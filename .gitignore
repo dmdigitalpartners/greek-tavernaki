@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Vercel
+.vercel/
+
+# Claude Code (local config — paths are machine-specific)
+.claude/
+
+# Claude Code temp files
+temporary screenshots/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables (if ever added)
+.env
+.env.local
+.env.*.local
