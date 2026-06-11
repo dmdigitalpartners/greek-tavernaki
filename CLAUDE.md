@@ -7,11 +7,11 @@
 - NEVER push to GitHub until explicitly told "push to GitHub"
 - ALWAYS preview changes on localhost before reporting done
 - Delete temporary screenshots after each major build phase
-- **Auto-deploy to Vercel runs automatically** via Stop hook after every response — no manual action needed
 
 ## Vercel
 - Project: `greek-tavernaki` → https://greek-tavernaki.vercel.app
-- Deploy is automatic (Stop hook in `.claude/settings.json`)
+- Deploy is automatic via GitHub — merging to `main` triggers production deploy
+- PRs automatically get a Vercel preview URL
 
 ## Local Server
 - Start: `node serve.mjs` (serves project root at http://localhost:3000)
