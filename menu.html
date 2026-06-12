@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<!-- data-page="menu" lets translations.js identify this as the menu page -->
+<html lang="bg" data-page="menu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Пълното меню на Тавернаки — Пловдив. Салати, предястия, скара, риба, морски дарове, паста и ризото.">
+    <meta property="og:title" content="Меню | Тавернаки — Автентична гръцка кухня">
+    <meta property="og:description" content="115 ястия: салати, предястия, мезета, скара, риба, морски дарове, паста и обедно меню.">
+    <title>Меню | Тавернаки</title>
+
+    <!-- Flash prevention: sets data-lang before any render to avoid BG→EN flicker -->
+    <script>
+      (function() {
+        var lang = 'bg';
+        try { lang = localStorage.getItem('tavernaki-lang') || 'bg'; } catch(e) {}
+        document.documentElement.dataset.lang = lang;
+      })();
+    </script>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%232D6A3F'/><text y='.82em' font-size='72' x='50%25' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>T</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            950: '#071510',
+                            900: '#0D2B1A',
+                            800: '#1A4A2E',
+                            700: '#2D6A3F',
+                            600: '#3A8050',
+                            100: '#E8F2EB',
+                        },
+                        stone: {
+                            50: '#FAF8F3',
+                            100: '#F0EDE6',
+                            200: '#E0DBD0',
+                            300: '#C8C2B4',
+                        },
+                        tavred: '#C0392B',
+                        ink: '#2C2C2C',
+                    },
+                    fontFamily: {
+                        display: ['Cinzel', 'Georgia', 'serif'],
+                        accent: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --forest:      #2D6A3F;
+            --forest-dark: #1A4A2E;
+            --forest-deep: #0D2B1A;
+            --stone:       #F0EDE6;
+            --cream:       #FAF8F3;
+            --red:         #C0392B;
+            --red-dark:    #A93226;
+            --ink:         #2C2C2C;
+        }
+
+        /* ─── GRAIN TEXTURE ───────────────────────────── */
+        .grain::after {
+            content: '';
+            position: absolute; inset: 0;
+            pointer-events: none; z-index: 3;
+            opacity: 0.045;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 200px 200px;
+        }
+
+        /* ─── NAVBAR ──────────────────────────────────── */
+        #nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            transition: background 0.5s ease, box-shadow 0.5s ease, padding 0.4s ease;
+            padding: 1.75rem 0;
+        }
+        #nav.scrolled {
+            background: rgba(250,248,243,0.97);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.06);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+        #nav.scrolled .nav-logo { color: var(--forest-dark); }
+        #nav.scrolled .nav-link { color: var(--ink); }
+        #nav.scrolled .nav-link::after { background: var(--forest); }
+        #nav.scrolled .nav-reserve { background: var(--forest); color: var(--stone); }
+        #nav.scrolled .nav-reserve:hover { background: var(--forest-dark); }
+
+        .nav-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            letter-spacing: 0.3em;
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.4s ease, opacity 0.2s ease;
+        }
+        .nav-logo:hover { opacity: 0.8; }
+
+        .nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(240,237,230,0.85);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease, opacity 0.2s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute; bottom: -3px; left: 0;
+            width: 100%; height: 1px;
+            background: var(--stone);
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+        }
+        .nav-link:hover { color: var(--stone); }
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after { transform: scaleX(1); }
+        .nav-link:focus-visible { outline: 2px solid rgba(240,237,230,0.5); outline-offset: 4px; border-radius: 2px; }
+
+        /* Active nav link (current page) */
+        .nav-link-active { color: var(--stone) !important; }
+        .nav-link-active::after { transform: scaleX(1) !important; }
+        #nav.scrolled .nav-link-active { color: var(--forest) !important; }
+        #nav.scrolled .nav-link-active::after { background: var(--forest) !important; transform: scaleX(1) !important; }
+
+        .nav-reserve {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--forest-dark);
+            background: var(--stone);
+            padding: 0.55rem 1.25rem;
+            border: none; cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .nav-reserve:hover {
+            background: var(--stone);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        }
+        .nav-reserve:active { transform: translateY(0); }
+        .nav-reserve:focus-visible { outline: 2px solid var(--stone); outline-offset: 3px; }
+
+        /* Language toggle button */
+        .lang-toggle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(44,44,44,0.7);
+            background: transparent;
+            border: 1px solid rgba(44,44,44,0.25);
+            padding: 0.4rem 0.75rem;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .lang-toggle:hover { color: var(--forest); border-color: var(--forest); }
+        .lang-toggle:active { opacity: 0.75; }
+        .lang-toggle:focus-visible { outline: 2px solid rgba(44,44,44,0.4); outline-offset: 3px; border-radius: 2px; }
+
+        /* Mobile nav */
+        #mobile-nav-panel {
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            background: var(--cream);
+            border-top: 1px solid var(--stone);
+        }
+        #mobile-nav-panel.open { display: flex; }
+        .mobile-nav-link {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            padding: 1.1rem 1.5rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .mobile-nav-link:hover { background: var(--stone); color: var(--forest); }
+        .mobile-nav-link:focus-visible { outline: 2px solid var(--forest); outline-offset: -2px; }
+        .mobile-nav-link-active { color: var(--forest) !important; background: var(--stone) !important; }
+
+        /* Hamburger icon */
+        .hamburger span {
+            display: block; width: 22px; height: 1.5px;
+            background: var(--stone);
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease;
+            margin: 5px 0;
+        }
+        #nav.scrolled .hamburger span { background: var(--ink); }
+        .hamburger.open span:nth-child(1) { transform: translateY(11.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-11.5px) rotate(-45deg); }
+
+        /* ─── BUTTONS ─────────────────────────────────── */
+        .btn-primary {
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--forest-dark);
+            background: var(--stone);
+            padding: 1rem 2.25rem;
+            border: 2px solid var(--stone);
+            cursor: pointer; text-decoration: none; display: inline-block;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+            box-shadow: 0 4px 16px rgba(240,237,230,0.15);
+        }
+        .btn-primary:hover {
+            background: transparent; color: var(--stone);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(240,237,230,0.1);
+        }
+        .btn-primary:active { transform: translateY(0); }
+        .btn-primary:focus-visible { outline: 2px solid var(--stone); outline-offset: 4px; }
+
+        /* ─── SECTION TYPOGRAPHY ──────────────────────── */
+        .section-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--red);
+        }
+        .rule {
+            width: 48px; height: 2px;
+            background: var(--red);
+            display: block;
+        }
+
+        /* ─── WHATSAPP FLOAT ──────────────────────────── */
+        #wa-float {
+            position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 500;
+            width: 54px; height: 54px;
+            background: #25D366; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+            text-decoration: none;
+            transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+        }
+        #wa-float:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+        }
+        #wa-float:focus-visible { outline: 2px solid #25D366; outline-offset: 4px; }
+
+        /* Sticky phone bar on mobile */
+        #sticky-phone {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+            display: none;
+            opacity: 0;
+            transform: translateY(100%);
+            will-change: transform, opacity;
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+        }
+        #sticky-phone.shown {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        @media (max-width: 640px) {
+            #wa-float { display: none; }
+            #sticky-phone { display: flex; }
+        }
+
+        /* ─── FOOTER ──────────────────────────────────── */
+        .footer-link {
+            color: rgba(240,237,230,0.55);
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.25s ease;
+        }
+        .footer-link:hover { color: var(--stone); }
+        .footer-link:focus-visible { outline: 1px solid rgba(240,237,230,0.5); outline-offset: 3px; border-radius: 1px; }
+        .social-link {
+            width: 36px; height: 36px;
+            border: 1px solid rgba(240,237,230,0.2);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(240,237,230,0.6);
+            text-decoration: none; font-size: 0.85rem;
+            transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .social-link:hover {
+            border-color: var(--stone); color: var(--stone);
+            background: rgba(240,237,230,0.06);
+            transform: scale(1.1);
+        }
+        .social-link:focus-visible { outline: 1px solid rgba(240,237,230,0.5); outline-offset: 3px; }
+
+        /* ─── PAGE HERO (menu) ────────────────────────── */
+        #menu-hero {
+            position: relative;
+            background: var(--forest-deep);
+            padding: 8rem 0 3.5rem;
+            overflow: hidden;
+        }
+        #menu-hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 80% 50%, rgba(45,106,63,0.35) 0%, transparent 65%),
+                radial-gradient(ellipse at 10% 80%, rgba(7,21,16,0.7) 0%, transparent 55%);
+            pointer-events: none;
+        }
+        .menu-hero-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            color: rgba(240,237,230,0.45);
+            text-transform: uppercase;
+        }
+        .menu-hero-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: clamp(2.25rem, 6vw, 4rem);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            color: var(--stone);
+        }
+        .menu-hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(0.95rem, 2vw, 1.2rem);
+            color: rgba(240,237,230,0.5);
+            letter-spacing: 0.01em;
+        }
+
+        /* ─── CATEGORY TAB BAR ────────────────────────── */
+        .cat-tabs-wrap {
+            position: sticky;
+            top: 57px; /* scrolled navbar height */
+            z-index: 90;
+            background: var(--cream);
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .cat-tabs-wrap::-webkit-scrollbar { display: none; }
+        .cat-tabs-inner {
+            display: flex;
+            min-width: max-content;
+            padding: 0 1rem;
+        }
+        .cat-tab {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #888;
+            padding: 1rem 1.1rem;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid transparent;
+            background: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.25s ease, border-color 0.25s ease;
+        }
+        .cat-tab:hover { color: var(--forest); }
+        .cat-tab.active {
+            color: var(--forest);
+            border-bottom-color: var(--forest);
+        }
+        .cat-tab:focus-visible {
+            outline: 2px solid var(--forest);
+            outline-offset: -2px;
+            border-radius: 2px;
+        }
+
+        /* ─── DISH GRID ───────────────────────────────── */
+        #menu-section {
+            background: var(--stone);
+            padding: 2.5rem 0 5rem;
+            min-height: 40vh;
+        }
+        #dish-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        @media (min-width: 640px) {
+            #dish-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            #dish-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ─── DISH CARD ───────────────────────────────── */
+        .dish-card {
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(13,43,26,0.06), 0 8px 20px rgba(13,43,26,0.07);
+            transition: transform 0.4s cubic-bezier(0.34,1.3,0.64,1), box-shadow 0.4s ease;
+        }
+        .dish-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 8px 16px rgba(13,43,26,0.1),
+                0 24px 48px rgba(13,43,26,0.13),
+                0 2px 4px rgba(0,0,0,0.04);
+        }
+        .dish-img-wrap {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            background: #e8e3d9;
+        }
+        .dish-img-wrap img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+        }
+        .dish-card:hover .dish-img-wrap img { transform: scale(1.06); }
+        .dish-placeholder {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #edeae2 0%, #ddd9cf 100%);
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+        }
+        .dish-placeholder::after {
+            content: '';
+            display: block;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232D6A3F' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2'/%3E%3Cpath d='M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7'/%3E%3C/svg%3E") center / 28px 28px no-repeat;
+            opacity: 0.18;
+        }
+        .dish-body {
+            padding: 1rem 1.1rem 1.1rem;
+        }
+        .dish-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .dish-meta {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .dish-weight {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.74rem;
+            color: rgba(44,44,44,0.38);
+            letter-spacing: 0.03em;
+        }
+        .dish-price {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--forest);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .dish-allergens {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.7rem;
+            color: rgba(44,44,44,0.4);
+            line-height: 1.45;
+            margin: 0;
+            padding-top: 0.35rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        .allergen-label {
+            font-weight: 500;
+            margin-right: 0.2em;
+        }
+
+        /* ─── LUNCH NOTE BANNER ───────────────────────── */
+        #lunch-note {
+            background: rgba(45,106,63,0.07);
+            border-left: 3px solid var(--forest);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem;
+            color: var(--forest-dark);
+            line-height: 1.55;
+        }
+        #lunch-note.hidden { display: none; }
+
+        /* ─── EMPTY STATE ─────────────────────────────── */
+        #menu-empty {
+            text-align: center;
+            padding: 4rem 1rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #aaa;
+        }
+        #menu-empty.hidden { display: none; }
+
+        /* ─── MOBILE FOOTER LAYOUT ────────────────────── */
+        @media (max-width: 639px) {
+            .footer-main-grid {
+                grid-template-columns: 1fr !important;
+                row-gap: 0 !important;
+            }
+            .footer-brand-col {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding-bottom: 2rem;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid rgba(240,237,230,0.08);
+            }
+            .footer-slogan { max-width: 100% !important; }
+            .footer-socials-desktop { display: none !important; }
+            .footer-nav-col {
+                text-align: center;
+                padding-bottom: 2rem;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid rgba(240,237,230,0.08);
+            }
+            .footer-contact-col {
+                text-align: center;
+                padding-bottom: 1rem;
+            }
+            .footer-contact-col > div[style*="flex-direction"] { align-items: center !important; }
+            .footer-socials-mobile { display: flex !important; }
+            footer { padding-bottom: calc(2rem + 52px) !important; }
+
+            /* Mobile tab scroll: slightly more padding */
+            .cat-tabs-inner { padding: 0 0.25rem; }
+        }
+    </style>
+</head>
+
+<body class="bg-stone-50 text-ink font-body">
+
+    <!-- ═══ WHATSAPP FLOAT ════════════════════════════════════════════ -->
+    <a href="https://wa.me/359877646206" target="_blank" rel="noopener" id="wa-float" aria-label="Пишете ни в WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.116 1.531 5.847L.057 23.804a.5.5 0 00.613.612l5.957-1.474A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-5.064-1.405l-.363-.216-3.537.875.892-3.534-.236-.374A9.798 9.798 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182c5.427 0 9.818 4.391 9.818 9.818 0 5.427-4.391 9.818-9.818 9.818z"/>
+        </svg>
+    </a>
+
+    <!-- ═══ STICKY MOBILE PHONE BAR ═══════════════════════════════════ -->
+    <div id="sticky-phone">
+        <a href="tel:+359877646206" class="flex-1 flex items-center justify-center py-3 bg-forest-700 text-stone-100" style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;text-decoration:none;">
+            ПОЗВЪНЕТЕ
+        </a>
+        <a href="https://wa.me/359877646206" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center gap-2 py-3" style="background:#25D366;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;text-decoration:none;color:#fff;">
+            WHATSAPP
+        </a>
+    </div>
+
+    <!-- ═══ NAVBAR — copied from index.html; Меню link is active ═════ -->
+    <!-- nav-link-active marks the current page link -->
+    <nav id="nav" class="scrolled" aria-label="Главно меню">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="nav-logo">TAVERNAKI</a>
+
+            <!-- Desktop links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="menu.html" class="nav-link nav-link-active" data-i18n="nav_menu">Меню</a>
+                <a href="index.html#about" class="nav-link" data-i18n="nav_about">История</a>
+                <a href="index.html#gallery" class="nav-link" data-i18n="nav_gallery">Галерия</a>
+                <a href="index.html#location" class="nav-link" data-i18n="nav_contact">Контакти</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+359877646206" class="nav-link" style="font-size:0.65rem;letter-spacing:0.12em;">0877 64 62 06</a>
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger" class="hamburger md:hidden flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню">
+            <a href="menu.html" class="mobile-nav-link mobile-nav-link-active" data-i18n="nav_menu">Меню</a>
+            <a href="index.html#about" class="mobile-nav-link" data-i18n="nav_about">История</a>
+            <a href="index.html#gallery" class="mobile-nav-link" data-i18n="nav_gallery">Галерия</a>
+            <a href="index.html#location" class="mobile-nav-link" data-i18n="nav_contact">Контакти</a>
+            <a href="tel:+359877646206" class="mobile-nav-link" style="color:var(--forest);display:flex;align-items:center;gap:0.5rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                0877 64 62 06
+            </a>
+            <button class="mobile-nav-link lang-toggle" onclick="toggleLang()" aria-label="Switch language" style="background:none;border:none;width:100%;text-align:left;cursor:pointer;border-top:1px solid rgba(0,0,0,0.05);">EN</button>
+        </div>
+    </nav>
+
+    <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
+    <section id="menu-hero" class="grain">
+        <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;">
+            <div class="menu-hero-label mb-4">Тавернаки · Пловдив</div>
+            <h1 class="menu-hero-title mb-3" data-i18n="page_title_menu">Меню | Тавернаки</h1>
+            <p class="menu-hero-sub">115 ястия · 11 категории · Пресни продукти всеки ден</p>
+        </div>
+    </section>
+
+    <!-- ═══ CATEGORY TAB BAR ════════════════════════════════════════ -->
+    <div class="cat-tabs-wrap" role="tablist" aria-label="Категории меню">
+        <div class="cat-tabs-inner">
+            <button class="cat-tab active" role="tab" aria-selected="true"  data-filter="all"         data-i18n="cat_all">Всички</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="salads"      data-i18n="cat_salads">Салати</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="starters"    data-i18n="cat_starters">Стартери</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="appetizers"  data-i18n="cat_appetizers">Предястия</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="mezethes"    data-i18n="cat_mezethes">Мезета</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="potatoes"    data-i18n="cat_potatoes">Пържени Картофи</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="pasta"       data-i18n="cat_pasta">Паста и Ризото</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="bbq-meat"    data-i18n="cat_bbq_meat">Месни Ястия на Скара</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="pan-meat"    data-i18n="cat_pan_meat">Месни Ястия на Тиган</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="specialties" data-i18n="cat_specialties">Специалитети</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="fish"        data-i18n="cat_fish">Риба и Морски Дарове</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="lunch"       data-i18n="cat_lunch">Обедно Меню (Пон–Пет)</button>
+        </div>
+    </div>
+
+    <!-- ═══ MENU SECTION ════════════════════════════════════════════ -->
+    <section id="menu-section">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Lunch note — visible only when lunch tab is active -->
+            <div id="lunch-note" class="hidden" data-i18n="lunch_note">
+                Всеки делничен ден ви очакваме с разнообразно обедно меню от пресни и домашно приготвени ястия.
+            </div>
+
+            <!-- Dish grid — populated by renderMenu() -->
+            <div id="dish-grid"></div>
+
+            <!-- Empty state — shown when filter has 0 results -->
+            <div id="menu-empty" class="hidden" data-i18n="menu_empty">Няма налични ястия.</div>
+
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER — copied from index.html; hrefs updated to index.html anchors ═ -->
+    <footer style="background: var(--forest-deep); padding: 4rem 0 2rem;">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="footer-main-grid grid grid-cols-1 md:grid-cols-3 gap-12 pb-12" style="border-bottom: 1px solid rgba(240,237,230,0.08);">
+
+                <!-- Brand -->
+                <div class="footer-brand-col">
+                    <div style="font-family:'Cinzel',serif; font-size:1.25rem; letter-spacing:0.3em; color:var(--stone); margin-bottom:0.75rem;">TAVERNAKI</div>
+                    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" class="footer-slogan" data-i18n="footer_slogan">
+                        Автентичната гръцка кухня, традиционно поднесена с любов
+                    </p>
+                    <div class="footer-socials-desktop" style="margin-top:1.5rem;">
+                        <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:0.75rem;" data-i18n="footer_social">Социални Медии</div>
+                        <div class="flex gap-3">
+                            <a href="https://facebook.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                            </a>
+                            <a href="https://instagram.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-nav-col">
+                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_nav_head">Навигация</div>
+                    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                        <a href="menu.html" class="footer-link" data-i18n="footer_nav_menu">Меню</a>
+                        <a href="index.html#about" class="footer-link" data-i18n="footer_nav_about">История</a>
+                        <a href="index.html#gallery" class="footer-link" data-i18n="footer_nav_gallery">Галерия</a>
+                        <a href="index.html#location" class="footer-link" data-i18n="footer_nav_contact">Контакти</a>
+                        <a href="tel:+359877646206" class="footer-link" data-i18n="footer_nav_reserve">Резервации</a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact-col">
+                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_contact_head">Контакти</div>
+                    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                        <a href="tel:+359877646206" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">0877 64 62 06</a>
+                        <a href="mailto:tavernaki@abv.bg" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">tavernaki@abv.bg</a>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;">
+                            бул. Пещерско шосе 28а<br>
+                            кв. Младежки хълм, 4002<br>
+                            Пловдив, България
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Socials: mobile only -->
+            <div class="footer-socials-mobile flex-col items-center gap-3 py-8" style="display:none; border-bottom: 1px solid rgba(240,237,230,0.08);">
+                <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:0.25rem;" data-i18n="footer_social">Социални Медии</div>
+                <div class="flex gap-3">
+                    <a href="https://facebook.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                    </a>
+                    <a href="https://instagram.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.25);" data-i18n="footer_copyright">
+                    © 2025 Tavernaki · Всички права запазени
+                </div>
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.2); text-align:center;">
+                    Доставка чрез Glovo · Wolt · Takeaway.com
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ═══ SCRIPTS — load order: site-config → menu-data → translations → init ═ -->
+    <script src="site-config.js"></script>
+    <script src="menu-data.js"></script>
+    <script src="translations.js"></script>
+
+    <script>
+        // ── Dish card renderer ──────────────────────────────────────────
+        function renderMenu() {
+            var lang = getLang();
+            var grid = document.getElementById('dish-grid');
+            window.menuData.forEach(function(dish) {
+                var name = lang === 'en' ? dish.name_en : dish.name_bg;
+                var allergenText = dish.allergens === 'Requires Restaurant Verification'
+                    ? t[lang].allergens_on_request
+                    : dish.allergens;
+                // toFixed(2) uses dot decimal — client confirmed EUR with dot
+                var priceDisplay = dish.price_unit
+                    ? '€' + dish.price.toFixed(2) + ' ' + t[lang].price_per_unit
+                    : '€' + dish.price.toFixed(2);
+
+                var card = document.createElement('div');
+                card.className = 'dish-card';
+                card.dataset.category = dish.category;
+                card.dataset.dishId = dish.id;
+                card.innerHTML =
+                    '<div class="dish-img-wrap">' +
+                        (dish.image
+                            ? '<img src="' + dish.image + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy">'
+                            : '<div class="dish-placeholder" role="img" aria-label="' + name.replace(/"/g, '&quot;') + '"></div>') +
+                    '</div>' +
+                    '<div class="dish-body">' +
+                        '<h3 class="dish-name">' + name + '</h3>' +
+                        '<div class="dish-meta">' +
+                            (dish.weight ? '<span class="dish-weight">' + dish.weight + '</span>' : '<span></span>') +
+                            '<span class="dish-price">' + priceDisplay + '</span>' +
+                        '</div>' +
+                        '<p class="dish-allergens">' +
+                            '<span class="allergen-label">' + t[lang].allergens_label + '</span>' +
+                            '<span class="allergen-val">' + allergenText + '</span>' +
+                        '</p>' +
+                    '</div>';
+                grid.appendChild(card);
+            });
+        }
+
+        // ── Category filter ─────────────────────────────────────────────
+        // scroll=false on initial page load; true on tab click
+        function filterCategory(filter, scroll) {
+            // Update tab aria + active class
+            document.querySelectorAll('.cat-tab').forEach(function(btn) {
+                var active = btn.dataset.filter === filter;
+                btn.classList.toggle('active', active);
+                btn.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+
+            var visible = 0;
+            document.querySelectorAll('.dish-card').forEach(function(card) {
+                var show = filter === 'all' || card.dataset.category === filter;
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            document.getElementById('menu-empty').classList.toggle('hidden', visible > 0);
+
+            // Lunch note banner
+            var lunchNote = document.getElementById('lunch-note');
+            if (lunchNote) lunchNote.classList.toggle('hidden', filter !== 'lunch');
+
+            // Hash: clear for "all", set slug for specific category
+            history.replaceState(null, '', filter === 'all' ? location.pathname : '#' + filter);
+
+            // Scroll to grid only on user-initiated tab clicks (not initial page load)
+            if (scroll !== false) {
+                var grid = document.getElementById('dish-grid');
+                var tabBar = document.querySelector('.cat-tabs-wrap');
+                var offset = (tabBar ? tabBar.offsetHeight : 0) + 16;
+                window.scrollTo({ top: grid.offsetTop - offset, behavior: 'smooth' });
+            }
+        }
+
+        // ── Navbar scroll + hamburger (verbatim from index.html) ────────
+        var nav = document.getElementById('nav');
+        var stickyPhone = document.getElementById('sticky-phone');
+        window.addEventListener('scroll', function() {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+            if (window.innerWidth <= 640) {
+                stickyPhone.classList.toggle('shown', window.scrollY > 200);
+            }
+        }, { passive: true });
+
+        var hamburger = document.getElementById('hamburger');
+        var mobilePanel = document.getElementById('mobile-nav-panel');
+        hamburger.addEventListener('click', function() {
+            var isOpen = mobilePanel.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        mobilePanel.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobilePanel.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ── Single init ─────────────────────────────────────────────────
+        // Order: renderMenu → applyLang → filterCategory
+        // applyLang MUST run after renderMenu so dish cards exist in DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMenu();                                               // 1. create all 115 cards
+            applyLang(getLang());                                       // 2. apply language strings (cards now exist)
+            var hash = location.hash.replace('#', '') || 'all';
+            filterCategory(hash, false);                                // 3. apply initial filter — no scroll on load
+            document.querySelectorAll('.cat-tab').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    filterCategory(btn.dataset.filter, true);           // scroll on tab click
+                });
+            });
+        });
+
+        // ── Dev-only validation (localhost only) ────────────────────────
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            document.addEventListener('DOMContentLoaded', function() {
+                var expected = {
+                    salads: 12, starters: 3, appetizers: 13, mezethes: 8,
+                    potatoes: 6, pasta: 11, 'bbq-meat': 13, 'pan-meat': 9,
+                    specialties: 8, fish: 23, lunch: 9
+                };
+                var actual = {};
+                window.menuData.forEach(function(d) {
+                    actual[d.category] = (actual[d.category] || 0) + 1;
+                });
+                Object.keys(expected).forEach(function(cat) {
+                    console.assert(
+                        actual[cat] === expected[cat],
+                        'Category "' + cat + '": expected ' + expected[cat] + ', got ' + (actual[cat] || 0)
+                    );
+                });
+                console.log('Menu validation complete. Total:', window.menuData.length, '(expected 115)');
+            });
+        }
+    </script>
+
+</body>
+</html>
