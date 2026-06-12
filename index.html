@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tavernaki — Автентичната гръцка кухня в Пловдив. Морски дарове, сувлаки, живa гръцка музика всеки петък. Резервации: 0877 64 62 06">
+    <meta name="description" content="Tavernaki — Автентичната гръцка кухня в Пловдив. Пресни сезонни продукти, домашно приготвено, традиционни рецепти. Резервации: 0877 64 62 06">
     <meta property="og:title" content="Tavernaki — Автентична гръцка кухня · Пловдив">
-    <meta property="og:description" content="Автентичната гръцка кухня, традиционно поднесена с любов. Живa гръцка музика всеки петък в Пловдив.">
+    <meta property="og:description" content="Автентичната гръцка кухня, традиционно поднесена с любов. Пресни сезонни продукти и домашна рецептура в Пловдив.">
     <title>Tavernaki — Автентична гръцка кухня · Пловдив</title>
 
     <!-- Flash prevention: sets data-lang before any render to avoid BG→EN flicker -->
@@ -112,37 +112,26 @@
         /* ─── NAVBAR ──────────────────────────────────── */
         #nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            transition: background 0.5s ease, box-shadow 0.5s ease, padding 0.4s ease;
-            padding: 1.75rem 0;
-        }
-        #nav.scrolled {
-            background: rgba(250,248,243,0.97);
+            background: var(--cream);
             box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.06);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            padding: 0.75rem 0;
         }
-        #nav.scrolled .nav-logo { color: var(--forest-dark); }
-        #nav.scrolled .nav-link { color: var(--ink); }
-        #nav.scrolled .nav-link::after { background: var(--forest); }
-        #nav.scrolled .nav-reserve { background: var(--forest); color: var(--stone); }
-        #nav.scrolled .nav-reserve:hover { background: var(--forest-dark); }
 
         .nav-logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1rem;
-            letter-spacing: 0.3em;
-            color: var(--stone);
             text-decoration: none;
-            transition: color 0.4s ease, opacity 0.2s ease;
+            display: flex; align-items: center;
+            opacity: 1;
+            transition: opacity 0.2s ease;
         }
-        .nav-logo:hover { opacity: 0.8; }
+        .nav-logo:hover { opacity: 0.75; }
+        .nav-logo img { height: 44px; width: auto; display: block; }
 
         .nav-link {
             font-family: 'Cinzel', serif;
             font-size: 0.65rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: rgba(240,237,230,0.85);
+            color: var(--ink);
             text-decoration: none;
             position: relative;
             transition: color 0.3s ease, opacity 0.2s ease;
@@ -151,35 +140,39 @@
             content: '';
             position: absolute; bottom: -3px; left: 0;
             width: 100%; height: 1px;
-            background: var(--stone);
+            background: var(--forest);
             transform: scaleX(0); transform-origin: left;
             transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
         }
-        .nav-link:hover { color: var(--stone); }
+        .nav-link:hover { color: var(--forest); }
         .nav-link:hover::after,
         .nav-link:focus-visible::after { transform: scaleX(1); }
-        .nav-link:focus-visible { outline: 2px solid rgba(240,237,230,0.5); outline-offset: 4px; border-radius: 2px; }
+        .nav-link:focus-visible { outline: 2px solid rgba(45,106,63,0.4); outline-offset: 4px; border-radius: 2px; }
+
+        /* Active nav link (current page) */
+        .nav-link-active { color: var(--forest) !important; }
+        .nav-link-active::after { transform: scaleX(1) !important; background: var(--forest) !important; }
 
         .nav-reserve {
             font-family: 'Cinzel', serif;
             font-size: 0.65rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--forest-dark);
-            background: var(--stone);
+            color: var(--stone);
+            background: var(--forest);
             padding: 0.55rem 1.25rem;
             border: none; cursor: pointer;
             text-decoration: none;
-            transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(45,106,63,0.25);
         }
         .nav-reserve:hover {
-            background: var(--stone);
+            background: var(--forest-dark);
             transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 14px rgba(45,106,63,0.35);
         }
         .nav-reserve:active { transform: translateY(0); }
-        .nav-reserve:focus-visible { outline: 2px solid var(--stone); outline-offset: 3px; }
+        .nav-reserve:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 
         /* Language toggle button */
         .lang-toggle {
@@ -187,19 +180,17 @@
             font-size: 0.6rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(240,237,230,0.75);
+            color: rgba(44,44,44,0.7);
             background: transparent;
-            border: 1px solid rgba(240,237,230,0.35);
+            border: 1px solid rgba(44,44,44,0.25);
             padding: 0.4rem 0.75rem;
             cursor: pointer;
             border-radius: 2px;
             transition: color 0.3s ease, border-color 0.3s ease;
         }
-        .lang-toggle:hover { color: var(--stone); border-color: rgba(240,237,230,0.65); }
+        .lang-toggle:hover { color: var(--forest); border-color: var(--forest); }
         .lang-toggle:active { opacity: 0.75; }
-        .lang-toggle:focus-visible { outline: 2px solid rgba(240,237,230,0.5); outline-offset: 3px; border-radius: 2px; }
-        #nav.scrolled .lang-toggle { color: rgba(44,44,44,0.7); border-color: rgba(44,44,44,0.3); }
-        #nav.scrolled .lang-toggle:hover { color: var(--forest); border-color: var(--forest); }
+        .lang-toggle:focus-visible { outline: 2px solid rgba(44,44,44,0.4); outline-offset: 3px; border-radius: 2px; }
 
         /* Mobile nav */
         #mobile-nav-panel {
@@ -223,15 +214,15 @@
         }
         .mobile-nav-link:hover { background: var(--stone); color: var(--forest); }
         .mobile-nav-link:focus-visible { outline: 2px solid var(--forest); outline-offset: -2px; }
+        .mobile-nav-link-active { color: var(--forest) !important; background: var(--stone) !important; }
 
-        /* Hamburger icon */
+        /* Hamburger icon — instant swap, no morphing animation */
         .hamburger span {
             display: block; width: 22px; height: 1.5px;
-            background: var(--stone);
-            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease;
+            background: var(--ink);
+            transition: none;
             margin: 5px 0;
         }
-        #nav.scrolled .hamburger span { background: var(--ink); }
         .hamburger.open span:nth-child(1) { transform: translateY(11.5px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: translateY(-11.5px) rotate(-45deg); }
@@ -290,18 +281,18 @@
             font-size: 0.7rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--forest-dark);
-            background: var(--stone);
+            color: var(--stone);
+            background: var(--forest);
             padding: 1rem 2.25rem;
-            border: 2px solid var(--stone);
+            border: 2px solid var(--forest);
             cursor: pointer; text-decoration: none; display: inline-block;
-            transition: background 0.3s ease, color 0.3s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
-            box-shadow: 0 4px 16px rgba(240,237,230,0.15);
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 16px rgba(45,106,63,0.3);
         }
         .btn-primary:hover {
-            background: transparent; color: var(--stone);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(240,237,230,0.1);
+            background: var(--forest-dark); border-color: var(--forest-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(45,106,63,0.4);
         }
         .btn-primary:active { transform: translateY(0); }
         .btn-primary:focus-visible { outline: 2px solid var(--stone); outline-offset: 4px; }
@@ -547,21 +538,7 @@
         .d3 { transition-delay: 0.3s; }
         .d4 { transition-delay: 0.4s; }
 
-        /* ─── WHATSAPP FLOAT ──────────────────────────── */
-        #wa-float {
-            position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 500;
-            width: 54px; height: 54px;
-            background: #25D366; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 16px rgba(37,211,102,0.45);
-            text-decoration: none;
-            transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
-        }
-        #wa-float:hover {
-            transform: scale(1.12);
-            box-shadow: 0 8px 28px rgba(37,211,102,0.55);
-        }
-        #wa-float:focus-visible { outline: 2px solid #25D366; outline-offset: 4px; }
+        /* (WhatsApp float removed) */
 
         /* ─── FOOTER ──────────────────────────────────── */
         .footer-link {
@@ -605,7 +582,7 @@
             background: linear-gradient(135deg, #ddd8ce 0%, #e8e4dc 50%, #d8d2c6 100%);
         }
 
-        /* Sticky phone bar on mobile */
+        /* Sticky reserve bar on mobile */
         #sticky-phone {
             position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
             display: none;
@@ -620,8 +597,20 @@
             transform: translateY(0);
             pointer-events: auto;
         }
+        .sticky-reserve {
+            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+            width: 100%; min-height: 52px;
+            background: var(--forest);
+            color: var(--stone);
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .sticky-reserve:active { background: var(--forest-dark); }
         @media (max-width: 640px) {
-            #wa-float { display: none; }
             #sticky-phone { display: flex; }
         }
 
@@ -738,7 +727,7 @@
             .footer-contact-col > div[style*="flex-direction"] { align-items: center !important; }
             /* Mobile socials: shown */
             .footer-socials-mobile { display: flex !important; }
-            footer { padding-bottom: calc(2rem + 52px) !important; }
+            footer { padding-bottom: calc(2rem + 56px) !important; }
         }
     </style>
 </head>
@@ -747,64 +736,58 @@
 
     <!-- ═══ LOADING OVERLAY ═══════════════════════════════════════════ -->
     <div id="loader">
-        <div class="loader-wordmark">TAVERNAKI</div>
+        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant"
+             style="width: 200px; max-width: 60vw; height: auto; display: block; margin-bottom: 1rem; animation: loaderPulse 1.8s ease-in-out infinite;">
         <div class="loader-sub">Автентична гръцка кухня · Пловдив</div>
     </div>
 
-    <!-- ═══ WHATSAPP FLOAT ════════════════════════════════════════════ -->
-    <a href="https://wa.me/359877646206" target="_blank" rel="noopener" id="wa-float" aria-label="Пишете ни в WhatsApp">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.116 1.531 5.847L.057 23.804a.5.5 0 00.613.612l5.957-1.474A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 01-5.064-1.405l-.363-.216-3.537.875.892-3.534-.236-.374A9.798 9.798 0 012.182 12C2.182 6.573 6.573 2.182 12 2.182c5.427 0 9.818 4.391 9.818 9.818 0 5.427-4.391 9.818-9.818 9.818z"/>
-        </svg>
-    </a>
-
-    <!-- ═══ STICKY MOBILE PHONE BAR ═══════════════════════════════════ -->
+    <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
     <div id="sticky-phone">
-        <a href="tel:+359877646206" class="flex-1 flex items-center justify-center py-3 bg-forest-700 text-stone-100" style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;text-decoration:none;">
-            ПОЗВЪНЕТЕ
-        </a>
-        <a href="https://wa.me/359877646206" target="_blank" rel="noopener" class="flex-1 flex items-center justify-center gap-2 py-3" style="background:#25D366;font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.12em;text-decoration:none;color:#fff;">
-            WHATSAPP
+        <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            РЕЗЕРВИРАЙ МАСА
         </a>
     </div>
 
     <!-- ═══ NAVBAR ════════════════════════════════════════════════════ -->
     <nav id="nav" aria-label="Главно меню">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="#" class="nav-logo">TAVERNAKI</a>
+            <a href="index.html" class="nav-logo">
+                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant">
+            </a>
 
             <!-- Desktop links -->
-            <div class="hidden md:flex items-center gap-8">
+            <div class="hidden md:flex items-center gap-6">
                 <a href="menu.html" class="nav-link" data-i18n="nav_menu">Меню</a>
-                <a href="#about" class="nav-link" data-i18n="nav_about">История</a>
-                <a href="#gallery" class="nav-link" data-i18n="nav_gallery">Галерия</a>
-                <a href="#location" class="nav-link" data-i18n="nav_contact">Контакти</a>
+                <a href="about.html" class="nav-link" data-i18n="nav_about">За нас</a>
+                <a href="parties.html" class="nav-link" data-i18n="nav_parties">Тържества</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Контакти</a>
             </div>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="tel:+359877646206" class="nav-link" style="font-size:0.65rem;letter-spacing:0.12em;">0877 64 62 06</a>
                 <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
                 <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай маса</a>
             </div>
 
-            <!-- Hamburger -->
-            <button id="hamburger" class="hamburger md:hidden flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+            <!-- Mobile right: lang toggle + hamburger -->
+            <div class="flex items-center gap-2 md:hidden">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile menu panel -->
         <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню">
             <a href="menu.html" class="mobile-nav-link" data-i18n="nav_menu">Меню</a>
-            <a href="#about" class="mobile-nav-link" data-i18n="nav_about">История</a>
-            <a href="#gallery" class="mobile-nav-link" data-i18n="nav_gallery">Галерия</a>
-            <a href="#location" class="mobile-nav-link" data-i18n="nav_contact">Контакти</a>
+            <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">За нас</a>
+            <a href="parties.html" class="mobile-nav-link" data-i18n="nav_parties">Тържества</a>
+            <a href="contact.html" class="mobile-nav-link" data-i18n="nav_contact">Контакти</a>
             <a href="tel:+359877646206" class="mobile-nav-link" style="color:var(--forest);display:flex;align-items:center;gap:0.5rem;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                 0877 64 62 06
             </a>
-            <button class="mobile-nav-link lang-toggle" onclick="toggleLang()" aria-label="Switch language" style="background:none;border:none;width:100%;text-align:left;cursor:pointer;border-top:1px solid rgba(0,0,0,0.05);">EN</button>
         </div>
     </nav>
 
@@ -815,11 +798,13 @@
         </div>
         <div class="hero-overlay"></div>
 
-        <div class="hero-content max-w-7xl mx-auto px-6 py-12 mt-16">
+        <div class="hero-content max-w-7xl mx-auto px-6 py-12 mt-14">
             <div class="hero-eyebrow mb-5">Пловдив · България · <span class="eyebrow-break">Автентична гръцка таверна</span></div>
 
-            <h1 class="hero-title mb-6">
-                TAVERNAKI
+            <h1 class="hero-title mb-6" style="display:flex; align-items:flex-start;">
+                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant"
+                     style="max-width: min(320px, 80vw); width: 100%; height: auto; display: block;
+                            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));">
             </h1>
 
             <p class="hero-tagline max-w-xl mb-10">
@@ -842,7 +827,7 @@
 
                 <div class="trust-item">
                     <div class="trust-icon" style="color:#2D6A3F;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:#2D6A3F"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#2D6A3F"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
                     <div>
                         <div class="trust-label">4.1 ★ · 637+ отзива</div>
@@ -852,11 +837,11 @@
 
                 <div class="trust-item">
                     <div class="trust-icon" style="color:#2D6A3F;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm12-2c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
                     <div>
-                        <div class="trust-label" data-i18n="trust_music">Жива гръцка музика</div>
-                        <div class="trust-sub" data-i18n="trust_music_sub">Всеки петък</div>
+                        <div class="trust-label" data-i18n="trust_quality">Домашно приготвено</div>
+                        <div class="trust-sub" data-i18n="trust_quality_sub">Пресни сезонни продукти</div>
                     </div>
                 </div>
 
@@ -997,8 +982,7 @@
 
                 <!-- Text: 5 client content blocks -->
                 <div class="about-text-col reveal-right">
-                    <div class="section-label mb-4" data-i18n="nav_about">Нашата история</div>
-                    <h2 class="section-title mb-3" data-i18n="about_welcome_h">Добре дошли в Тавернаки</h2>
+                    <h2 class="section-title mb-4" data-i18n="about_welcome_h">Добре дошли в Тавернаки</h2>
                     <span class="rule block mb-6"></span>
 
                     <p style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p">
@@ -1020,12 +1004,9 @@
                         При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера — вечери, след които се мисли дълго.
                     </p>
 
-                    <!-- Lunch note banner -->
-                    <div style="padding:1.1rem 1.25rem; background:var(--stone); border-left:3px solid var(--forest);">
-                        <p style="font-family:'DM Sans',sans-serif; font-size:0.88rem; line-height:1.65; color:#555; margin:0;" data-i18n="lunch_note">
-                            Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна — идеална за обедна пауза.
-                        </p>
-                    </div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="lunch_note">
+                        Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна — идеална за обедна пауза.
+                    </p>
                 </div>
 
             </div>
@@ -1073,24 +1054,42 @@
                 <span class="rule mx-auto block"></span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <div class="review-card reveal d1">
                     <div class="review-author mb-2">Emma Richardson</div>
                     <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote">„Калмарите бяха едни от най-вкусните, които съм опитвала. Изключителна гръцка атмосфера, бързо и качествено обслужване, щедри порции."</p>
+                    <p class="review-quote" data-i18n="review_1_quote">„Калмарите бяха едни от най-вкусните, които съм опитвала. Изключителна гръцка атмосфера, бързо и качествено обслужване, щедри порции."</p>
                 </div>
 
                 <div class="review-card reveal d2">
                     <div class="review-author mb-2">Nikos Sidiropoulos</div>
                     <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote">„Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома."</p>
+                    <p class="review-quote" data-i18n="review_2_quote">„Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома."</p>
                 </div>
 
                 <div class="review-card reveal d3">
                     <div class="review-author mb-2">Mattia Santoro</div>
                     <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote">„Комплиментарна вода и десерт, пресни морски дарове. Страхотно преживяване. Има меню на английски."</p>
+                    <p class="review-quote" data-i18n="review_3_quote">„Комплиментарна вода и десерт, пресни морски дарове. Страхотно преживяване. Има меню на английски."</p>
+                </div>
+
+                <div class="review-card reveal d1">
+                    <div class="review-author mb-2" data-i18n="review_4_author">Георги Иванов</div>
+                    <div class="stars mb-3">★★★★★</div>
+                    <p class="review-quote" data-i18n="review_4_quote">„Рибата на скара е невероятна — свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем."</p>
+                </div>
+
+                <div class="review-card reveal d2">
+                    <div class="review-author mb-2" data-i18n="review_5_author">Sophie Laurent</div>
+                    <div class="stars mb-3">★★★★★</div>
+                    <p class="review-quote" data-i18n="review_5_quote">„Безплатните предястия бяха прекрасна изненада. Атмосферата е топла и средиземноморска. Персоналът — изключително любезен."</p>
+                </div>
+
+                <div class="review-card reveal d3">
+                    <div class="review-author mb-2" data-i18n="review_6_author">Alexandros Papadopoulos</div>
+                    <div class="stars mb-3">★★★★★</div>
+                    <p class="review-quote" data-i18n="review_6_quote">„Истински гръцки дух — точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти."</p>
                 </div>
 
             </div>
@@ -1147,9 +1146,9 @@
                             <span class="hours-day" data-i18n="day_thu">Четвъртък</span>
                             <span class="hours-time">10:00 — 00:00</span>
                         </div>
-                        <div class="hours-row" style="border-bottom: none; background: rgba(45,106,63,0.04); margin: 0 -1.5rem; padding: 0.7rem 1.5rem;">
-                            <span class="hours-day" style="color:var(--forest); font-weight:500; display:flex; align-items:center; gap:0.4rem;" data-i18n="day_fri">Петък</span>
-                            <span class="hours-time" style="color:var(--forest);">10:00 — 00:00</span>
+                        <div class="hours-row">
+                            <span class="hours-day" data-i18n="day_fri">Петък</span>
+                            <span class="hours-time">10:00 — 00:00</span>
                         </div>
                         <div class="hours-row">
                             <span class="hours-day" data-i18n="day_sat">Събота</span>
@@ -1228,9 +1227,6 @@
                 <a href="tel:+359877646206" class="btn-primary" data-i18n="cta_btn_call">
                     Обадете се: 0877 64 62 06
                 </a>
-                <a href="https://wa.me/359877646206" target="_blank" rel="noopener" class="btn-ghost" data-i18n="cta_btn_wa">
-                    WhatsApp резервация
-                </a>
             </div>
 
             <div style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(240,237,230,0.1);">
@@ -1249,7 +1245,9 @@
 
                 <!-- Brand (desktop col 1 / mobile: full-width top) -->
                 <div class="footer-brand-col">
-                    <div style="font-family:'Cinzel',serif; font-size:1.25rem; letter-spacing:0.3em; color:var(--stone); margin-bottom:0.75rem;">TAVERNAKI</div>
+                    <div style="margin-bottom:0.85rem; display:inline-block; background:rgba(250,248,243,0.1); padding:0.5rem 0.75rem; border-radius:2px;">
+                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" style="height:36px; width:auto; display:block;">
+                    </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" class="footer-slogan" data-i18n="footer_slogan">
                         Автентичната гръцка кухня, традиционно поднесена с любов
                     </p>
@@ -1271,11 +1269,11 @@
                 <div class="footer-nav-col">
                     <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_nav_head">Навигация</div>
                     <div style="display:flex; flex-direction:column; gap:0.75rem;">
-                        <a href="#dishes" class="footer-link" data-i18n="footer_nav_menu">Меню</a>
-                        <a href="#about" class="footer-link" data-i18n="footer_nav_about">История</a>
-                        <a href="#gallery" class="footer-link" data-i18n="footer_nav_gallery">Галерия</a>
-                        <a href="#location" class="footer-link" data-i18n="footer_nav_contact">Контакти</a>
-                        <a href="tel:+359877646206" class="footer-link" data-i18n="footer_nav_reserve">Резервации</a>
+                        <a href="index.html" class="footer-link" data-i18n="nav_home">Начало</a>
+                        <a href="menu.html" class="footer-link" data-i18n="nav_menu">Меню</a>
+                        <a href="about.html" class="footer-link" data-i18n="nav_about">За нас</a>
+                        <a href="parties.html" class="footer-link" data-i18n="nav_parties">Тържества</a>
+                        <a href="contact.html" class="footer-link" data-i18n="nav_contact">Контакти</a>
                     </div>
                 </div>
 
@@ -1362,16 +1360,25 @@
             observer.observe(statsBlock);
         })();
 
-        // Loading overlay — fast for real users, also dismissable by screenshot.mjs
+        // Loading overlay — only plays on first visit per session; skip on back/forward navigation
         window.addEventListener('load', () => {
-            setTimeout(() => document.getElementById('loader').classList.add('done'), 600);
+            if (sessionStorage.getItem('tk-visited')) {
+                document.getElementById('loader').classList.add('done');
+            } else {
+                setTimeout(() => {
+                    document.getElementById('loader').classList.add('done');
+                    sessionStorage.setItem('tk-visited', '1');
+                }, 600);
+            }
+        });
+        // Also handle bfcache restore (back/forward button)
+        window.addEventListener('pageshow', (e) => {
+            if (e.persisted) document.getElementById('loader').classList.add('done');
         });
 
-        // Navbar scroll state + sticky phone bar reveal
-        const nav = document.getElementById('nav');
+        // Sticky reserve bar reveal on mobile
         const stickyPhone = document.getElementById('sticky-phone');
         window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 60);
             if (window.innerWidth <= 640) {
                 stickyPhone.classList.toggle('shown', window.scrollY > 200);
             }

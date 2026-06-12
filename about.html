@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="За нас — Тавернаки, Пловдив. Петгодишна история на автентична гръцка кухня. Домашно приготвено, пресни сезонни продукти, рецепти с душа.">
+    <meta property="og:title" content="За нас | Тавернаки — Автентична гръцка кухня">
+    <title>За нас | Тавернаки</title>
+
+    <script>
+      (function() {
+        var lang = 'bg';
+        try { lang = localStorage.getItem('tavernaki-lang') || 'bg'; } catch(e) {}
+        document.documentElement.dataset.lang = lang;
+      })();
+    </script>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%232D6A3F'/><text y='.82em' font-size='72' x='50%25' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>T</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: { 950:'#071510', 900:'#0D2B1A', 800:'#1A4A2E', 700:'#2D6A3F', 600:'#3A8050', 100:'#E8F2EB' },
+                        stone: { 50:'#FAF8F3', 100:'#F0EDE6', 200:'#E0DBD0', 300:'#C8C2B4' },
+                        tavred: '#C0392B', ink: '#2C2C2C',
+                    },
+                    fontFamily: {
+                        display: ['Cinzel','Georgia','serif'],
+                        accent: ['"Cormorant Garamond"','Georgia','serif'],
+                        body: ['"DM Sans"','system-ui','sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        html { scroll-behavior: smooth; }
+        :root {
+            --forest: #2D6A3F; --forest-dark: #1A4A2E; --forest-deep: #0D2B1A;
+            --stone: #F0EDE6; --cream: #FAF8F3; --red: #C0392B; --ink: #2C2C2C;
+        }
+
+        /* ─── NAVBAR ──────────────────────────────────── */
+        #nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: var(--cream);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.06);
+            padding: 0.75rem 0;
+        }
+        .nav-logo { text-decoration: none; display: flex; align-items: center; opacity: 1; transition: opacity 0.2s ease; }
+        .nav-logo:hover { opacity: 0.75; }
+        .nav-logo img { height: 44px; width: auto; display: block; }
+        .nav-link {
+            font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--ink); text-decoration: none;
+            position: relative; transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -3px; left: 0;
+            width: 100%; height: 1px; background: var(--forest);
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+        }
+        .nav-link:hover { color: var(--forest); }
+        .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); }
+        .nav-link:focus-visible { outline: 2px solid rgba(45,106,63,0.4); outline-offset: 4px; border-radius: 2px; }
+        .nav-link-active { color: var(--forest) !important; }
+        .nav-link-active::after { transform: scaleX(1) !important; background: var(--forest) !important; }
+        .nav-reserve {
+            font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--stone); background: var(--forest);
+            padding: 0.55rem 1.25rem; border: none; cursor: pointer; text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(45,106,63,0.25);
+        }
+        .nav-reserve:hover { background: var(--forest-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(45,106,63,0.35); }
+        .nav-reserve:active { transform: translateY(0); }
+        .lang-toggle {
+            font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em;
+            text-transform: uppercase; color: rgba(44,44,44,0.7); background: transparent;
+            border: 1px solid rgba(44,44,44,0.25); padding: 0.4rem 0.75rem;
+            cursor: pointer; border-radius: 2px; transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .lang-toggle:hover { color: var(--forest); border-color: var(--forest); }
+        #mobile-nav-panel { display: none; flex-direction: column; gap: 0; background: var(--cream); border-top: 1px solid var(--stone); }
+        #mobile-nav-panel.open { display: flex; }
+        .mobile-nav-link {
+            font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--ink); text-decoration: none;
+            padding: 1.1rem 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .mobile-nav-link:hover { background: var(--stone); color: var(--forest); }
+        .mobile-nav-link-active { color: var(--forest) !important; background: var(--stone) !important; }
+        .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: none; margin: 5px 0; }
+        .hamburger.open span:nth-child(1) { transform: translateY(11.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-11.5px) rotate(-45deg); }
+
+        /* ─── PAGE HERO ───────────────────────────────── */
+        .page-hero {
+            background: var(--forest-dark); padding: 7rem 0 4rem;
+            position: relative; overflow: hidden;
+        }
+        .page-hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(45,106,63,0.35) 0%, transparent 60%),
+                        radial-gradient(ellipse at 20% 80%, rgba(7,21,16,0.5) 0%, transparent 50%);
+        }
+        .page-hero-content { position: relative; z-index: 1; }
+        .page-hero-label {
+            font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.35em;
+            color: rgba(240,237,230,0.5); text-transform: uppercase; margin-bottom: 0.75rem;
+        }
+        .page-hero-title {
+            font-family: 'Cinzel', serif; font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.02em;
+            line-height: 1.1; color: var(--stone); margin-bottom: 1rem;
+        }
+        .page-hero-sub {
+            font-family: 'Cormorant Garamond', serif; font-style: italic;
+            font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(240,237,230,0.6); line-height: 1.6;
+        }
+
+        /* ─── SECTION ─────────────────────────────────── */
+        .section-label {
+            font-family: 'Cinzel', serif; font-size: 0.65rem;
+            letter-spacing: 0.35em; text-transform: uppercase; color: var(--red);
+        }
+        .section-title {
+            font-family: 'Cinzel', serif; font-weight: 700;
+            font-size: clamp(1.75rem, 4vw, 3rem); letter-spacing: -0.02em;
+            line-height: 1.1; color: var(--forest-dark);
+        }
+        .rule { width: 48px; height: 2px; background: var(--red); display: block; }
+
+        /* ─── SCROLL ANIMATIONS ───────────────────────── */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal-left { opacity: 0; transform: translateX(-36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal-right { opacity: 0; transform: translateX(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .reveal.in, .reveal-left.in, .reveal-right.in { opacity: 1; transform: none; }
+        .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+
+        /* ─── FOOTER ──────────────────────────────────── */
+        .footer-link {
+            color: rgba(240,237,230,0.55); font-family: 'Cinzel', serif; font-size: 0.65rem;
+            letter-spacing: 0.15em; text-decoration: none; text-transform: uppercase; transition: color 0.25s ease;
+        }
+        .footer-link:hover { color: var(--stone); }
+        .social-link {
+            width: 36px; height: 36px; border: 1px solid rgba(240,237,230,0.2); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(240,237,230,0.6); text-decoration: none;
+            transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        .social-link:hover { border-color: var(--stone); color: var(--stone); background: rgba(240,237,230,0.06); transform: scale(1.1); }
+
+        /* ─── STICKY RESERVE ─────────────────────────── */
+        #sticky-phone {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+            display: none; opacity: 0; transform: translateY(100%);
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+            pointer-events: none;
+        }
+        #sticky-phone.shown { opacity: 1; transform: translateY(0); pointer-events: auto; }
+        .sticky-reserve {
+            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+            width: 100%; min-height: 52px; background: var(--forest);
+            color: var(--stone); font-family: 'Cinzel', serif; font-size: 0.75rem;
+            letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+        }
+        .sticky-reserve:active { background: var(--forest-dark); }
+        @media (max-width: 640px) { #sticky-phone { display: flex; } }
+
+        /* ─── MOBILE ──────────────────────────────────── */
+        @media (max-width: 639px) {
+            .about-img-col { order: 2; }
+            .about-text-col { order: 1; }
+            footer { padding-bottom: calc(2rem + 56px) !important; }
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-ink font-body">
+
+    <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
+    <div id="sticky-phone">
+        <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            РЕЗЕРВИРАЙ МАСА
+        </a>
+    </div>
+
+    <!-- ═══ NAVBAR ════════════════════════════════════════════════════ -->
+    <nav id="nav" aria-label="Главно меню">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="nav-logo">
+                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant">
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="menu.html" class="nav-link" data-i18n="nav_menu">Меню</a>
+                <a href="about.html" class="nav-link nav-link-active" data-i18n="nav_about">За нас</a>
+                <a href="parties.html" class="nav-link" data-i18n="nav_parties">Тържества</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav_contact">Контакти</a>
+            </div>
+            <div class="hidden md:flex items-center gap-4">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай маса</a>
+            </div>
+            <div class="flex items-center gap-2 md:hidden">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню">
+            <a href="menu.html" class="mobile-nav-link" data-i18n="nav_menu">Меню</a>
+            <a href="about.html" class="mobile-nav-link mobile-nav-link-active" data-i18n="nav_about">За нас</a>
+            <a href="parties.html" class="mobile-nav-link" data-i18n="nav_parties">Тържества</a>
+            <a href="contact.html" class="mobile-nav-link" data-i18n="nav_contact">Контакти</a>
+            <a href="tel:+359877646206" class="mobile-nav-link" style="color:var(--forest);display:flex;align-items:center;gap:0.5rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                0877 64 62 06
+            </a>
+        </div>
+    </nav>
+
+    <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
+    <section class="page-hero">
+        <div class="max-w-7xl mx-auto px-6 page-hero-content">
+            <div class="page-hero-label" data-i18n="nav_about">За нас</div>
+            <h1 class="page-hero-title" data-i18n="about_welcome_h">Добре дошли в Тавернаки</h1>
+            <p class="page-hero-sub" style="max-width:560px;" data-i18n="about_hero_sub">Пет години автентична гръцка кухня · Пловдив</p>
+        </div>
+    </section>
+
+    <!-- ═══ ABOUT CONTENT ════════════════════════════════════════════ -->
+    <section style="background: var(--cream); padding: 5rem 0 6rem;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+
+                <!-- Image -->
+                <div class="about-img-col reveal-left">
+                    <div class="relative" style="aspect-ratio: 4/5; overflow: hidden;">
+                        <img src="Visual Assets/History-Image.png"
+                             alt="Интериорът на Тавернаки — топла средиземноморска атмосфера"
+                             class="w-full h-full object-cover" style="filter: brightness(0.9);">
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(7,21,16,0.4) 0%, transparent 60%); pointer-events:none;"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-5" style="background: rgba(250,248,243,0.97); box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
+                            <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--red); text-transform:uppercase; margin-bottom:0.4rem;" data-i18n="about_badge_label">Оценени от гостите</div>
+                            <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--ink); line-height:1.4;" data-i18n="about_badge_quote">
+                                "Изключителна гръцка атмосфера, бързо и качествено обслужване, големи порции"
+                            </div>
+                            <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:var(--forest); margin-top:0.5rem;" data-i18n="about_badge_author">Гост на Тавернаки</div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery strip -->
+                    <div class="grid grid-cols-2 gap-2 mt-4">
+                        <div style="overflow:hidden; height:140px;">
+                            <img src="Visual Assets/atmosphere-interior.png" alt="Интериор" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                        </div>
+                        <div style="overflow:hidden; height:140px;">
+                            <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="about-text-col reveal-right">
+                    <div class="section-label mb-4" data-i18n="nav_about">За нас</div>
+                    <h2 class="section-title mb-3" data-i18n="about_welcome_h">Добре дошли в Тавернаки</h2>
+                    <span class="rule block mb-6"></span>
+
+                    <p style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p">
+                        Вече повече от пет години посрещаме своите гости с внимание към всеки детайл. Тавернаки е уютно място с топла вътрешна зала и красива лятна градина, където истинската гръцка кухня се среща с домашния уют. Приготвяме всичко от пресни и сезонни продукти с грижа за всяка чиния.
+                    </p>
+
+                    <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_story_h">Нашата история</h3>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_story_p">
+                        Създадохме Тавернаки с идеята да предложим не просто ресторант, а място с характер и душа. Вдъхновени от природата, гръцката трапеза и радостта от споделено ястие, изградихме пространство, в което семейства и приятели се завръщат отново и отново.
+                    </p>
+
+                    <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_chef_h">Кухня с душа</h3>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_chef_p">
+                        Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня — приготвено с разбиране, опит и любов към занаята.
+                    </p>
+
+                    <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_music_h">Храна и музика</h3>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.75rem;" data-i18n="about_music_p">
+                        При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера — вечери, след които се мисли дълго.
+                    </p>
+
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="lunch_note">
+                        Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна — идеална за обедна пауза.
+                    </p>
+
+                    <div class="mt-8">
+                        <a href="tel:+359877646206" style="display:inline-flex; align-items:center; gap:0.6rem; font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--stone); background:var(--forest); padding:1rem 2rem; text-decoration:none; transition:background 0.3s ease, transform 0.25s ease; box-shadow: 0 4px 16px rgba(45,106,63,0.3);" onmouseover="this.style.background='var(--forest-dark)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--forest)';this.style.transform='none'" data-i18n="nav_reserve">
+                            Резервирай маса
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ VALUES STRIP ══════════════════════════════════════════════ -->
+    <section style="background: var(--forest-dark); padding: 5rem 0;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+
+                <div class="reveal d1">
+                    <div style="width:56px; height:56px; background:rgba(240,237,230,0.08); border-radius:50%; display:flex; align-items:center; justify-content:center; margin: 0 auto 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(240,237,230,0.7)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div style="font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.12em; color:var(--stone); text-transform:uppercase; margin-bottom:0.5rem;" data-i18n="value1_title">Автентична рецептура</div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(240,237,230,0.5); line-height:1.65;" data-i18n="value1_sub">Рецепти избрани с внимание от гръцки майстори-готвачи</p>
+                </div>
+
+                <div class="reveal d2">
+                    <div style="width:56px; height:56px; background:rgba(240,237,230,0.08); border-radius:50%; display:flex; align-items:center; justify-content:center; margin: 0 auto 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(240,237,230,0.7)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div style="font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.12em; color:var(--stone); text-transform:uppercase; margin-bottom:0.5rem;" data-i18n="value2_title">Домашна атмосфера</div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(240,237,230,0.5); line-height:1.65;" data-i18n="value2_sub">Топла вътрешна зала и красива лятна градина в Пловдив</p>
+                </div>
+
+                <div class="reveal d3">
+                    <div style="width:56px; height:56px; background:rgba(240,237,230,0.08); border-radius:50%; display:flex; align-items:center; justify-content:center; margin: 0 auto 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(240,237,230,0.7)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    </div>
+                    <div style="font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.12em; color:var(--stone); text-transform:uppercase; margin-bottom:0.5rem;" data-i18n="value3_title">С любов към детайла</div>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(240,237,230,0.5); line-height:1.65;" data-i18n="value3_sub">Пет години внимание към всяка чиния и всеки гост</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+    <footer style="background: var(--forest-deep); padding: 4rem 0 2rem;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="footer-main-grid grid grid-cols-1 md:grid-cols-3 gap-12 pb-12" style="border-bottom: 1px solid rgba(240,237,230,0.08);">
+                <div class="footer-brand-col">
+                    <div style="margin-bottom:0.85rem; display:inline-block; background:rgba(250,248,243,0.1); padding:0.5rem 0.75rem; border-radius:2px;">
+                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" style="height:36px; width:auto; display:block;">
+                    </div>
+                    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" data-i18n="footer_slogan">
+                        Автентичната гръцка кухня, традиционно поднесена с любов
+                    </p>
+                    <div class="footer-socials-desktop" style="margin-top:1.5rem;">
+                        <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:0.75rem;" data-i18n="footer_social">Социални Медии</div>
+                        <div class="flex gap-3">
+                            <a href="https://facebook.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                            <a href="https://instagram.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-nav-col">
+                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_nav_head">Навигация</div>
+                    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                        <a href="index.html" class="footer-link" data-i18n="nav_home">Начало</a>
+                        <a href="menu.html" class="footer-link" data-i18n="nav_menu">Меню</a>
+                        <a href="about.html" class="footer-link" data-i18n="nav_about">За нас</a>
+                        <a href="parties.html" class="footer-link" data-i18n="nav_parties">Тържества</a>
+                        <a href="contact.html" class="footer-link" data-i18n="nav_contact">Контакти</a>
+                    </div>
+                </div>
+                <div class="footer-contact-col">
+                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_contact_head">Контакти</div>
+                    <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                        <a href="tel:+359877646206" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">0877 64 62 06</a>
+                        <a href="mailto:tavernaki@abv.bg" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">tavernaki@abv.bg</a>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;">бул. Пещерско шосе 28а<br>кв. Младежки хълм, 4002<br>Пловдив, България</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.25);" data-i18n="footer_copyright">© 2025 Tavernaki · Всички права запазени</div>
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.2); text-align:center;" data-i18n="footer_delivery">Доставка чрез Glovo · Wolt · Takeaway.com</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="site-config.js"></script>
+    <script src="menu-data.js"></script>
+    <script src="translations.js"></script>
+    <script>
+        const stickyPhone = document.getElementById('sticky-phone');
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth <= 640) stickyPhone.classList.toggle('shown', window.scrollY > 200);
+        }, { passive: true });
+
+        const hamburger = document.getElementById('hamburger');
+        const mobilePanel = document.getElementById('mobile-nav-panel');
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobilePanel.classList.toggle('open');
+            hamburger.classList.toggle('open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+        mobilePanel.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobilePanel.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => observer.observe(el));
+
+        applyLang(getLang());
+    </script>
+</body>
+</html>

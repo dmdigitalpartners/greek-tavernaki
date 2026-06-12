@@ -157,7 +157,7 @@ window.menuData = [
   {
     id:         'lyutti-chushki',
     category:   'starters',
-    name_bg:    'Лютти Чушки',
+    name_bg:    'Люти Чушки',
     name_en:    'Chilli Peppers',
     price:      4.00,
     price_unit: null,
@@ -762,7 +762,7 @@ window.menuData = [
   {
     id:         'svinski-bon-file-s-lyutti-chushki',
     category:   'pan-meat',
-    name_bg:    'Свински Бон Филе с Лютти Чушки',
+    name_bg:    'Свински Бон Филе с Люти Чушки',
     name_en:    'Pork Tenderloin with Hot Peppers',
     price:      11.20,
     price_unit: null,
