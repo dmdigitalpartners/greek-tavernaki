@@ -4,10 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Пълното меню на Тавернаки — Пловдив. Салати, предястия, скара, риба, морски дарове, паста и ризото.">
+    <meta name="description" content="71 гръцки ястия — салати, стартери, предястия, специалитети, месо, риба, морски дарове и паста. Виж пълното меню на Тавернаки, Пловдив.">
     <meta property="og:title" content="Меню | Тавернаки — Автентична гръцка кухня">
     <meta property="og:description" content="115 ястия: салати, предястия, мезета, скара, риба, морски дарове, паста и обедно меню.">
-    <title>Меню | Тавернаки</title>
+    <title>Меню — 71 гръцки ястия | Тавернаки · Пловдив</title>
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:url" content="https://tavernaki.bg/menu">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Меню — 115 гръцки ястия | Тавернаки · Пловдив">
+    <meta name="twitter:description" content="115 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <link rel="canonical" href="https://tavernaki.bg/menu">
 
     <!-- Flash prevention: sets data-lang before any render to avoid BG→EN flicker -->
     <script>
@@ -451,38 +459,39 @@
             line-height: 1.2;
             margin-bottom: 0.5rem;
         }
-        .dish-meta {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
         .dish-weight {
+            display: block;
             font-family: 'DM Sans', sans-serif;
             font-size: 0.74rem;
             color: rgba(44,44,44,0.38);
             letter-spacing: 0.03em;
+            margin-top: 0.35rem;
         }
         .dish-price {
+            position: absolute;
+            bottom: 0.55rem;
+            left: 0.65rem;
+            background: rgba(13, 43, 26, 0.68);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: #FAF8F3;
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            color: var(--forest);
+            font-size: 0.76rem;
             font-weight: 600;
+            letter-spacing: 0.02em;
+            padding: 0.22rem 0.55rem;
+            border-radius: 4px;
+            pointer-events: none;
             white-space: nowrap;
+            line-height: 1.4;
         }
-        .dish-allergens {
+        .dish-desc {
             font-family: 'DM Sans', sans-serif;
-            font-size: 0.7rem;
-            color: rgba(44,44,44,0.4);
-            line-height: 1.45;
-            margin: 0;
-            padding-top: 0.35rem;
-            border-top: 1px solid rgba(0,0,0,0.05);
-        }
-        .allergen-label {
-            font-weight: 500;
-            margin-right: 0.2em;
+            font-size: 0.78rem;
+            color: rgba(44,44,44,0.52);
+            line-height: 1.5;
+            margin: 0 0 0.6rem;
+            font-style: italic;
         }
 
         /* ─── LUNCH NOTE BANNER ───────────────────────── */
@@ -555,10 +564,10 @@
     </div>
 
     <!-- ═══ NAVBAR ════════════════════════════════════════════════════ -->
-    <nav id="nav" aria-label="Главно меню">
+    <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <a href="index.html" class="nav-logo">
-                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant">
+                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
             </a>
 
             <!-- Desktop links -->
@@ -570,21 +579,21 @@
             </div>
 
             <div class="hidden md:flex items-center gap-4">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
                 <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай маса</a>
             </div>
 
             <!-- Mobile right: lang toggle + hamburger -->
             <div class="flex items-center gap-2 md:hidden">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
-                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
+                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false" data-i18n-aria="aria_open_menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
 
         <!-- Mobile menu panel -->
-        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню">
+        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню" data-i18n-aria="aria_mobile_menu">
             <a href="menu.html" class="mobile-nav-link mobile-nav-link-active" data-i18n="nav_menu">Меню</a>
             <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">За нас</a>
             <a href="parties.html" class="mobile-nav-link" data-i18n="nav_parties">Тържества</a>
@@ -599,37 +608,30 @@
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section id="menu-hero" class="grain">
         <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;">
-            <div class="menu-hero-label mb-4">Пловдив · България</div>
+            <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:56px; width:auto; display:block; margin:0 auto 1.5rem; filter: brightness(0) invert(1);">
+            <div class="menu-hero-label mb-4" data-i18n="menu_hero_label">Пловдив · България</div>
             <h1 class="menu-hero-title mb-3" data-i18n="menu_hero_title">Нашето меню</h1>
-            <p class="menu-hero-sub">115 ястия · 11 категории · Пресни продукти всеки ден</p>
+            <p class="menu-hero-sub" data-i18n="menu_hero_sub">115 ястия · 11 категории · Пресни продукти всеки ден</p>
         </div>
     </section>
 
     <!-- ═══ CATEGORY TAB BAR ════════════════════════════════════════ -->
-    <div class="cat-tabs-wrap" role="tablist" aria-label="Категории меню">
+    <div class="cat-tabs-wrap" role="tablist" aria-label="Категории меню" data-i18n-aria="aria_menu_categories">
         <div class="cat-tabs-inner">
             <button class="cat-tab active" role="tab" aria-selected="true"  data-filter="salads"      data-i18n="cat_salads">Салати</button>
             <button class="cat-tab"        role="tab" aria-selected="false" data-filter="starters"    data-i18n="cat_starters">Стартери</button>
             <button class="cat-tab"        role="tab" aria-selected="false" data-filter="appetizers"  data-i18n="cat_appetizers">Предястия</button>
-            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="mezethes"    data-i18n="cat_mezethes">Мезета</button>
-            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="potatoes"    data-i18n="cat_potatoes">Пържени Картофи</button>
-            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="pasta"       data-i18n="cat_pasta">Паста и Ризото</button>
-            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="bbq-meat"    data-i18n="cat_bbq_meat">Месни Ястия на Скара</button>
-            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="pan-meat"    data-i18n="cat_pan_meat">Месни Ястия на Тиган</button>
             <button class="cat-tab"        role="tab" aria-selected="false" data-filter="specialties" data-i18n="cat_specialties">Специалитети</button>
-            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="fish"        data-i18n="cat_fish">Риба и Морски Дарове</button>
-            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="lunch"       data-i18n="cat_lunch">Обедно Меню (Пон–Пет)</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="bbq-meat"    data-i18n="cat_bbq_meat">Месни ястия</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="pan-meat"    data-i18n="cat_pan_meat">На тиган</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="pasta"       data-i18n="cat_pasta">Паста и Ризото</button>
+            <button class="cat-tab"        role="tab" aria-selected="false" data-filter="fish"        data-i18n="cat_fish">Риби</button>
         </div>
     </div>
 
     <!-- ═══ MENU SECTION ════════════════════════════════════════════ -->
     <section id="menu-section">
         <div class="max-w-7xl mx-auto px-6">
-
-            <!-- Lunch note — visible only when lunch tab is active -->
-            <div id="lunch-note" class="hidden" data-i18n="lunch_note">
-                Всеки делничен ден ви очакваме с разнообразно обедно меню от пресни и домашно приготвени ястия.
-            </div>
 
             <!-- Dish grid — populated by renderMenu() -->
             <div id="dish-grid"></div>
@@ -648,8 +650,8 @@
 
                 <!-- Brand -->
                 <div class="footer-brand-col">
-                    <div style="margin-bottom:0.85rem; display:inline-block; background:rgba(250,248,243,0.1); padding:0.5rem 0.75rem; border-radius:2px;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" style="height:36px; width:auto; display:block;">
+                    <div style="margin-bottom:0.85rem; display:inline-block;">
+                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" class="footer-slogan" data-i18n="footer_slogan">
                         Автентичната гръцка кухня, традиционно поднесена с любов
@@ -686,9 +688,9 @@
                         <a href="tel:+359877646206" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">0877 64 62 06</a>
                         <a href="mailto:tavernaki@abv.bg" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">tavernaki@abv.bg</a>
                         <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;">
-                            бул. Пещерско шосе 28а<br>
-                            кв. Младежки хълм, 4002<br>
-                            Пловдив, България
+                            <span data-i18n="contact_address_line1">бул. Пещерско шосе 28а</span><br>
+                            <span data-i18n="contact_address_line2">кв. Младежки хълм, 4002 Пловдив</span><br>
+                            <span data-i18n="contact_address_city">Пловдив, България</span>
                         </div>
                     </div>
                 </div>
@@ -736,10 +738,11 @@
                 var allergenText = dish.allergens === 'Requires Restaurant Verification'
                     ? t[lang].allergens_on_request
                     : dish.allergens;
-                // toFixed(2) uses dot decimal — client confirmed EUR with dot
+                var eur = (dish.price / 1.95583).toFixed(2).replace('.', ',');
+                var bgn = dish.price.toFixed(2).replace('.', ',');
                 var priceDisplay = dish.price_unit
-                    ? '€' + dish.price.toFixed(2) + ' ' + t[lang].price_per_unit
-                    : '€' + dish.price.toFixed(2);
+                    ? eur + ' € (' + bgn + ' лв.) / ' + dish.price_unit
+                    : eur + ' € (' + bgn + ' лв.)';
 
                 var card = document.createElement('div');
                 card.className = 'dish-card';
@@ -750,17 +753,12 @@
                         (dish.image
                             ? '<img src="' + dish.image + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy">'
                             : '<div class="dish-placeholder" role="img" aria-label="' + name.replace(/"/g, '&quot;') + '"></div>') +
+                        '<span class="dish-price">' + priceDisplay + '</span>' +
                     '</div>' +
                     '<div class="dish-body">' +
                         '<h3 class="dish-name">' + name + '</h3>' +
-                        '<div class="dish-meta">' +
-                            (dish.weight ? '<span class="dish-weight">' + dish.weight + '</span>' : '<span></span>') +
-                            '<span class="dish-price">' + priceDisplay + '</span>' +
-                        '</div>' +
-                        '<p class="dish-allergens">' +
-                            '<span class="allergen-label">' + t[lang].allergens_label + '</span>' +
-                            '<span class="allergen-val">' + allergenText + '</span>' +
-                        '</p>' +
+                        (dish.description_bg ? '<p class="dish-desc">' + dish.description_bg + '</p>' : '') +
+                        (dish.weight ? '<span class="dish-weight" data-weight="' + dish.weight + '">' + dish.weight + '</span>' : '') +
                     '</div>';
                 grid.appendChild(card);
             });
@@ -784,10 +782,6 @@
             });
 
             document.getElementById('menu-empty').classList.toggle('hidden', visible > 0);
-
-            // Lunch note banner
-            var lunchNote = document.getElementById('lunch-note');
-            if (lunchNote) lunchNote.classList.toggle('hidden', filter !== 'lunch');
 
             // Hash: set slug for category
             history.replaceState(null, '', '#' + filter);
@@ -827,11 +821,20 @@
         // ── Single init ─────────────────────────────────────────────────
         // Order: renderMenu → applyLang → filterCategory
         // applyLang MUST run after renderMenu so dish cards exist in DOM
+        function applyWeightLang(lang) {
+            document.querySelectorAll('.dish-weight[data-weight]').forEach(function(el) {
+                var raw = el.dataset.weight;
+                el.textContent = lang === 'en' ? raw.replace('г', 'g') : raw;
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            renderMenu();                                               // 1. create all 115 cards
-            applyLang(getLang());                                       // 2. apply language strings (cards now exist)
+            renderMenu();                                               // 1. create all 71 cards
+            var lang = getLang();
+            applyLang(lang);                                            // 2. apply language strings (cards now exist)
+            applyWeightLang(lang);                                      // 3. translate weight units
             var hash = location.hash.replace('#', '') || 'salads';
-            filterCategory(hash, false);                                // 3. apply initial filter — no scroll on load
+            filterCategory(hash, false);                                // 4. apply initial filter — no scroll on load
             document.querySelectorAll('.cat-tab').forEach(function(btn) {
                 btn.addEventListener('click', function() {
                     filterCategory(btn.dataset.filter, true);           // scroll on tab click
@@ -843,9 +846,9 @@
         if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
             document.addEventListener('DOMContentLoaded', function() {
                 var expected = {
-                    salads: 12, starters: 3, appetizers: 13, mezethes: 8,
-                    potatoes: 6, pasta: 11, 'bbq-meat': 13, 'pan-meat': 9,
-                    specialties: 8, fish: 23, lunch: 9
+                    salads: 12, starters: 10, appetizers: 12,
+                    specialties: 5, 'bbq-meat': 8, 'pan-meat': 3,
+                    pasta: 9, fish: 12
                 };
                 var actual = {};
                 window.menuData.forEach(function(d) {
@@ -857,7 +860,7 @@
                         'Category "' + cat + '": expected ' + expected[cat] + ', got ' + (actual[cat] || 0)
                     );
                 });
-                console.log('Menu validation complete. Total:', window.menuData.length, '(expected 115)');
+                console.log('Menu validation complete. Total:', window.menuData.length, '(expected 71)');
             });
         }
     </script>
