@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tavernaki.bg/sitemap.xml

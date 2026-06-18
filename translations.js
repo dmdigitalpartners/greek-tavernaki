@@ -1,6 +1,7 @@
 // Loaded AFTER site-config.js and menu-data.js
 // DO NOT call applyLang() from this file — pages own their own init() order.
 const LANG_KEY = 'tavernaki-lang';
+const SITE_URL = 'https://tavernaki.bg';
 
 function getLang() {
   try { return localStorage.getItem(LANG_KEY) || 'bg'; }
@@ -15,10 +16,10 @@ const t = {
   bg: {
     // Page titles
     page_title_home: 'Тавернаки — Автентична гръцка кухня',
-    page_title_menu: 'Меню | Тавернаки',
+    page_title_menu: 'Меню — 115 гръцки ястия | Тавернаки · Пловдив',
     // Meta descriptions
-    meta_desc_home: 'Тавернаки — автентична гръцка кухня в Пловдив. Свежа риба, морски дарове, скара, паста. Резервирайте маса: 0877 64 62 06.',
-    meta_desc_menu: 'Пълното меню на Тавернаки — Пловдив. Салати, предястия, скара, риба, морски дарове, паста и ризото.',
+    meta_desc_home: 'Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара — приготвени с любов. Жива музика в петък. Резервации: 0877 64 62 06.',
+    meta_desc_menu: '115 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Виж пълното меню на Тавернаки, Пловдив.',
     // Navbar
     nav_home:    'Начало',
     nav_menu:    'Меню',
@@ -141,6 +142,45 @@ const t = {
     footer_delivery:     'Доставка чрез Glovo · Wolt · Takeaway.com',
     // Menu hero
     menu_hero_title: 'Нашето меню',
+    menu_hero_label: 'Пловдив · България',
+    menu_hero_sub:   '115 ястия · 11 категории · Пресни продукти всеки ден',
+    // Loader
+    loader_sub: 'Автентична гръцка кухня · Пловдив',
+    // Hero eyebrow
+    hero_eyebrow_loc: 'Пловдив · България',
+    hero_eyebrow_sub: 'Автентична гръцка таверна',
+    // Trust bar — Google rating
+    trust_rating_label: '4.1 ★ · 637+ отзива',
+    trust_rating_sub:   'Google Maps',
+    // Featured dishes (home page showcase)
+    dish1_name: 'Барбун',
+    dish1_desc: 'Пресен барбун, опечен до съвършенство с лимон и зехтин — истинско средиземноморско удоволствие',
+    dish2_name: 'Киноа и скариди',
+    dish2_desc: 'Свежа киноа с пресни скариди, лимонов дресинг и ароматни билки — лека, но наситена',
+    dish3_name: 'Плато с морски дарове',
+    dish3_desc: 'Щедро плато от пресни морски дарове — за споделена трапеза с аромат на морето',
+    dish4_name: 'Свински късчета с чушки',
+    dish4_desc: 'Сочни свински късчета с печени чушки и свежа мащерка — богато, топло и традиционно',
+    dishes_btn_menu: 'Вижте пълното меню',
+    // About section floating badge (index.html)
+    about_rated_label:  'Оценени от гостите',
+    about_rated_quote:  'Изключителна гръцка атмосфера, бързо и качествено обслужване, големи порции',
+    about_rated_author: 'Гост на Тавернаки',
+    // Gallery quote
+    gallery_quote:        'Храната е вкусна, добре приготвена, атмосферата е типична за гръцка таверна',
+    gallery_quote_author: 'ПЕТЪР С.',
+    // Review authors 1–3
+    review_1_author: 'Emma Richardson',
+    review_2_author: 'Nikos Sidiropoulos',
+    review_3_author: 'Mattia Santoro',
+    // Address lines
+    contact_address_line1: 'бул. Пещерско шосе 28а',
+    contact_address_line2: 'кв. Младежки хълм, 4002 Пловдив',
+    contact_address_city:  'Пловдив, България',
+    // Gallery strip image alt text
+    alt_about_interior: 'Интериорът на Тавернаки',
+    alt_about_terrace:  'Тераса на Тавернаки',
+    alt_history_img:    'Интериорът на Тавернаки — топла средиземноморска атмосфера',
     // Reviews
     review_1_quote: 'Калмарите бяха едни от най-вкусните, които съм опитвала. Изключителна гръцка атмосфера, бързо и качествено обслужване, щедри порции.',
     review_2_quote: 'Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома.',
@@ -169,11 +209,45 @@ const t = {
     allergens_on_request: 'Информация за алергени при поискване',
     price_per_unit:       '/ 100г',
     menu_empty:           'Няма налични ястия.',
+    // Page titles — per-page (all pages)
+    page_title_about:    'За нас | Тавернаки — Гръцки ресторант с история · Пловдив',
+    page_title_contact:  'Контакти & Работно Време | Тавернаки · Пловдив',
+    page_title_parties:  'Тържества & Специални Поводи | Тавернаки · Пловдив',
+    // Meta descriptions — per-page (all pages)
+    meta_desc_about:    'Над 5 години автентична гръцка кухня в Пловдив. Рецепти от шеф Димитри, пресни сезонни продукти и домашна атмосфера в Тавернаки.',
+    meta_desc_contact:  'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Тел: 0877 64 62 06. Безплатен паркинг.',
+    meta_desc_parties:  'Рождени дни, годишнини и фирмени вечери в Тавернаки, Пловдив. Персонализирано меню, лятна градина, посветен персонал. Тел: 0877 64 62 06.',
+    // OG titles — all pages
+    og_title_home:    'Тавернаки — Автентична гръцка кухня · Пловдив',
+    og_title_menu:    'Меню — 115 гръцки ястия | Тавернаки · Пловдив',
+    og_title_about:   'За нас | Тавернаки — Гръцки ресторант с история · Пловдив',
+    og_title_contact: 'Контакти & Работно Време | Тавернаки · Пловдив',
+    og_title_parties: 'Тържества & Специални Поводи | Тавернаки · Пловдив',
+    // OG descriptions — all pages
+    og_desc_home:    'Автентичната гръцка кухня, традиционно поднесена с любов. Пресни сезонни продукти и домашна рецептура в Пловдив.',
+    og_desc_menu:    '115 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.',
+    og_desc_about:   'Над 5 години автентична гръцка кухня с рецепти от шеф Димитри и пресни сезонни продукти. Тавернаки, Пловдив.',
+    og_desc_contact: 'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Тел: 0877 64 62 06.',
+    og_desc_parties: 'Рождени дни, годишнини, фирмени вечери в Тавернаки. Персонализирано меню, лятна градина. Тел: 0877 64 62 06.',
+    // Accessible ARIA labels
+    aria_lang_toggle:      'Смяна на езика',
+    aria_main_nav:         'Главно меню',
+    aria_open_menu:        'Отвори меню',
+    aria_mobile_menu:      'Мобилно меню',
+    aria_menu_categories:  'Категории меню',
+    aria_order_glovo:      'Поръчайте от Glovo',
+    aria_order_wolt:       'Поръчайте от Wolt',
+    aria_order_takeaway:   'Поръчайте от Takeaway',
+    // Image alt text
+    alt_logo:          'Тавернаки — Автентична гръцка таверна',
+    alt_hero_home:     'Тавернаки — Автентична гръцка кухня в Пловдив',
+    alt_contact_map:   'Тавернаки — намерете ни на картата',
+    alt_parties_hero:  'Тавернаки — тържества и специални поводи',
   },
   en: {
     // Page titles
     page_title_home: 'Tavernaki — Authentic Greek Cuisine',
-    page_title_menu: 'Menu | Tavernaki',
+    page_title_menu: 'Menu — 115 Greek Dishes | Tavernaki · Plovdiv',
     // Meta descriptions
     meta_desc_home: 'Tavernaki — authentic Greek cuisine in Plovdiv. Fresh fish, seafood, grilled meats, pasta. Reserve a table: 0877 64 62 06.',
     meta_desc_menu: 'Full menu of Tavernaki — Plovdiv. Salads, appetizers, BBQ, fish, seafood, pasta and risotto.',
@@ -299,6 +373,45 @@ const t = {
     footer_delivery:     'Delivery via Glovo · Wolt · Takeaway.com',
     // Menu hero
     menu_hero_title: 'Our Menu',
+    menu_hero_label: 'Plovdiv · Bulgaria',
+    menu_hero_sub:   '115 dishes · 11 categories · Fresh products every day',
+    // Loader
+    loader_sub: 'Authentic Greek cuisine · Plovdiv',
+    // Hero eyebrow
+    hero_eyebrow_loc: 'Plovdiv · Bulgaria',
+    hero_eyebrow_sub: 'Authentic Greek Taverna',
+    // Trust bar — Google rating
+    trust_rating_label: '4.1 ★ · 637+ ratings',
+    trust_rating_sub:   'Google Maps',
+    // Featured dishes (home page showcase)
+    dish1_name: 'Red Mullet (Barbun)',
+    dish1_desc: 'Fresh red mullet, grilled to perfection with lemon and olive oil — a true Mediterranean pleasure',
+    dish2_name: 'Quinoa and Shrimp',
+    dish2_desc: 'Fresh quinoa with juicy shrimp, lemon dressing and aromatic herbs — light yet satisfying',
+    dish3_name: 'Seafood Platter',
+    dish3_desc: 'A generous platter of fresh seafood — for a shared table with the scent of the sea',
+    dish4_name: 'Pork Pieces with Peppers',
+    dish4_desc: 'Juicy pork pieces with roasted peppers and fresh thyme — rich, warm and traditional',
+    dishes_btn_menu: 'View full menu',
+    // About section floating badge (index.html)
+    about_rated_label:  'Rated by our guests',
+    about_rated_quote:  'Exceptional Greek atmosphere, fast and quality service, generous portions',
+    about_rated_author: 'Guest at Tavernaki',
+    // Gallery quote
+    gallery_quote:        'The food is delicious, well prepared, the atmosphere is typical of a Greek taverna',
+    gallery_quote_author: 'PETAR S.',
+    // Review authors 1–3
+    review_1_author: 'Emma Richardson',
+    review_2_author: 'Nikos Sidiropoulos',
+    review_3_author: 'Mattia Santoro',
+    // Address lines
+    contact_address_line1: '28a Peshtersko Shose Blvd',
+    contact_address_line2: 'Mladezhki Halm Quarter, 4002 Plovdiv',
+    contact_address_city:  'Plovdiv, Bulgaria',
+    // Gallery strip image alt text
+    alt_about_interior: 'Tavernaki Interior',
+    alt_about_terrace:  'Tavernaki Terrace',
+    alt_history_img:    'Tavernaki Interior — warm Mediterranean atmosphere',
     // Reviews
     review_1_quote: 'The calamari were among the best I\'ve ever had. Exceptional Greek atmosphere, fast and quality service, generous portions.',
     review_2_quote: 'Incredibly delicious! Live Greek music on Fridays. Authentic Greek atmosphere — just like home.',
@@ -327,6 +440,40 @@ const t = {
     allergens_on_request: 'Allergen info on request',
     price_per_unit:       '/ 100g',
     menu_empty:           'No dishes available.',
+    // Page titles — per-page (all pages)
+    page_title_about:    'About Us | Tavernaki — Greek Restaurant with History · Plovdiv',
+    page_title_contact:  'Contact & Opening Hours | Tavernaki · Plovdiv',
+    page_title_parties:  'Celebrations & Special Occasions | Tavernaki · Plovdiv',
+    // Meta descriptions — per-page (all pages)
+    meta_desc_about:    'Over 5 years of authentic Greek cuisine in Plovdiv. Recipes by Chef Dimitri, fresh seasonal ingredients and a homely atmosphere at Tavernaki.',
+    meta_desc_contact:  'Tavernaki — 28a Peshtерsko Shose Blvd, Plovdiv. Open every day 10:00–00:00. Tel: 0877 64 62 06. Free parking.',
+    meta_desc_parties:  'Birthdays, anniversaries and corporate dinners at Tavernaki, Plovdiv. Personalised menu, summer garden, dedicated staff. Tel: 0877 64 62 06.',
+    // OG titles — all pages
+    og_title_home:    'Tavernaki — Authentic Greek Cuisine · Plovdiv',
+    og_title_menu:    'Menu — 115 Greek Dishes | Tavernaki · Plovdiv',
+    og_title_about:   'About Us | Tavernaki — Greek Restaurant with History · Plovdiv',
+    og_title_contact: 'Contact & Opening Hours | Tavernaki · Plovdiv',
+    og_title_parties: 'Celebrations & Special Occasions | Tavernaki · Plovdiv',
+    // OG descriptions — all pages
+    og_desc_home:    'Authentic Greek cuisine, traditionally served with love. Fresh seasonal ingredients and home-style recipes in Plovdiv.',
+    og_desc_menu:    '115 Greek dishes — salads, BBQ, fish, seafood, pasta, dips and lunch menu. Tavernaki, Plovdiv.',
+    og_desc_about:   'Over 5 years of authentic Greek cuisine with recipes by Chef Dimitri and fresh seasonal ingredients. Tavernaki, Plovdiv.',
+    og_desc_contact: 'Tavernaki — 28a Peshtersko Shose Blvd, Plovdiv. Open every day 10:00–00:00. Tel: 0877 64 62 06.',
+    og_desc_parties: 'Birthdays, anniversaries, corporate dinners at Tavernaki. Personalised menu, summer garden. Tel: 0877 64 62 06.',
+    // Accessible ARIA labels
+    aria_lang_toggle:      'Switch language',
+    aria_main_nav:         'Main navigation',
+    aria_open_menu:        'Open menu',
+    aria_mobile_menu:      'Mobile menu',
+    aria_menu_categories:  'Menu categories',
+    aria_order_glovo:      'Order from Glovo',
+    aria_order_wolt:       'Order from Wolt',
+    aria_order_takeaway:   'Order from Takeaway',
+    // Image alt text
+    alt_logo:          'Tavernaki — Authentic Greek Taverna',
+    alt_hero_home:     'Tavernaki — Authentic Greek Cuisine in Plovdiv',
+    alt_contact_map:   'Tavernaki — find us on the map',
+    alt_parties_hero:  'Tavernaki — celebrations and special occasions',
   },
 };
 
@@ -342,6 +489,18 @@ function applyLang(lang) {
   // Toggle button label
   document.querySelectorAll('.lang-toggle').forEach(function(btn) {
     btn.textContent = curr.toggle_label;
+  });
+
+  // ARIA labels via data-i18n-aria attributes
+  document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
+    var key = el.dataset.i18nAria;
+    if (curr[key] !== undefined) el.setAttribute('aria-label', curr[key]);
+  });
+
+  // Image alt text via data-i18n-alt attributes
+  document.querySelectorAll('[data-i18n-alt]').forEach(function(el) {
+    var key = el.dataset.i18nAlt;
+    if (curr[key] !== undefined) el.setAttribute('alt', curr[key]);
   });
 
   // Dish card names + allergen text (menu.html only — skipped on index.html)
@@ -369,14 +528,29 @@ function applyLang(lang) {
     });
   }
 
-  // Page title + meta description
-  var isMenuPage = !!document.querySelector('[data-page="menu"]');
-  document.title = isMenuPage ? curr.page_title_menu : curr.page_title_home;
+  // Page title + meta description (all pages via data-page attribute)
+  var pageEl = document.querySelector('[data-page]');
+  var page = pageEl ? pageEl.dataset.page : 'home';
+  var titleKey = 'page_title_' + page;
+  var descKey  = 'meta_desc_' + page;
+  var ogTitleKey = 'og_title_' + page;
+  var ogDescKey  = 'og_desc_' + page;
+  if (curr[titleKey]) document.title = curr[titleKey];
   var metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.content = isMenuPage ? curr.meta_desc_menu : curr.meta_desc_home;
+  if (metaDesc && curr[descKey]) metaDesc.content = curr[descKey];
+  var ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle && curr[ogTitleKey]) ogTitle.content = curr[ogTitleKey];
+  var ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc && curr[ogDescKey]) ogDesc.content = curr[ogDescKey];
+
+  // html lang attribute (accessibility — screen readers)
+  document.documentElement.lang = lang;
 
   setLang(lang);
   document.documentElement.dataset.lang = lang;
+
+  // Menu page: update weight unit (г ↔ g) when language changes
+  if (typeof applyWeightLang === 'function') applyWeightLang(lang);
 }
 
 function toggleLang() {

@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="bg" data-page="about">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="За нас — Тавернаки, Пловдив. Петгодишна история на автентична гръцка кухня. Домашно приготвено, пресни сезонни продукти, рецепти с душа.">
+    <meta name="description" content="Над 5 години автентична гръцка кухня в Пловдив. Рецепти от шеф Димитри, пресни сезонни продукти и домашна атмосфера в Тавернаки.">
     <meta property="og:title" content="За нас | Тавернаки — Автентична гръцка кухня">
-    <title>За нас | Тавернаки</title>
+    <meta property="og:description" content="Над 5 години автентична гръцка кухня с рецепти от шеф Димитри и пресни сезонни продукти. Тавернаки, Пловдив.">
+    <title>За нас | Тавернаки — Гръцки ресторант с история · Пловдив</title>
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:url" content="https://tavernaki.bg/about">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="За нас | Тавернаки — Гръцки ресторант с история · Пловдив">
+    <meta name="twitter:description" content="Над 5 години автентична гръцка кухня в Пловдив. Рецепти от шеф Димитри, пресни сезонни продукти и домашна атмосфера.">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <link rel="canonical" href="https://tavernaki.bg/about">
 
     <script>
       (function() {
@@ -106,15 +115,18 @@
 
         /* ─── PAGE HERO ───────────────────────────────── */
         .page-hero {
-            background: var(--forest-dark); padding: 7rem 0 4rem;
+            padding: 7rem 0 4rem;
             position: relative; overflow: hidden;
+            min-height: 340px; display: flex; align-items: center;
         }
-        .page-hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: radial-gradient(ellipse at 70% 50%, rgba(45,106,63,0.35) 0%, transparent 60%),
-                        radial-gradient(ellipse at 20% 80%, rgba(7,21,16,0.5) 0%, transparent 50%);
+        .page-hero-bg { position: absolute; inset: 0; overflow: hidden; }
+        .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+        .page-hero-overlay {
+            position: absolute; inset: 0; z-index: 1;
+            background: linear-gradient(to top, rgba(7,21,16,0.88) 0%, rgba(7,21,16,0.55) 50%, rgba(7,21,16,0.4) 100%),
+                        linear-gradient(to right, rgba(7,21,16,0.5) 0%, transparent 65%);
         }
-        .page-hero-content { position: relative; z-index: 1; }
+        .page-hero-content { position: relative; z-index: 2; width: 100%; }
         .page-hero-label {
             font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.35em;
             color: rgba(240,237,230,0.5); text-transform: uppercase; margin-bottom: 0.75rem;
@@ -198,10 +210,10 @@
     </div>
 
     <!-- ═══ NAVBAR ════════════════════════════════════════════════════ -->
-    <nav id="nav" aria-label="Главно меню">
+    <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <a href="index.html" class="nav-logo">
-                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant">
+                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
             </a>
             <div class="hidden md:flex items-center gap-6">
                 <a href="menu.html" class="nav-link" data-i18n="nav_menu">Меню</a>
@@ -210,17 +222,17 @@
                 <a href="contact.html" class="nav-link" data-i18n="nav_contact">Контакти</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
                 <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай маса</a>
             </div>
             <div class="flex items-center gap-2 md:hidden">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
-                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
+                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false" data-i18n-aria="aria_open_menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
-        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню">
+        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню" data-i18n-aria="aria_mobile_menu">
             <a href="menu.html" class="mobile-nav-link" data-i18n="nav_menu">Меню</a>
             <a href="about.html" class="mobile-nav-link mobile-nav-link-active" data-i18n="nav_about">За нас</a>
             <a href="parties.html" class="mobile-nav-link" data-i18n="nav_parties">Тържества</a>
@@ -234,10 +246,14 @@
 
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section class="page-hero">
-        <div class="max-w-7xl mx-auto px-6 page-hero-content">
+        <div class="page-hero-bg">
+            <img src="Visual Assets/about us pic.png" alt="" loading="eager">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 page-hero-content text-center">
             <div class="page-hero-label" data-i18n="nav_about">За нас</div>
             <h1 class="page-hero-title" data-i18n="about_welcome_h">Добре дошли в Тавернаки</h1>
-            <p class="page-hero-sub" style="max-width:560px;" data-i18n="about_hero_sub">Пет години автентична гръцка кухня · Пловдив</p>
+            <p class="page-hero-sub" style="max-width:560px; margin:0 auto;" data-i18n="about_hero_sub">Пет години автентична гръцка кухня · Пловдив</p>
         </div>
     </section>
 
@@ -250,8 +266,9 @@
                 <div class="about-img-col reveal-left">
                     <div class="relative" style="aspect-ratio: 4/5; overflow: hidden;">
                         <img src="Visual Assets/History-Image.png"
-                             alt="Интериорът на Тавернаки — топла средиземноморска атмосфера"
-                             class="w-full h-full object-cover" style="filter: brightness(0.9);">
+                             alt="Интериорът на Тавернаки — топла средиземноморска атмосфера" data-i18n-alt="alt_history_img"
+                             class="w-full h-full object-cover" style="filter: brightness(0.9);"
+                             loading="lazy">
                         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(7,21,16,0.4) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-6 left-6 right-6 p-5" style="background: rgba(250,248,243,0.97); box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
                             <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--red); text-transform:uppercase; margin-bottom:0.4rem;" data-i18n="about_badge_label">Оценени от гостите</div>
@@ -265,10 +282,10 @@
                     <!-- Gallery strip -->
                     <div class="grid grid-cols-2 gap-2 mt-4">
                         <div style="overflow:hidden; height:140px;">
-                            <img src="Visual Assets/atmosphere-interior.png" alt="Интериор" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                            <img src="Visual Assets/atmosphere-interior.png" alt="Интериорът на Тавернаки" data-i18n-alt="alt_about_interior" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
                         </div>
                         <div style="overflow:hidden; height:140px;">
-                            <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'">
+                            <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса на Тавернаки" data-i18n-alt="alt_about_terrace" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -351,8 +368,8 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="footer-main-grid grid grid-cols-1 md:grid-cols-3 gap-12 pb-12" style="border-bottom: 1px solid rgba(240,237,230,0.08);">
                 <div class="footer-brand-col">
-                    <div style="margin-bottom:0.85rem; display:inline-block; background:rgba(250,248,243,0.1); padding:0.5rem 0.75rem; border-radius:2px;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" style="height:36px; width:auto; display:block;">
+                    <div style="margin-bottom:0.85rem; display:inline-block;">
+                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" data-i18n="footer_slogan">
                         Автентичната гръцка кухня, традиционно поднесена с любов
@@ -380,7 +397,7 @@
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="tel:+359877646206" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">0877 64 62 06</a>
                         <a href="mailto:tavernaki@abv.bg" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">tavernaki@abv.bg</a>
-                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;">бул. Пещерско шосе 28а<br>кв. Младежки хълм, 4002<br>Пловдив, България</div>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;"><span data-i18n="contact_address_line1">бул. Пещерско шосе 28а</span><br><span data-i18n="contact_address_line2">кв. Младежки хълм, 4002 Пловдив</span><br><span data-i18n="contact_address_city">Пловдив, България</span></div>
                     </div>
                 </div>
             </div>

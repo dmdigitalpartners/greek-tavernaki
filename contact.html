@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="bg" data-page="contact">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Тавернаки — контакти, адрес, работно време. бул. Пещерско шосе 28а, Пловдив. Тел: 0877 64 62 06">
+    <meta name="description" content="Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Тел: 0877 64 62 06. Безплатен паркинг.">
     <meta property="og:title" content="Контакти | Тавернаки — Автентична гръцка кухня">
-    <title>Контакти | Тавернаки</title>
+    <meta property="og:description" content="Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Тел: 0877 64 62 06.">
+    <title>Контакти & Работно Време | Тавернаки · Пловдив</title>
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:url" content="https://tavernaki.bg/contact">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Контакти & Работно Време | Тавернаки · Пловдив">
+    <meta name="twitter:description" content="Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Безплатен паркинг.">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <link rel="canonical" href="https://tavernaki.bg/contact">
 
     <script>
       (function() {
@@ -141,9 +150,9 @@
         </a>
     </div>
 
-    <nav id="nav" aria-label="Главно меню">
+    <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="nav-logo"><img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant"></a>
+            <a href="index.html" class="nav-logo"><img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"></a>
             <div class="hidden md:flex items-center gap-6">
                 <a href="menu.html" class="nav-link" data-i18n="nav_menu">Меню</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">За нас</a>
@@ -151,17 +160,17 @@
                 <a href="contact.html" class="nav-link nav-link-active" data-i18n="nav_contact">Контакти</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
                 <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай маса</a>
             </div>
             <div class="flex items-center gap-2 md:hidden">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
-                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
+                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false" data-i18n-aria="aria_open_menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
-        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню">
+        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню" data-i18n-aria="aria_mobile_menu">
             <a href="menu.html" class="mobile-nav-link" data-i18n="nav_menu">Меню</a>
             <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">За нас</a>
             <a href="parties.html" class="mobile-nav-link" data-i18n="nav_parties">Тържества</a>
@@ -176,13 +185,13 @@
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="Visual Assets/atmosphere-exterior.png" alt="Тавернаки — намерете ни">
+            <img src="Visual Assets/atmosphere-exterior.png" alt="Тавернаки — намерете ни" data-i18n-alt="alt_contact_map" loading="lazy">
         </div>
         <div class="page-hero-overlay"></div>
-        <div class="page-hero-content max-w-7xl mx-auto px-6">
+        <div class="page-hero-content max-w-7xl mx-auto px-6 text-center">
             <div class="page-hero-label" data-i18n="nav_contact">Контакти</div>
             <h1 class="page-hero-title" data-i18n="contact_hero_title">Работно Време & Адрес</h1>
-            <p class="page-hero-sub" style="max-width:480px;" data-i18n="contact_hero_sub">Заповядайте при нас — в уютна среда и с открито сърце</p>
+            <p class="page-hero-sub" style="max-width:480px; margin:0 auto;" data-i18n="contact_hero_sub">Заповядайте при нас — в уютна среда и с открито сърце</p>
         </div>
     </section>
 
@@ -196,7 +205,7 @@
                 <span class="rule mx-auto block"></span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
                 <!-- ── LEFT: HOURS + CONTACT ── -->
                 <div class="reveal-left">
@@ -246,14 +255,14 @@
                             </a>
                             <div style="display:flex; align-items:flex-start; gap:0.75rem; font-family:'DM Sans',sans-serif; font-size:0.9rem; color:#555; padding:0.75rem; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.06);">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--forest); flex-shrink:0; margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                <span>бул. Пещерско шосе 28а<br>кв. Младежки хълм, 4002 Пловдив<br><span style="font-size:0.8rem; color:#888; margin-top:4px; display:flex; align-items:center; gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span data-i18n="contact_parking_label">Безплатен паркинг</span></span></span>
+                                <span><span data-i18n="contact_address_line1">бул. Пещерско шосе 28а</span><br><span data-i18n="contact_address_line2">кв. Младежки хълм, 4002 Пловдив</span><br><span style="font-size:0.8rem; color:#888; margin-top:4px; display:flex; align-items:center; gap:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span data-i18n="contact_parking_label">Безплатен паркинг</span></span></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ── RIGHT: MAP + DELIVERY ── -->
-                <div class="reveal-right">
+                <div class="reveal-right" style="display:flex; flex-direction:column; justify-content:center;">
                     <div style="width:100%; height:320px; overflow:hidden; border:1px solid var(--stone); position:relative;">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.4849772396624!2d24.726500176097968!3d42.13990767121428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1332b483921%3A0xd36467727670fc5a!2z0JPRgNGK0YbQutCwINGC0LDQstC10YDQvdCwIFRhdmVybmFraQ!5e0!3m2!1sen!2sbg!4v1780653694938!5m2!1sen!2sbg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Tavernaki на Google Maps"></iframe>
                     </div>
@@ -262,13 +271,13 @@
                     <div class="mt-6">
                         <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#888; margin-bottom:1rem;" data-i18n="delivery_label">Поръчайте онлайн чрез</div>
                         <div class="flex gap-3 flex-wrap">
-                            <a href="https://glovoapp.com/bg/bg/plovdiv/stores/grucka-taverna-tavernaki-pdv?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-width:7rem; padding:0.65rem 1.25rem; background:#FF6900; border:2px solid #FF6900; text-decoration:none; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease; box-shadow:0 3px 10px rgba(255,105,0,0.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(255,105,0,0.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(255,105,0,0.3)'" aria-label="Поръчайте от Glovo">
+                            <a href="https://glovoapp.com/bg/bg/plovdiv/stores/grucka-taverna-tavernaki-pdv?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-width:7rem; padding:0.65rem 1.25rem; background:#FF6900; border:2px solid #FF6900; text-decoration:none; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease; box-shadow:0 3px 10px rgba(255,105,0,0.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(255,105,0,0.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(255,105,0,0.3)'" aria-label="Поръчайте от Glovo" data-i18n-aria="aria_order_glovo">
                                 <span style="font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.85rem; color:#fff; letter-spacing:0.02em;">Glovo</span>
                             </a>
-                            <a href="https://wolt.com/bg/bgr/plovdiv/restaurant/tavernaki-greek-restaurant?utm_source=googlemapreserved&utm_campaign=tavernaki-greek-restaurant&utm_content=686fa8eed24358db365437db&category=restaurant&rwg_token=AFd1xnFvD2UNknCPalpTGjfIxeDGideWD__BqMDxRFjJ3EEE7xjFMOH-r0HPA4bs3fdDWwo0XQ0KVnVZEtcj-7NWwy7EW7yPWJIVNu6kxhpo8vIfU27Bp0I%3D" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-width:7rem; padding:0.65rem 1.25rem; background:#009DE0; border:2px solid #009DE0; text-decoration:none; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease; box-shadow:0 3px 10px rgba(0,157,224,0.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(0,157,224,0.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(0,157,224,0.3)'" aria-label="Поръчайте от Wolt">
+                            <a href="https://wolt.com/bg/bgr/plovdiv/restaurant/tavernaki-greek-restaurant?utm_source=googlemapreserved&utm_campaign=tavernaki-greek-restaurant&utm_content=686fa8eed24358db365437db&category=restaurant&rwg_token=AFd1xnFvD2UNknCPalpTGjfIxeDGideWD__BqMDxRFjJ3EEE7xjFMOH-r0HPA4bs3fdDWwo0XQ0KVnVZEtcj-7NWwy7EW7yPWJIVNu6kxhpo8vIfU27Bp0I%3D" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-width:7rem; padding:0.65rem 1.25rem; background:#009DE0; border:2px solid #009DE0; text-decoration:none; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease; box-shadow:0 3px 10px rgba(0,157,224,0.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(0,157,224,0.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(0,157,224,0.3)'" aria-label="Поръчайте от Wolt" data-i18n-aria="aria_order_wolt">
                                 <span style="font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.85rem; color:#fff; letter-spacing:0.02em;">Wolt</span>
                             </a>
-                            <a href="https://www.takeaway.com/bg/menu/greek-restaurant-tavernakigratski-restorant-tavernaki?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-width:7rem; padding:0.65rem 1.25rem; background:#FF8000; border:2px solid #FF8000; text-decoration:none; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease; box-shadow:0 3px 10px rgba(255,128,0,0.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(255,128,0,0.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(255,128,0,0.3)'" aria-label="Поръчайте от Takeaway">
+                            <a href="https://www.takeaway.com/bg/menu/greek-restaurant-tavernakigratski-restorant-tavernaki?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; min-width:7rem; padding:0.65rem 1.25rem; background:#FF8000; border:2px solid #FF8000; text-decoration:none; transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease; box-shadow:0 3px 10px rgba(255,128,0,0.3);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 18px rgba(255,128,0,0.4)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 3px 10px rgba(255,128,0,0.3)'" aria-label="Поръчайте от Takeaway" data-i18n-aria="aria_order_takeaway">
                                 <span style="font-family:'DM Sans',sans-serif; font-weight:700; font-size:0.85rem; color:#fff; letter-spacing:0.02em;">Takeaway</span>
                             </a>
                         </div>
@@ -284,8 +293,8 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12" style="border-bottom: 1px solid rgba(240,237,230,0.08);">
                 <div>
-                    <div style="margin-bottom:0.85rem; display:inline-block; background:rgba(250,248,243,0.1); padding:0.5rem 0.75rem; border-radius:2px;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" style="height:36px; width:auto; display:block;">
+                    <div style="margin-bottom:0.85rem; display:inline-block;">
+                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" data-i18n="footer_slogan">Автентичната гръцка кухня, традиционно поднесена с любов</p>
                     <div style="margin-top:1.5rem;">
@@ -311,7 +320,7 @@
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="tel:+359877646206" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">0877 64 62 06</a>
                         <a href="mailto:tavernaki@abv.bg" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">tavernaki@abv.bg</a>
-                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;">бул. Пещерско шосе 28а<br>кв. Младежки хълм, 4002<br>Пловдив, България</div>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;"><span data-i18n="contact_address_line1">бул. Пещерско шосе 28а</span><br><span data-i18n="contact_address_line2">кв. Младежки хълм, 4002 Пловдив</span><br><span data-i18n="contact_address_city">Пловдив, България</span></div>
                     </div>
                 </div>
             </div>

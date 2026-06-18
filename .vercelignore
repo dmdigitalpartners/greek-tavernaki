@@ -4,3 +4,7 @@ screenshot.mjs
 serve.mjs
 *.md
 components
+requirements.txt
+generate-menu.py
+*.xlsx
+*.py

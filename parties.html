@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="bg" data-page="parties">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Тържества и специални поводи в Тавернаки, Пловдив. Рождени дни, годишнини, фирмени вечери — в уютна гръцка атмосфера. Тел: 0877 64 62 06">
+    <meta name="description" content="Рождени дни, годишнини и фирмени вечери в Тавернаки, Пловдив. Персонализирано меню, лятна градина, посветен персонал. Тел: 0877 64 62 06.">
     <meta property="og:title" content="Тържества | Тавернаки — Автентична гръцка кухня">
-    <title>Тържества | Тавернаки</title>
+    <meta property="og:description" content="Рождени дни, годишнини, фирмени вечери в Тавернаки. Персонализирано меню, лятна градина. Тел: 0877 64 62 06.">
+    <title>Тържества & Специални Поводи | Тавернаки · Пловдив</title>
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:url" content="https://tavernaki.bg/parties">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Тържества & Специални Поводи | Тавернаки · Пловдив">
+    <meta name="twitter:description" content="Рождени дни, годишнини и фирмени вечери в Тавернаки, Пловдив. Персонализирано меню, лятна градина, посветен персонал.">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <link rel="canonical" href="https://tavernaki.bg/parties">
 
     <script>
       (function() {
@@ -139,9 +148,9 @@
         </a>
     </div>
 
-    <nav id="nav" aria-label="Главно меню">
+    <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="nav-logo"><img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant"></a>
+            <a href="index.html" class="nav-logo"><img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"></a>
             <div class="hidden md:flex items-center gap-6">
                 <a href="menu.html" class="nav-link" data-i18n="nav_menu">Меню</a>
                 <a href="about.html" class="nav-link" data-i18n="nav_about">За нас</a>
@@ -149,17 +158,17 @@
                 <a href="contact.html" class="nav-link" data-i18n="nav_contact">Контакти</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
                 <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай маса</a>
             </div>
             <div class="flex items-center gap-2 md:hidden">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
-                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false">
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
+                <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false" data-i18n-aria="aria_open_menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
-        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню">
+        <div id="mobile-nav-panel" role="navigation" aria-label="Мобилно меню" data-i18n-aria="aria_mobile_menu">
             <a href="menu.html" class="mobile-nav-link" data-i18n="nav_menu">Меню</a>
             <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">За нас</a>
             <a href="parties.html" class="mobile-nav-link mobile-nav-link-active" data-i18n="nav_parties">Тържества</a>
@@ -174,13 +183,13 @@
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="Visual Assets/atmosphere-table.png" alt="Тавернаки — тържества и специални поводи">
+            <img src="Visual Assets/atmosphere-table.png" alt="Тавернаки — тържества и специални поводи" data-i18n-alt="alt_parties_hero" loading="lazy">
         </div>
         <div class="page-hero-overlay"></div>
-        <div class="page-hero-content max-w-7xl mx-auto px-6">
+        <div class="page-hero-content max-w-7xl mx-auto px-6 text-center">
             <div class="page-hero-label" data-i18n="nav_parties">Тържества</div>
             <h1 class="page-hero-title" data-i18n="parties_hero_title">Специални моменти,<br>незабравими спомени</h1>
-            <p class="page-hero-sub" style="max-width:520px;" data-i18n="parties_hero_sub">Отпразнувайте важните моменти в топлата атмосфера на Тавернаки</p>
+            <p class="page-hero-sub" style="max-width:520px; margin:0 auto;" data-i18n="parties_hero_sub">Отпразнувайте важните моменти в топлата атмосфера на Тавернаки</p>
         </div>
     </section>
 
@@ -200,7 +209,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="event-card reveal d1">
                     <div class="event-card-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.8"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 8a2 2 0 0 0 0-4 2 2 0 0 0 0 4"/><path d="M12 8a2 2 0 0 0 0-4 2 2 0 0 0 0 4"/><path d="M17 8a2 2 0 0 0 0-4 2 2 0 0 0 0 4"/></svg>
                     </div>
                     <div style="font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.12em; color:var(--forest-dark); text-transform:uppercase; margin-bottom:0.6rem;" data-i18n="event1_title">Рождени дни</div>
                     <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.65;" data-i18n="event1_desc">Изненадайте любим човек с незабравима вечеря в автентична гръцка атмосфера. Специално меню, декорация и внимание към всеки детайл.</p>
@@ -241,7 +250,8 @@
                 <div class="reveal-left">
                     <img src="Visual Assets/atmosphere-exterior.png" alt="Тавернаки — лятна тераса за тържества"
                          style="width:100%; height:420px; object-fit:cover; display:block;
-                                box-shadow: 0 8px 32px rgba(13,43,26,0.15);">
+                                box-shadow: 0 8px 32px rgba(13,43,26,0.15);"
+                         loading="lazy">
                 </div>
 
                 <div class="reveal-right">
@@ -316,8 +326,8 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="footer-main-grid grid grid-cols-1 md:grid-cols-3 gap-12 pb-12" style="border-bottom: 1px solid rgba(240,237,230,0.08);">
                 <div class="footer-brand-col">
-                    <div style="margin-bottom:0.85rem; display:inline-block; background:rgba(250,248,243,0.1); padding:0.5rem 0.75rem; border-radius:2px;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" style="height:36px; width:auto; display:block;">
+                    <div style="margin-bottom:0.85rem; display:inline-block;">
+                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" data-i18n="footer_slogan">Автентичната гръцка кухня, традиционно поднесена с любов</p>
                     <div class="footer-socials-desktop" style="margin-top:1.5rem;">
@@ -343,7 +353,7 @@
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="tel:+359877646206" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">0877 64 62 06</a>
                         <a href="mailto:tavernaki@abv.bg" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">tavernaki@abv.bg</a>
-                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;">бул. Пещерско шосе 28а<br>кв. Младежки хълм, 4002<br>Пловдив, България</div>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;"><span data-i18n="contact_address_line1">бул. Пещерско шосе 28а</span><br><span data-i18n="contact_address_line2">кв. Младежки хълм, 4002 Пловдив</span><br><span data-i18n="contact_address_city">Пловдив, България</span></div>
                     </div>
                 </div>
             </div>

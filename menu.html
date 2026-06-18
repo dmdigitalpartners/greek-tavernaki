@@ -310,17 +310,18 @@
         /* ─── PAGE HERO (menu) ────────────────────────── */
         #menu-hero {
             position: relative;
-            background: var(--forest-deep);
             padding: 8rem 0 3.5rem;
             overflow: hidden;
+            min-height: 340px;
+            display: flex;
+            align-items: center;
         }
-        #menu-hero::before {
-            content: '';
-            position: absolute; inset: 0;
-            background:
-                radial-gradient(ellipse at 80% 50%, rgba(45,106,63,0.35) 0%, transparent 65%),
-                radial-gradient(ellipse at 10% 80%, rgba(7,21,16,0.7) 0%, transparent 55%);
-            pointer-events: none;
+        .page-hero-bg { position: absolute; inset: 0; overflow: hidden; }
+        .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+        .page-hero-overlay {
+            position: absolute; inset: 0; z-index: 1;
+            background: linear-gradient(to top, rgba(7,21,16,0.88) 0%, rgba(7,21,16,0.55) 50%, rgba(7,21,16,0.4) 100%),
+                        linear-gradient(to right, rgba(7,21,16,0.5) 0%, transparent 65%);
         }
         .menu-hero-label {
             font-family: 'Cinzel', serif;
@@ -422,7 +423,7 @@
                 0 2px 4px rgba(0,0,0,0.04);
         }
         .dish-img-wrap {
-            height: 180px;
+            aspect-ratio: 4 / 3;
             overflow: hidden;
             position: relative;
             background: #e8e3d9;
@@ -469,21 +470,15 @@
         }
         .dish-price {
             position: absolute;
-            bottom: 0.55rem;
-            left: 0.65rem;
-            background: rgba(13, 43, 26, 0.68);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+            bottom: 0.75rem;
+            left: 1rem;
             color: #FAF8F3;
             font-family: 'Cinzel', serif;
-            font-size: 0.76rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            letter-spacing: 0.02em;
-            padding: 0.22rem 0.55rem;
-            border-radius: 4px;
             pointer-events: none;
             white-space: nowrap;
-            line-height: 1.4;
+            z-index: 2;
         }
         .dish-desc {
             font-family: 'DM Sans', sans-serif;
@@ -607,8 +602,11 @@
 
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section id="menu-hero" class="grain">
-        <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;">
-            <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:56px; width:auto; display:block; margin:0 auto 1.5rem; filter: brightness(0) invert(1);">
+        <div class="page-hero-bg">
+            <img src="Visual Assets/greek food.png" alt="" loading="eager">
+        </div>
+        <div class="page-hero-overlay"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;width:100%;">
             <div class="menu-hero-label mb-4" data-i18n="menu_hero_label">Пловдив · България</div>
             <h1 class="menu-hero-title mb-3" data-i18n="menu_hero_title">Нашето меню</h1>
             <p class="menu-hero-sub" data-i18n="menu_hero_sub">115 ястия · 11 категории · Пресни продукти всеки ден</p>
@@ -753,6 +751,7 @@
                         (dish.image
                             ? '<img src="' + dish.image + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy">'
                             : '<div class="dish-placeholder" role="img" aria-label="' + name.replace(/"/g, '&quot;') + '"></div>') +
+                        '<div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,21,16,0.55) 0%,transparent 60%);pointer-events:none;"></div>' +
                         '<span class="dish-price">' + priceDisplay + '</span>' +
                     '</div>' +
                     '<div class="dish-body">' +
