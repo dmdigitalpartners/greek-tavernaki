@@ -624,6 +624,9 @@
 
         /* ─── MOBILE OPTIMIZATIONS ───────────────────────── */
         @media (max-width: 639px) {
+            /* Prevent hero resize when Chrome address bar shows/hides */
+            #hero { min-height: 100svh; }
+
             /* Hero: centre + constrain width */
             #hero .hero-content {
                 text-align: center;
