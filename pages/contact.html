@@ -134,7 +134,7 @@
         #sticky-phone.shown { opacity: 1; transform: translateY(0); pointer-events: auto; }
         .sticky-reserve { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; min-height: 52px; background: var(--forest); color: var(--stone); font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
         .sticky-reserve:active { background: var(--forest-dark); }
-        @media (max-width: 640px) { #sticky-phone { display: flex; } }
+        @media (max-width: 640px) { #sticky-phone, #sticky-phone.shown { display: none !important; } }
 
         @media (max-width: 639px) {
             footer { padding-bottom: calc(2rem + 56px) !important; }

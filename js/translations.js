@@ -60,8 +60,10 @@ const t = {
     // About — 5 blocks (client copy)
     about_welcome_h: 'Добре дошли в Тавернаки',
     about_welcome_p: 'Вече повече от пет години посрещаме своите гости с внимание към всеки детайл. Тавернаки е уютно място с топла вътрешна зала и красива лятна градина, където истинската гръцка кухня се среща с домашния уют. Приготвяме всичко от пресни и сезонни продукти с грижа за всяка чиния.',
+    about_welcome_p_mobile: 'Пет години автентична гръцка кухня в уютна атмосфера, приготвена с грижа за всеки детайл.',
     about_story_h:   'Нашата история',
     about_story_p:   'Създадохме Тавернаки с идеята да предложим не просто ресторант, а място с характер и душа. Вдъхновени от природата, гръцката трапеза и радостта от споделено ястие, изградихме пространство, в което семейства и приятели се завръщат отново и отново.',
+    about_story_p_mobile: 'Създадохме Тавернаки за семейства и приятели, вдъхновени от природата и гръцката трапеза.',
     about_chef_h:    'Кухня с душа',
     about_chef_p:    'Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня — приготвено с разбиране, опит и любов към занаята.',
     about_music_h:   'Храна и музика',
@@ -291,8 +293,10 @@ const t = {
     // About — 5 blocks
     about_welcome_h: 'Welcome to Tavernaki',
     about_welcome_p: 'For over five years we have welcomed our guests with attention to every detail. Tavernaki is a cosy place with a warm indoor hall and a beautiful summer garden, where authentic Greek cuisine meets the comfort of home. We prepare everything from fresh, seasonal ingredients with care for every plate.',
+    about_welcome_p_mobile: 'Five years of authentic Greek cuisine in a cosy setting, crafted with care for every detail.',
     about_story_h:   'Our Story',
     about_story_p:   'We created Tavernaki with the idea of offering not just a restaurant, but a place with character and soul. Inspired by nature, the Greek table and the joy of shared meals, we built a space where families and friends return again and again.',
+    about_story_p_mobile: 'We created Tavernaki for families and friends, inspired by nature and the spirit of Greek dining.',
     about_chef_h:    'A Kitchen with Soul',
     about_chef_p:    'Our recipes were carefully selected by Chef Dimitri and Greek chefs with deep respect for tradition. Every dish carries the authentic spirit of Greek cuisine — prepared with understanding, experience and love for the craft.',
     about_music_h:   'Food & Music',

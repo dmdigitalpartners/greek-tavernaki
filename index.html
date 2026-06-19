@@ -504,6 +504,30 @@
         }
         .stars { color: #F59E0B; font-size: 0.85rem; letter-spacing: 0.05em; }
 
+        /* ─── REVIEWS CAROUSEL (mobile only) ─────────── */
+        @media (max-width: 767px) {
+            #reviews-carousel { position: relative; }
+            .reviews-track { display: flex; overflow: hidden; }
+            .reviews-track .review-card {
+                min-width: 100%; flex-shrink: 0;
+                transition: none !important; transition-delay: 0s !important;
+            }
+            .carousel-arrows {
+                display: flex; justify-content: center;
+                gap: 1.5rem; margin-top: 1.5rem;
+            }
+            .carousel-btn {
+                width: 44px; height: 44px;
+                border: 1.5px solid var(--forest);
+                background: transparent; color: var(--forest);
+                font-size: 1.25rem; cursor: pointer;
+                display: flex; align-items: center; justify-content: center;
+                transition: background 0.2s ease, color 0.2s ease;
+            }
+            .carousel-btn:hover { background: var(--forest); color: var(--stone); }
+            .carousel-btn:active { transform: scale(0.95); }
+        }
+
         /* ─── DELIVERY BUTTONS ────────────────────────── */
         .dlv-btn {
             display: flex; align-items: center; gap: 0.75rem;
@@ -640,6 +664,7 @@
             #hero .hero-btns { justify-content: center; }
             .hero-btns { flex-direction: column; }
             .hero-btns a { text-align: center; width: 100%; }
+            .hero-btns .btn-primary { display: none; }
 
             /* Hero: tighten element spacing */
             #hero .hero-eyebrow { margin-bottom: 0.6rem; }
@@ -1033,8 +1058,11 @@
                     <h2 class="section-title mb-4" data-i18n="about_welcome_h">Добре дошли в Тавернаки</h2>
                     <span class="rule block mb-6"></span>
 
-                    <p style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p">
+                    <p class="hidden md:block" style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p">
                         Вече повече от пет години посрещаме своите гости с внимание към всеки детайл. Тавернаки е уютно място с топла вътрешна зала и красива лятна градина, където истинската гръцка кухня се среща с домашния уют. Приготвяме всичко от пресни и сезонни продукти с грижа за всяка чиния.
+                    </p>
+                    <p class="md:hidden" style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p_mobile">
+                        Пет години автентична гръцка кухня в уютна атмосфера, приготвена с грижа за всеки детайл.
                     </p>
 
                     <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_story_h">Нашата история</h3>
@@ -1102,44 +1130,52 @@
                 <span class="rule mx-auto block"></span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="reviews-carousel">
+                <div class="reviews-track md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
 
-                <div class="review-card reveal d1">
-                    <div class="review-author mb-2" data-i18n="review_1_author">Emma Richardson</div>
-                    <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote" data-i18n="review_1_quote">„Калмарите бяха едни от най-вкусните, които съм опитвала. Изключителна гръцка атмосфера, бързо и качествено обслужване, щедри порции."</p>
+                    <div class="review-card reveal d1">
+                        <div class="review-author mb-2" data-i18n="review_1_author">Emma Richardson</div>
+                        <div class="stars mb-3">★★★★★</div>
+                        <p class="review-quote" data-i18n="review_1_quote">„Калмарите бяха едни от най-вкусните, които съм опитвала. Изключителна гръцка атмосфера, бързо и качествено обслужване, щедри порции."</p>
+                    </div>
+
+                    <div class="review-card reveal d2">
+                        <div class="review-author mb-2" data-i18n="review_2_author">Nikos Sidiropoulos</div>
+                        <div class="stars mb-3">★★★★★</div>
+                        <p class="review-quote" data-i18n="review_2_quote">„Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома."</p>
+                    </div>
+
+                    <div class="review-card reveal d3">
+                        <div class="review-author mb-2" data-i18n="review_3_author">Mattia Santoro</div>
+                        <div class="stars mb-3">★★★★★</div>
+                        <p class="review-quote" data-i18n="review_3_quote">„Комплиментарна вода и десерт, пресни морски дарове. Страхотно преживяване. Има меню на английски."</p>
+                    </div>
+
+                    <div class="review-card reveal d1">
+                        <div class="review-author mb-2" data-i18n="review_4_author">Георги Иванов</div>
+                        <div class="stars mb-3">★★★★★</div>
+                        <p class="review-quote" data-i18n="review_4_quote">„Рибата на скара е невероятна — свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем."</p>
+                    </div>
+
+                    <div class="review-card reveal d2">
+                        <div class="review-author mb-2" data-i18n="review_5_author">Sophie Laurent</div>
+                        <div class="stars mb-3">★★★★★</div>
+                        <p class="review-quote" data-i18n="review_5_quote">„Безплатните предястия бяха прекрасна изненада. Атмосферата е топла и средиземноморска. Персоналът — изключително любезен."</p>
+                    </div>
+
+                    <div class="review-card reveal d3">
+                        <div class="review-author mb-2" data-i18n="review_6_author">Alexandros Papadopoulos</div>
+                        <div class="stars mb-3">★★★★★</div>
+                        <p class="review-quote" data-i18n="review_6_quote">„Истински гръцки дух — точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти."</p>
+                    </div>
+
                 </div>
 
-                <div class="review-card reveal d2">
-                    <div class="review-author mb-2" data-i18n="review_2_author">Nikos Sidiropoulos</div>
-                    <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote" data-i18n="review_2_quote">„Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома."</p>
+                <!-- Carousel arrows — mobile only -->
+                <div class="carousel-arrows md:hidden">
+                    <button class="carousel-btn" id="reviews-prev" aria-label="Previous review">&#8592;</button>
+                    <button class="carousel-btn" id="reviews-next" aria-label="Next review">&#8594;</button>
                 </div>
-
-                <div class="review-card reveal d3">
-                    <div class="review-author mb-2" data-i18n="review_3_author">Mattia Santoro</div>
-                    <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote" data-i18n="review_3_quote">„Комплиментарна вода и десерт, пресни морски дарове. Страхотно преживяване. Има меню на английски."</p>
-                </div>
-
-                <div class="review-card reveal d1">
-                    <div class="review-author mb-2" data-i18n="review_4_author">Георги Иванов</div>
-                    <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote" data-i18n="review_4_quote">„Рибата на скара е невероятна — свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем."</p>
-                </div>
-
-                <div class="review-card reveal d2">
-                    <div class="review-author mb-2" data-i18n="review_5_author">Sophie Laurent</div>
-                    <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote" data-i18n="review_5_quote">„Безплатните предястия бяха прекрасна изненада. Атмосферата е топла и средиземноморска. Персоналът — изключително любезен."</p>
-                </div>
-
-                <div class="review-card reveal d3">
-                    <div class="review-author mb-2" data-i18n="review_6_author">Alexandros Papadopoulos</div>
-                    <div class="stars mb-3">★★★★★</div>
-                    <p class="review-quote" data-i18n="review_6_quote">„Истински гръцки дух — точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти."</p>
-                </div>
-
             </div>
 
             <!-- Google rating -->
@@ -1473,6 +1509,33 @@
 
         // Apply language on page load (translations.js loaded above)
         applyLang(getLang());
+
+        // Mobile reviews carousel
+        (function() {
+            if (window.innerWidth >= 768) return;
+            var track = document.querySelector('.reviews-track');
+            var cards = track ? track.querySelectorAll('.review-card') : [];
+            if (!track || !cards.length) return;
+            var current = 0;
+            var total = cards.length;
+
+            function goTo(n) {
+                current = ((n % total) + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            }
+
+            document.getElementById('reviews-prev').addEventListener('click', function() { goTo(current - 1); });
+            document.getElementById('reviews-next').addEventListener('click', function() { goTo(current + 1); });
+
+            var startX = 0;
+            track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+            track.addEventListener('touchend', function(e) {
+                var diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+            }, { passive: true });
+
+            goTo(0);
+        })();
     </script>
 
 </body>

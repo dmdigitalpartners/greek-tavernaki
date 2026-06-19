@@ -132,7 +132,7 @@
         #sticky-phone.shown { opacity: 1; transform: translateY(0); pointer-events: auto; }
         .sticky-reserve { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; min-height: 52px; background: var(--forest); color: var(--stone); font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
         .sticky-reserve:active { background: var(--forest-dark); }
-        @media (max-width: 640px) { #sticky-phone { display: flex; } }
+        @media (max-width: 640px) { #sticky-phone, #sticky-phone.shown { display: none !important; } }
 
         @media (max-width: 639px) {
             footer { padding-bottom: calc(2rem + 56px) !important; }
@@ -254,13 +254,15 @@
                          loading="lazy">
                 </div>
 
-                <div class="reveal-right">
-                    <div class="section-label mb-3" data-i18n="parties_features_label">Нашите предимства</div>
-                    <h2 class="section-title mb-3" data-i18n="parties_features_title">Всичко, от което се нуждаете</h2>
-                    <span class="rule block mb-7"></span>
+                <div>
+                    <div class="reveal-right">
+                        <div class="section-label mb-3" data-i18n="parties_features_label">Нашите предимства</div>
+                        <h2 class="section-title mb-3" data-i18n="parties_features_title">Всичко, от което се нуждаете</h2>
+                        <span class="rule block mb-7"></span>
+                    </div>
 
                     <div style="display:flex; flex-direction:column; gap:1.25rem;">
-                        <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div class="reveal d1" style="display:flex; gap:1rem; align-items:flex-start;">
                             <div style="width:32px; height:32px; background:var(--forest-100,#E8F2EB); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
@@ -269,7 +271,7 @@
                                 <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.6;" data-i18n="feature1_desc">Просторна тераса и зелена градина — идеална за летни тържества на открито.</p>
                             </div>
                         </div>
-                        <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div class="reveal d2" style="display:flex; gap:1rem; align-items:flex-start;">
                             <div style="width:32px; height:32px; background:var(--forest-100,#E8F2EB); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
@@ -278,7 +280,7 @@
                                 <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.6;" data-i18n="feature2_desc">Избираме заедно с вас менюто от нашите автентични гръцки специалитети.</p>
                             </div>
                         </div>
-                        <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div class="reveal d3" style="display:flex; gap:1rem; align-items:flex-start;">
                             <div style="width:32px; height:32px; background:var(--forest-100,#E8F2EB); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>
@@ -287,7 +289,7 @@
                                 <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.6;" data-i18n="feature3_desc">Нашият екип се грижи за всеки детайл, за да се насладите на вечерта.</p>
                             </div>
                         </div>
-                        <div style="display:flex; gap:1rem; align-items:flex-start;">
+                        <div class="reveal d4" style="display:flex; gap:1rem; align-items:flex-start;">
                             <div style="width:32px; height:32px; background:var(--forest-100,#E8F2EB); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                             </div>

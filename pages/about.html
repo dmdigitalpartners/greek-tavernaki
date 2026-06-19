@@ -189,7 +189,7 @@
             letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
         }
         .sticky-reserve:active { background: var(--forest-dark); }
-        @media (max-width: 640px) { #sticky-phone { display: flex; } }
+        @media (max-width: 640px) { #sticky-phone, #sticky-phone.shown { display: none !important; } }
 
         /* ─── MOBILE ──────────────────────────────────── */
         @media (max-width: 639px) {
@@ -296,30 +296,40 @@
                     <h2 class="section-title mb-3" data-i18n="about_welcome_h">Добре дошли в Тавернаки</h2>
                     <span class="rule block mb-6"></span>
 
-                    <p style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p">
+                    <p class="hidden md:block" style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p">
                         Вече повече от пет години посрещаме своите гости с внимание към всеки детайл. Тавернаки е уютно място с топла вътрешна зала и красива лятна градина, където истинската гръцка кухня се среща с домашния уют. Приготвяме всичко от пресни и сезонни продукти с грижа за всяка чиния.
+                    </p>
+                    <p class="md:hidden" style="font-family:'DM Sans',sans-serif; font-size:1rem; line-height:1.8; color:#555; margin-bottom:1.75rem;" data-i18n="about_welcome_p_mobile">
+                        Пет години автентична гръцка кухня в уютна атмосфера, приготвена с грижа за всеки детайл.
                     </p>
 
                     <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_story_h">Нашата история</h3>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_story_p">
+                    <p class="hidden md:block" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_story_p">
                         Създадохме Тавернаки с идеята да предложим не просто ресторант, а място с характер и душа. Вдъхновени от природата, гръцката трапеза и радостта от споделено ястие, изградихме пространство, в което семейства и приятели се завръщат отново и отново.
                     </p>
-
-                    <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_chef_h">Кухня с душа</h3>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_chef_p">
-                        Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня — приготвено с разбиране, опит и любов към занаята.
+                    <p class="md:hidden" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_story_p_mobile">
+                        Създадохме Тавернаки за семейства и приятели, вдъхновени от природата и гръцката трапеза.
                     </p>
 
-                    <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_music_h">Храна и музика</h3>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.75rem;" data-i18n="about_music_p">
-                        При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера — вечери, след които се мисли дълго.
-                    </p>
+                    <div class="hidden md:block">
+                        <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_chef_h">Кухня с душа</h3>
+                        <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_chef_p">
+                            Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня — приготвено с разбиране, опит и любов към занаята.
+                        </p>
+                    </div>
+
+                    <div class="hidden md:block">
+                        <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_music_h">Храна и музика</h3>
+                        <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.75rem;" data-i18n="about_music_p">
+                            При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера — вечери, след които се мисли дълго.
+                        </p>
+                    </div>
 
                     <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="lunch_note">
                         Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна — идеална за обедна пауза.
                     </p>
 
-                    <div class="mt-8">
+                    <div class="mt-8 hidden md:block">
                         <a href="tel:+359877646206" style="display:inline-flex; align-items:center; gap:0.6rem; font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--stone); background:var(--forest); padding:1rem 2rem; text-decoration:none; transition:background 0.3s ease, transform 0.25s ease; box-shadow: 0 4px 16px rgba(45,106,63,0.3);" onmouseover="this.style.background='var(--forest-dark)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--forest)';this.style.transform='none'" data-i18n="nav_reserve">
                             Резервирай маса
                         </a>
