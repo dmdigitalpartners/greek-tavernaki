@@ -23,11 +23,19 @@ const MIME = {
   '.ttf': 'font/ttf',
 };
 
-http.createServer((req, res) => {
-  let urlPath = decodeURIComponent(req.url.split('?')[0]);
-  if (urlPath === '/') urlPath = '/index.html';
+const ROUTES = {
+  '/':        '/index.html',
+  '/menu':    '/pages/menu.html',
+  '/about':   '/pages/about.html',
+  '/contact': '/pages/contact.html',
+  '/parties': '/pages/parties.html',
+};
 
-  const filePath = path.join(__dirname, urlPath);
+http.createServer((req, res) => {
+  const urlPath = decodeURIComponent(req.url.split('?')[0]);
+  const resolved = ROUTES[urlPath] ?? urlPath;
+
+  const filePath = path.join(__dirname, resolved);
   const ext = path.extname(filePath);
   const contentType = MIME[ext] || 'application/octet-stream';
 

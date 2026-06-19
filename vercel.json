@@ -2,5 +2,11 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/menu",    "destination": "/pages/menu.html" },
+    { "source": "/about",   "destination": "/pages/about.html" },
+    { "source": "/contact", "destination": "/pages/contact.html" },
+    { "source": "/parties", "destination": "/pages/parties.html" }
+  ]
 }
