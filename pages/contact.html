@@ -15,6 +15,7 @@
     <meta name="twitter:description" content="Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Безплатен паркинг.">
     <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <link rel="canonical" href="https://tavernaki.bg/contact">
+    <link rel="preload" as="image" href="Visual%20Assets/atmosphere-exterior.webp" type="image/webp">
 
     <script>
       (function() {
@@ -139,6 +140,7 @@
         @media (max-width: 639px) {
             footer { padding-bottom: calc(2rem + 56px) !important; }
         }
+        picture { display: contents; }
     </style>
 </head>
 <body class="bg-stone-50 text-ink font-body">
@@ -185,7 +187,10 @@
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="Visual Assets/atmosphere-exterior.png" alt="Тавернаки — намерете ни" data-i18n-alt="alt_contact_map" loading="lazy">
+            <picture>
+                <source srcset="Visual%20Assets/atmosphere-exterior.webp" type="image/webp">
+                <img src="Visual Assets/atmosphere-exterior.png" alt="Тавернаки — намерете ни" data-i18n-alt="alt_contact_map" loading="eager" fetchpriority="high">
+            </picture>
         </div>
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content max-w-7xl mx-auto px-6 text-center">

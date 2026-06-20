@@ -15,6 +15,7 @@
     <meta name="twitter:description" content="Над 5 години автентична гръцка кухня в Пловдив. Рецепти от шеф Димитри, пресни сезонни продукти и домашна атмосфера.">
     <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <link rel="canonical" href="https://tavernaki.bg/about">
+    <link rel="preload" as="image" href="Visual%20Assets/about%20us%20pic.webp" type="image/webp">
 
     <script>
       (function() {
@@ -197,6 +198,7 @@
             .about-text-col { order: 1; }
             footer { padding-bottom: calc(2rem + 56px) !important; }
         }
+        picture { display: contents; }
     </style>
 </head>
 <body class="bg-stone-50 text-ink font-body">
@@ -247,7 +249,10 @@
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <img src="Visual Assets/about us pic.png" alt="" loading="eager">
+            <picture>
+                <source srcset="Visual%20Assets/about%20us%20pic.webp" type="image/webp">
+                <img src="Visual Assets/about us pic.png" alt="" loading="eager" fetchpriority="high">
+            </picture>
         </div>
         <div class="page-hero-overlay"></div>
         <div class="max-w-7xl mx-auto px-6 page-hero-content text-center">
@@ -265,10 +270,13 @@
                 <!-- Image -->
                 <div class="about-img-col reveal-left">
                     <div class="relative" style="aspect-ratio: 4/5; overflow: hidden;">
-                        <img src="Visual Assets/History-Image.png"
-                             alt="Интериорът на Тавернаки — топла средиземноморска атмосфера" data-i18n-alt="alt_history_img"
-                             class="w-full h-full object-cover" style="filter: brightness(0.9);"
-                             loading="lazy">
+                        <picture>
+                            <source srcset="Visual%20Assets/History-Image.webp" type="image/webp">
+                            <img src="Visual Assets/History-Image.png"
+                                 alt="Интериорът на Тавернаки — топла средиземноморска атмосфера" data-i18n-alt="alt_history_img"
+                                 class="w-full h-full object-cover" style="filter: brightness(0.9);"
+                                 loading="lazy">
+                        </picture>
                         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(7,21,16,0.4) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-6 left-6 right-6 p-5" style="background: rgba(250,248,243,0.97); box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
                             <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--red); text-transform:uppercase; margin-bottom:0.4rem;" data-i18n="about_badge_label">Оценени от гостите</div>
@@ -282,10 +290,16 @@
                     <!-- Gallery strip -->
                     <div class="grid grid-cols-2 gap-2 mt-4">
                         <div style="overflow:hidden; height:140px;">
-                            <img src="Visual Assets/atmosphere-interior.png" alt="Интериорът на Тавернаки" data-i18n-alt="alt_about_interior" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
+                            <picture>
+                                <source srcset="Visual%20Assets/atmosphere-interior.webp" type="image/webp">
+                                <img src="Visual Assets/atmosphere-interior.png" alt="Интериорът на Тавернаки" data-i18n-alt="alt_about_interior" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
+                            </picture>
                         </div>
                         <div style="overflow:hidden; height:140px;">
-                            <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса на Тавернаки" data-i18n-alt="alt_about_terrace" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
+                            <picture>
+                                <source srcset="Visual%20Assets/atmosphere-terrace.webp" type="image/webp">
+                                <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса на Тавернаки" data-i18n-alt="alt_about_terrace" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
+                            </picture>
                         </div>
                     </div>
                 </div>

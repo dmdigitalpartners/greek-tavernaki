@@ -16,6 +16,7 @@
     <meta name="twitter:description" content="115 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.">
     <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <link rel="canonical" href="https://tavernaki.bg/menu">
+    <link rel="preload" as="image" href="Visual%20Assets/greek%20food.webp" type="image/webp">
 
     <!-- Flash prevention: sets data-lang before any render to avoid BG→EN flicker -->
     <script>
@@ -545,6 +546,7 @@
             /* Mobile tab scroll: slightly more padding */
             .cat-tabs-inner { padding: 0 0.25rem; }
         }
+        picture { display: contents; }
     </style>
 </head>
 
@@ -603,7 +605,10 @@
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section id="menu-hero" class="grain">
         <div class="page-hero-bg">
-            <img src="Visual Assets/greek food.png" alt="" loading="eager">
+            <picture>
+                <source srcset="Visual%20Assets/greek%20food.webp" type="image/webp">
+                <img src="Visual Assets/greek food.png" alt="" loading="eager" fetchpriority="high">
+            </picture>
         </div>
         <div class="page-hero-overlay"></div>
         <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;width:100%;">
@@ -749,7 +754,10 @@
                 card.innerHTML =
                     '<div class="dish-img-wrap">' +
                         (dish.image
-                            ? '<img src="' + dish.image + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy">'
+                            ? '<picture>' +
+                                '<source srcset="' + dish.image.replace('menu-images/', 'menu-images-webp/').replace('.png', '.webp') + '" type="image/webp">' +
+                                '<img src="' + dish.image + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy">' +
+                              '</picture>'
                             : '<div class="dish-placeholder" role="img" aria-label="' + name.replace(/"/g, '&quot;') + '"></div>') +
                         '<div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,21,16,0.55) 0%,transparent 60%);pointer-events:none;"></div>' +
                         '<span class="dish-price">' + priceDisplay + '</span>' +

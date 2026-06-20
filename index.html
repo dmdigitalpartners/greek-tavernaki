@@ -15,6 +15,7 @@
     <meta name="twitter:description" content="Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара — приготвени с любов. Жива музика в петък.">
     <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <link rel="canonical" href="https://tavernaki.bg/">
+    <link rel="preload" as="image" href="Visual%20Assets/HERO-PAGE.webp" type="image/webp">
 
     <!-- Flash prevention: sets data-lang before any render to avoid BG→EN flicker -->
     <script>
@@ -765,6 +766,7 @@
             .footer-socials-mobile { display: flex !important; }
             footer { padding-bottom: calc(2rem + 56px) !important; }
         }
+        picture { display: contents; }
     </style>
 
     <!-- Schema.org: Restaurant structured data for Google rich results -->
@@ -866,7 +868,10 @@
     <!-- ═══ HERO ══════════════════════════════════════════════════════ -->
     <section id="hero" class="grain">
         <div class="hero-bg-img">
-            <img src="Visual Assets/HERO-PAGE.png" alt="Tavernaki — Автентична гръцка таверна" data-i18n-alt="alt_hero_home" fetchpriority="high">
+            <picture>
+                <source srcset="Visual%20Assets/HERO-PAGE.webp" type="image/webp">
+                <img src="Visual Assets/HERO-PAGE.png" alt="Tavernaki — Автентична гръцка таверна" data-i18n-alt="alt_hero_home" fetchpriority="high">
+            </picture>
         </div>
         <div class="hero-overlay"></div>
 
@@ -947,7 +952,10 @@
                 <!-- Dish 1 -->
                 <div class="dish-card reveal d1" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <img src="Visual Assets/barbun.png" alt="Барбун — пресна морска риба на скара" loading="lazy">
+                        <picture>
+                            <source srcset="Visual%20Assets/barbun.webp" type="image/webp">
+                            <img src="Visual Assets/barbun.png" alt="Барбун — пресна морска риба на скара" loading="lazy">
+                        </picture>
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">19,95 €</span>
@@ -965,7 +973,10 @@
                 <!-- Dish 2 -->
                 <div class="dish-card reveal d2" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <img src="Visual Assets/kinoa-skaridi.png" alt="Киноа и скариди" loading="lazy">
+                        <picture>
+                            <source srcset="Visual%20Assets/kinoa-skaridi.webp" type="image/webp">
+                            <img src="Visual Assets/kinoa-skaridi.png" alt="Киноа и скариди" loading="lazy">
+                        </picture>
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">11,60 €</span>
@@ -983,7 +994,10 @@
                 <!-- Dish 3 -->
                 <div class="dish-card reveal d3" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <img src="Visual Assets/plato-morski-darove.png" alt="Плато с морски дарове" loading="lazy">
+                        <picture>
+                            <source srcset="Visual%20Assets/plato-morski-darove.webp" type="image/webp">
+                            <img src="Visual Assets/plato-morski-darove.png" alt="Плато с морски дарове" loading="lazy">
+                        </picture>
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">42,30 €</span>
@@ -1001,7 +1015,10 @@
                 <!-- Dish 4 -->
                 <div class="dish-card reveal d4" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <img src="Visual Assets/svinski-kascheta-chushki.png" alt="Свински късчета с чушки" loading="lazy">
+                        <picture>
+                            <source srcset="Visual%20Assets/svinski-kascheta-chushki.webp" type="image/webp">
+                            <img src="Visual Assets/svinski-kascheta-chushki.png" alt="Свински късчета с чушки" loading="lazy">
+                        </picture>
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">11,05 €</span>
@@ -1033,13 +1050,16 @@
                 <!-- Image -->
                 <div class="about-img-col reveal-left">
                     <div class="relative" style="aspect-ratio: 4/5; overflow: hidden;">
-                        <img
-                            src="Visual Assets/History-Image.png"
-                            alt="Интериорът на Тавернаки — топла средиземноморска атмосфера" data-i18n-alt="alt_history_img"
-                            class="w-full h-full object-cover"
-                            style="filter: brightness(0.9);"
-                            loading="lazy"
-                        >
+                        <picture>
+                            <source srcset="Visual%20Assets/History-Image.webp" type="image/webp">
+                            <img
+                                src="Visual Assets/History-Image.png"
+                                alt="Интериорът на Тавернаки — топла средиземноморска атмосфера" data-i18n-alt="alt_history_img"
+                                class="w-full h-full object-cover"
+                                style="filter: brightness(0.9);"
+                                loading="lazy"
+                            >
+                        </picture>
                         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(7,21,16,0.4) 0%, transparent 60%); pointer-events:none;"></div>
 
                         <!-- Floating badge -->
@@ -1099,16 +1119,28 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-1 mt-8">
             <div class="gallery-item reveal" style="height: 320px;">
-                <img src="Visual Assets/atmosphere-interior.png" alt="Интериорът на Тавернаки" loading="lazy">
+                <picture>
+                    <source srcset="Visual%20Assets/atmosphere-interior.webp" type="image/webp">
+                    <img src="Visual Assets/atmosphere-interior.png" alt="Интериорът на Тавернаки" loading="lazy">
+                </picture>
             </div>
             <div class="gallery-item reveal d1" style="height: 320px; margin-top: 40px;">
-                <img src="Visual Assets/atmosphere-table.png" alt="Трапеза в Тавернаки" loading="lazy">
+                <picture>
+                    <source srcset="Visual%20Assets/atmosphere-table.webp" type="image/webp">
+                    <img src="Visual Assets/atmosphere-table.png" alt="Трапеза в Тавернаки" loading="lazy">
+                </picture>
             </div>
             <div class="gallery-item reveal d2" style="height: 320px;">
-                <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса на Тавернаки" loading="lazy">
+                <picture>
+                    <source srcset="Visual%20Assets/atmosphere-terrace.webp" type="image/webp">
+                    <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса на Тавернаки" loading="lazy">
+                </picture>
             </div>
             <div class="gallery-item reveal d3" style="height: 320px; margin-top: 40px;">
-                <img src="Visual Assets/atmosphere-exterior.png" alt="Екстериорът на Тавернаки" loading="lazy">
+                <picture>
+                    <source srcset="Visual%20Assets/atmosphere-exterior.webp" type="image/webp">
+                    <img src="Visual Assets/atmosphere-exterior.png" alt="Екстериорът на Тавернаки" loading="lazy">
+                </picture>
             </div>
         </div>
 
