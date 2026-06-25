@@ -434,18 +434,7 @@ window.menuData = [
     allergens:     null,
     image:         'menu-images/Кралски котлет.png',
   },
-  {
-    id:            'kebap-s-tsedeno-mlyako',
-    category:      'specialties',
-    name_bg:       'Кебап с цедено мляко и салса сос',
-    name_en:       'Кебап с цедено мляко и салса сос',
-    price:         26.31,
-    price_unit:    null,
-    weight:        '350 г',
-    description_bg:null,
-    allergens:     null,
-    image:         null,
-  },
+
   {
     id:            'svinski-shnitsel-s-gabi',
     category:      'specialties',
@@ -545,18 +534,7 @@ window.menuData = [
     allergens:     null,
     image:         'menu-images/Бифтек.png',
   },
-  {
-    id:            'kebap-teleshko-agneshko',
-    category:      'bbq-meat',
-    name_bg:       'Кебап с телешко и агнешко',
-    name_en:       'Кебап с телешко и агнешко',
-    price:         23.86,
-    price_unit:    null,
-    weight:        '350 г',
-    description_bg:null,
-    allergens:     null,
-    image:         null,
-  },
+
   {
     id:            'daska-s-mesa-za-dvama',
     category:      'bbq-meat',
