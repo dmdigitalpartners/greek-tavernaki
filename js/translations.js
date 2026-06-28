@@ -36,6 +36,8 @@ const t = {
     hero_cta_reserve: 'Резервирай маса',
     hero_cta_menu:    'Виж менюто',
     // Trust bar
+    trust_parking:        'Безплатен паркинг',
+    trust_parking_sub:    'За гостите на ресторанта',
     trust_music:          'Жива гръцка музика',
     trust_music_sub:      'Всеки петък',
     trust_quality:        'Домашно приготвено',
@@ -269,6 +271,8 @@ const t = {
     hero_cta_reserve: 'Reserve a table',
     hero_cta_menu:    'View the menu',
     // Trust bar
+    trust_parking:        'Free Parking',
+    trust_parking_sub:    'For restaurant guests',
     trust_music:          'Live Greek Music',
     trust_music_sub:      'Every Friday',
     trust_quality:        'Homemade food',
