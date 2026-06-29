@@ -270,7 +270,7 @@ window.menuData = [
     weight:        null,
     description_bg:'кисело мляко, краставица, копър, чесън',
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Таратор.png',
   },
   {
     id:            'paprika',
