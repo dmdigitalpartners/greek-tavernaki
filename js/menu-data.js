@@ -541,7 +541,7 @@ window.menuData = [
     weight:        null,
     description_bg:'телешко и агнешко месо, кисело мляко, салса сос',
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Кебап с кисело мляко и салса.png',
   },
   {
     id:            'pileshki-shnitsel-s-gabi',
@@ -553,7 +553,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Пилешки шницел с гъби и сметана.png',
   },
   {
     id:            'teleshko-bon-file',
@@ -565,7 +565,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Телешко бон филе.png',
   },
 
   // ── МЕСНИ ЯСТИЯ ───────────────────────────────────────────────────────────
