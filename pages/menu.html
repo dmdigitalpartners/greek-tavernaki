@@ -741,11 +741,16 @@
                 var allergenText = dish.allergens === 'Requires Restaurant Verification'
                     ? t[lang].allergens_on_request
                     : dish.allergens;
-                var eur = (dish.price / 1.95583).toFixed(2).replace('.', ',');
-                var bgn = dish.price.toFixed(2).replace('.', ',');
-                var priceDisplay = dish.price_unit
-                    ? eur + ' € (' + bgn + ' лв.) / ' + dish.price_unit
-                    : eur + ' € (' + bgn + ' лв.)';
+                var priceDisplay;
+                if (dish.price == null) {
+                    priceDisplay = dish.price_unit ? '— / ' + dish.price_unit : '—';
+                } else {
+                    var eur = (dish.price / 1.95583).toFixed(2).replace('.', ',');
+                    var bgn = dish.price.toFixed(2).replace('.', ',');
+                    priceDisplay = dish.price_unit
+                        ? eur + ' € (' + bgn + ' лв.) / ' + dish.price_unit
+                        : eur + ' € (' + bgn + ' лв.)';
+                }
 
                 var card = document.createElement('div');
                 card.className = 'dish-card';
