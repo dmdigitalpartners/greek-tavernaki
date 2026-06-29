@@ -294,7 +294,7 @@ window.menuData = [
     weight:        '200 г',
     description_bg:'сирене фета, домат, чушка',
     allergens:     null,
-    image:         'menu-images/Пикантно фета сирене, печено на фолио.png',
+    image:         'menu-images/Пикантно фета сирене печено на фолио.png',
   },
 
   // ── ПРЕДЯСТИЯ ─────────────────────────────────────────────────────────────
@@ -381,7 +381,7 @@ window.menuData = [
     weight:        '300 г',
     description_bg:null,
     allergens:     null,
-    image:         'menu-images/Пълнени гъби с бекон, чушки, гауда.png',
+    image:         'menu-images/Пълнени гъби с бекон чушки гауда.png',
   },
   {
     id:            'buyurdi-gyuvech',
@@ -740,7 +740,7 @@ window.menuData = [
     weight:        '300 г',
     description_bg:null,
     allergens:     null,
-    image:         'menu-images/Пилешки късчета с розмарин, гъби и горчица.png',
+    image:         'menu-images/Пилешки късчета с розмарин гъби и горчица.png',
   },
   {
     id:            'svinski-kystcheta-chushki',
