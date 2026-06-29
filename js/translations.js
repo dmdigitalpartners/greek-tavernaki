@@ -18,7 +18,7 @@ const t = {
     page_title_home: 'Тавернаки — Автентична гръцка кухня',
     page_title_menu: 'Меню — 115 гръцки ястия | Тавернаки · Пловдив',
     // Meta descriptions
-    meta_desc_home: 'Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара — приготвени с любов. Жива музика в петък. Резервации: 0877 64 62 06.',
+    meta_desc_home: 'Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара, приготвени с любов. Жива музика в петък. Резервации: 0877 64 62 06.',
     meta_desc_menu: '115 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Виж пълното меню на Тавернаки, Пловдив.',
     // Navbar
     nav_home:    'Начало',
@@ -42,12 +42,10 @@ const t = {
     trust_music_sub:      'Всеки петък',
     trust_quality:        'Домашно приготвено',
     trust_quality_sub:    'Пресни сезонни продукти',
-    trust_appetizers:     'Безплатни предястия',
-    trust_appetizers_sub: 'За всяка маса',
     // Dishes section
     dishes_label: 'Нашите специалитети',
     dishes_title: 'Вкусът на Гърция',
-    dishes_sub:   'Пресни морски дарове, автентични рецепти и щедри порции — подготвени с внимание и любов',
+    dishes_sub:   'Пресни морски дарове, автентични рецепти и щедри порции, приготвени с внимание и любов',
     // About page
     about_hero_sub:      'Разкрийте историята зад автентичната гръцка кухня, която обичаме',
     about_badge_label:   'Нашата мисия',
@@ -67,9 +65,9 @@ const t = {
     about_story_p:   'Създадохме Тавернаки с идеята да предложим не просто ресторант, а място с характер и душа. Вдъхновени от природата, гръцката трапеза и радостта от споделено ястие, изградихме пространство, в което семейства и приятели се завръщат отново и отново.',
     about_story_p_mobile: 'Създадохме Тавернаки за семейства и приятели, вдъхновени от природата и гръцката трапеза.',
     about_chef_h:    'Кухня с душа',
-    about_chef_p:    'Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня — приготвено с разбиране, опит и любов към занаята.',
+    about_chef_p:    'Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня, приготвено с разбиране, опит и любов към занаята.',
     about_music_h:   'Храна и музика',
-    about_music_p:   'При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера — вечери, след които се мисли дълго.',
+    about_music_p:   'При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера. Вечери, след които се мисли дълго.',
     // Parties page
     parties_hero_title:      'Специални моменти,\nнезабравими спомени',
     parties_hero_sub:        'Отпразнувайте важните моменти в топлата атмосфера на Тавернаки',
@@ -84,26 +82,26 @@ const t = {
     event2_title:  'Годишнини',
     event2_desc:   'Отпразнувайте годишнина в романтична среда с избрано меню от нашите гръцки специалитети и персонализирано обслужване.',
     event3_title:  'Групови резервации',
-    event3_desc:   'Семейна среща, събиране на приятели или групово посещение — разполагаме с необходимото пространство и гъвкавост.',
+    event3_desc:   'Семейна среща, събиране на приятели или групово посещение. Разполагаме с необходимото пространство и гъвкавост.',
     event4_title:  'Фирмени вечери',
     event4_desc:   'Корпоративни събирания в приятна и релаксираща среда. Персонализирано меню и дискретно обслужване за вашия екип.',
     feature1_title: 'Лятна градина',
-    feature1_desc:  'Просторна тераса и зелена градина — идеална за летни тържества на открито.',
+    feature1_desc:  'Просторна тераса и зелена градина, идеална за летни тържества на открито.',
     feature2_title: 'Персонализирано меню',
     feature2_desc:  'Избираме заедно с вас менюто от нашите автентични гръцки специалитети.',
     feature3_title: 'Посветен персонал',
     feature3_desc:  'Нашият екип се грижи за всеки детайл, за да се насладите на вечерта.',
     feature4_title: 'Безплатен паркинг',
-    feature4_desc:  'Просторен паркинг за вас и вашите гости — без допълнително притеснение.',
+    feature4_desc:  'Просторен паркинг за вас и вашите гости, без допълнително притеснение.',
     // Contact page
     contact_hero_title:    'Работно Време & Адрес',
-    contact_hero_sub:      'Заповядайте при нас — в уютна среда и с открито сърце',
+    contact_hero_sub:      'Заповядайте при нас, в уютна среда и с открито сърце',
     contact_address_label: 'Адрес',
     contact_parking_label: 'Паркинг',
     contact_parking_desc:  'Безплатен паркинг за гости на ресторанта',
     contact_map_link:      'Отвори в Google Maps',
     // Lunch note — used in About section and menu.html
-    lunch_note: 'Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна — идеална за обедна пауза.',
+    lunch_note: 'Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна, идеална за обедна пауза.',
     // Gallery
     gallery_label: 'Атмосфера',
     gallery_title: 'Средиземноморски дух',
@@ -128,7 +126,7 @@ const t = {
     // Reserve CTA
     cta_label:    'Резервации',
     cta_title:    'Заповядайте в Тавернаки',
-    cta_sub:      'Резервирайте маса или се обадете директно — ние ще се погрижим за всичко останало. Всяка вечер е специална при нас.',
+    cta_sub:      'Резервирайте маса или се обадете директно и ние ще се погрижим за всичко останало. Всяка вечер е специална при нас.',
     cta_btn_call: 'Обадете се: 0877 64 62 06',
     cta_btn_wa:   'WhatsApp резервация',
     cta_info:     'Открито всеки ден 10:00 — 00:00 · Безплатен паркинг · Достъпен за хора с увреждания',
@@ -158,13 +156,13 @@ const t = {
     trust_rating_sub:   'Google Maps',
     // Featured dishes (home page showcase)
     dish1_name: 'Барбун',
-    dish1_desc: 'Пресен барбун, опечен до съвършенство с лимон и зехтин — истинско средиземноморско удоволствие',
-    dish2_name: 'Киноа и скариди',
-    dish2_desc: 'Свежа киноа с пресни скариди, лимонов дресинг и ароматни билки — лека, но наситена',
+    dish1_desc: 'Пресен барбун, опечен до съвършенство с лимон и зехтин. Истинско средиземноморско удоволствие.',
+    dish2_name: 'Паста със скариди',
+    dish2_desc: 'Паста с пресни скариди в ароматен доматен сос. Средиземноморска класика, приготвена с любов.',
     dish3_name: 'Плато с морски дарове',
-    dish3_desc: 'Щедро плато от пресни морски дарове — за споделена трапеза с аромат на морето',
+    dish3_desc: 'Щедро плато от пресни морски дарове, идеално за споделена трапеза с аромат на морето.',
     dish4_name: 'Свински късчета с чушки',
-    dish4_desc: 'Сочни свински късчета с печени чушки и свежа мащерка — богато, топло и традиционно',
+    dish4_desc: 'Сочни свински късчета с печени чушки и свежа мащерка. Богато, топло и традиционно.',
     dishes_btn_menu: 'Вижте пълното меню',
     // About section floating badge (index.html)
     about_rated_label:  'Оценени от гостите',
@@ -190,11 +188,11 @@ const t = {
     review_2_quote: 'Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома.',
     review_3_quote: 'Комплиментарна вода и десерт, пресни морски дарове. Страхотно преживяване. Има меню на английски.',
     review_4_author: 'Георги Иванов',
-    review_4_quote: 'Рибата на скара е невероятна — свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем.',
+    review_4_quote: 'Рибата на скара е невероятна: свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем.',
     review_5_author: 'Sophie Laurent',
-    review_5_quote: 'Безплатните предястия бяха прекрасна изненада. Атмосферата е топла и средиземноморска. Персоналът — изключително любезен.',
+    review_5_quote: 'Автентичната гръцка кухня ме спечели от първата хапка. Лятната градина е невероятна, чувствах се като в Гърция. Задължителна спирка в Пловдив.',
     review_6_author: 'Alexandros Papadopoulos',
-    review_6_quote: 'Истински гръцки дух — точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти.',
+    review_6_quote: 'Истински гръцки дух, точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти.',
     // Category tabs
     cat_all:         'Всички',
     cat_salads:      'Салати',
@@ -277,12 +275,10 @@ const t = {
     trust_music_sub:      'Every Friday',
     trust_quality:        'Homemade food',
     trust_quality_sub:    'Fresh seasonal ingredients',
-    trust_appetizers:     'Complimentary appetizer',
-    trust_appetizers_sub: 'For every table',
     // Dishes section
     dishes_label: 'Our Specialties',
     dishes_title: 'The Taste of Greece',
-    dishes_sub:   'Fresh seafood, authentic recipes and generous portions — prepared with care and love',
+    dishes_sub:   'Fresh seafood, authentic recipes and generous portions, prepared with care and love',
     // About page
     about_hero_sub:      'Discover the story behind the authentic Greek cuisine we love',
     about_badge_label:   'Our mission',
@@ -302,9 +298,9 @@ const t = {
     about_story_p:   'We created Tavernaki with the idea of offering not just a restaurant, but a place with character and soul. Inspired by nature, the Greek table and the joy of shared meals, we built a space where families and friends return again and again.',
     about_story_p_mobile: 'We created Tavernaki for families and friends, inspired by nature and the spirit of Greek dining.',
     about_chef_h:    'A Kitchen with Soul',
-    about_chef_p:    'Our recipes were carefully selected by Chef Dimitri and Greek chefs with deep respect for tradition. Every dish carries the authentic spirit of Greek cuisine — prepared with understanding, experience and love for the craft.',
+    about_chef_p:    'Our recipes were carefully selected by Chef Dimitri and Greek chefs with deep respect for tradition. Every dish carries the authentic spirit of Greek cuisine, prepared with understanding, experience and love for the craft.',
     about_music_h:   'Food & Music',
-    about_music_p:   'On special occasions we host themed evenings with visiting orchestras from Greece. Live music, Greek rhythms and an unforgettable atmosphere — evenings that stay with you long after.',
+    about_music_p:   'On special occasions we host themed evenings with visiting orchestras from Greece. Live music, Greek rhythms and an unforgettable atmosphere. Evenings that stay with you long after.',
     // Parties page
     parties_hero_title:      'Special moments,\nunforgettable memories',
     parties_hero_sub:        'Celebrate your most important moments in the warm atmosphere of Tavernaki',
@@ -319,26 +315,26 @@ const t = {
     event2_title:  'Anniversaries',
     event2_desc:   'Celebrate your anniversary in a romantic setting with a curated menu of our Greek specialties and personalised service.',
     event3_title:  'Group bookings',
-    event3_desc:   'Family gathering, friends meetup or group visit — we have the space and flexibility to accommodate you.',
+    event3_desc:   'Family gathering, friends meetup or group visit. We have the space and flexibility to accommodate you.',
     event4_title:  'Corporate dinners',
     event4_desc:   'Corporate gatherings in a pleasant and relaxing environment. Customised menu and discreet service for your team.',
     feature1_title: 'Summer garden',
-    feature1_desc:  'A spacious terrace and green garden — ideal for summer outdoor celebrations.',
+    feature1_desc:  'A spacious terrace and green garden, ideal for summer outdoor celebrations.',
     feature2_title: 'Personalised menu',
     feature2_desc:  'We work with you to select from our authentic Greek specialties.',
     feature3_title: 'Dedicated staff',
     feature3_desc:  'Our team takes care of every detail so you can enjoy your evening.',
     feature4_title: 'Free parking',
-    feature4_desc:  'Spacious parking for you and your guests — no extra hassle.',
+    feature4_desc:  'Spacious parking for you and your guests. No extra hassle.',
     // Contact page
     contact_hero_title:    'Opening Hours & Address',
-    contact_hero_sub:      'Come visit us — in a cosy setting with an open heart',
+    contact_hero_sub:      'Come visit us, in a cosy setting with an open heart',
     contact_address_label: 'Address',
     contact_parking_label: 'Parking',
     contact_parking_desc:  'Free parking for restaurant guests',
     contact_map_link:      'Open in Google Maps',
     // Lunch note
-    lunch_note: 'Every weekday we welcome you with a varied lunch menu of freshly prepared dishes. Fast, tasty and home-style food — perfect for a lunch break.',
+    lunch_note: 'Every weekday we welcome you with a varied lunch menu of freshly prepared dishes. Fast, tasty and home-style food, perfect for a lunch break.',
     // Gallery
     gallery_label: 'Atmosphere',
     gallery_title: 'Mediterranean Spirit',
@@ -363,7 +359,7 @@ const t = {
     // Reserve CTA
     cta_label:    'Reservations',
     cta_title:    'Welcome to Tavernaki',
-    cta_sub:      'Book a table or call us directly — we\'ll take care of everything else. Every evening is special with us.',
+    cta_sub:      'Book a table or call us directly and we\'ll take care of everything else. Every evening is special with us.',
     cta_btn_call: 'Call: 0877 64 62 06',
     cta_btn_wa:   'WhatsApp reservation',
     cta_info:     'Open every day 10:00 — 00:00 · Free parking · Accessible for people with disabilities',
@@ -393,13 +389,13 @@ const t = {
     trust_rating_sub:   'Google Maps',
     // Featured dishes (home page showcase)
     dish1_name: 'Red Mullet (Barbun)',
-    dish1_desc: 'Fresh red mullet, grilled to perfection with lemon and olive oil — a true Mediterranean pleasure',
-    dish2_name: 'Quinoa and Shrimp',
-    dish2_desc: 'Fresh quinoa with juicy shrimp, lemon dressing and aromatic herbs — light yet satisfying',
+    dish1_desc: 'Fresh red mullet, grilled to perfection with lemon and olive oil. A true Mediterranean pleasure.',
+    dish2_name: 'Pasta with Shrimp',
+    dish2_desc: 'Pasta with fresh shrimp in fragrant tomato sauce. A Mediterranean classic, made with love.',
     dish3_name: 'Seafood Platter',
-    dish3_desc: 'A generous platter of fresh seafood — for a shared table with the scent of the sea',
+    dish3_desc: 'A generous platter of fresh seafood, perfect for a shared table with the scent of the sea.',
     dish4_name: 'Pork Pieces with Peppers',
-    dish4_desc: 'Juicy pork pieces with roasted peppers and fresh thyme — rich, warm and traditional',
+    dish4_desc: 'Juicy pork pieces with roasted peppers and fresh thyme. Rich, warm and traditional.',
     dishes_btn_menu: 'View full menu',
     // About section floating badge (index.html)
     about_rated_label:  'Rated by our guests',
@@ -422,14 +418,14 @@ const t = {
     alt_history_img:    'Tavernaki Interior — warm Mediterranean atmosphere',
     // Reviews
     review_1_quote: 'The calamari were among the best I\'ve ever had. Exceptional Greek atmosphere, fast and quality service, generous portions.',
-    review_2_quote: 'Incredibly delicious! Live Greek music on Fridays. Authentic Greek atmosphere — just like home.',
+    review_2_quote: 'Incredibly delicious! Live Greek music on Fridays. Authentic Greek atmosphere, just like home.',
     review_3_quote: 'Complimentary water and dessert, fresh seafood. A wonderful experience. They also have an English menu.',
     review_4_author: 'Georgi Ivanov',
-    review_4_quote: 'The grilled fish is incredible — fresh and perfectly cooked. The summer garden is cosy and lovely. We will definitely be back.',
+    review_4_quote: 'The grilled fish is incredible: fresh and perfectly cooked. The summer garden is cosy and lovely. We will definitely be back.',
     review_5_author: 'Sophie Laurent',
-    review_5_quote: 'The complimentary appetizers were a wonderful surprise. The atmosphere is warm and Mediterranean. Staff absolutely lovely.',
+    review_5_quote: 'The authentic Greek food won me over from the first bite. The summer garden is incredible, felt like I was in Greece. A must-visit in Plovdiv.',
     review_6_author: 'Alexandros Papadopoulos',
-    review_6_quote: 'Authentic Greek spirit — exactly as I know it from Athens. Excellent value for money and genuine recipes.',
+    review_6_quote: 'Authentic Greek spirit, exactly as I know it from Athens. Excellent value for money and genuine recipes.',
     // Category tabs
     cat_all:         'All',
     cat_salads:      'Salads',
@@ -530,7 +526,7 @@ function applyLang(lang) {
           : dish.allergens;
       }
       var priceEl = card.querySelector('.dish-price');
-      if (priceEl && dish.price_unit) {
+      if (priceEl && dish.price_unit && dish.price != null) {
         priceEl.textContent = '€' + dish.price.toFixed(2) + ' ' + curr.price_per_unit;
       }
     });
