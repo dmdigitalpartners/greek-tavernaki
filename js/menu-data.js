@@ -453,7 +453,7 @@ window.menuData = [
     weight:        null,
     description_bg:'чушки, домати, домашен сос, сирене фета',
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Пържени чушки и домати.png',
   },
   {
     id:            'parzheni-chushki-i-patladzhan',
@@ -465,7 +465,7 @@ window.menuData = [
     weight:        null,
     description_bg:'чушки, патладжан, доматен сос',
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Пържени чушки и патладжани.png',
   },
   {
     id:            'pechen-patladzhan',
@@ -477,7 +477,7 @@ window.menuData = [
     weight:        '300 г',
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Печен патладжан.png',
   },
 
   // ── СПЕЦИАЛИТЕТИ ──────────────────────────────────────────────────────────
