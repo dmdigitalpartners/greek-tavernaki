@@ -282,7 +282,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Паприка.png',
   },
   {
     id:            'pikantno-feta-na-folio',
