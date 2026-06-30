@@ -665,7 +665,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Сувлаки микс.png',
   },
   {
     id:            'suvlaki-teleshko',
@@ -677,7 +677,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Телешко сувлаки.png',
   },
   {
     id:            'selska-nadenitsa',
@@ -689,7 +689,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Селска наденица.png',
   },
   {
     id:            'teleshka-parzhola',
@@ -701,7 +701,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Телешка пържола.png',
   },
   {
     id:            'agneshki-rebra',
@@ -713,7 +713,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Агнешки ребра.png',
   },
   {
     id:            'agneshki-kebap',
@@ -725,7 +725,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Агнешки кебап.png',
   },
 
   // ── НА ТИГАН ──────────────────────────────────────────────────────────────
