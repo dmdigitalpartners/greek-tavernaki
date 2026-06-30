@@ -1027,8 +1027,8 @@ window.menuData = [
   {
     id:            'chipura',
     category:      'fish',
-    name_bg:       'Чипура',
-    name_en:       'Чипура',
+    name_bg:       'Ципура',
+    name_en:       'Ципура',
     price:         null,
     price_unit:    '100 г',
     weight:        null,
