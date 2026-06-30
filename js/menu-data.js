@@ -1022,7 +1022,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Лаврак на скара.png',
   },
   {
     id:            'chipura',
@@ -1034,7 +1034,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Ципура.png',
   },
   {
     id:            'chipura-diva',
@@ -1046,7 +1046,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Ципура дива.png',
   },
   {
     id:            'somga-na-skara',
@@ -1058,7 +1058,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Сьомга на скара.png',
   },
   {
     id:            'gavros-na-skara',
@@ -1070,7 +1070,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Гаврос на скара.png',
   },
   {
     id:            'pastarva-na-tigan',
@@ -1082,7 +1082,7 @@ window.menuData = [
     weight:        null,
     description_bg:null,
     allergens:     null,
-    image:         null,
+    image:         'menu-images/Пъстърва на тиган.png',
   },
   {
     id:            'zadusheni-midi',
