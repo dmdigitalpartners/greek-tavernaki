@@ -1073,10 +1073,10 @@ window.menuData = [
     image:         null,
   },
   {
-    id:            'petar-na-tigan',
+    id:            'pastarva-na-tigan',
     category:      'fish',
-    name_bg:       'Петър на тиган',
-    name_en:       'Петър на тиган',
+    name_bg:       'Пъстърва на тиган',
+    name_en:       'Пъстърва на тиган',
     price:         null,
     price_unit:    null,
     weight:        null,
