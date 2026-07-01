@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара — приготвени с любов. Жива музика в петък. Резервации: 0877 64 62 06.">
+    <meta name="description" content="Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара, приготвени с любов. Жива музика в петък. Резервации: 0877 64 62 06.">
     <meta property="og:title" content="Tavernaki — Автентична гръцка кухня · Пловдив">
     <meta property="og:description" content="Автентичната гръцка кухня, традиционно поднесена с любов. Пресни сезонни продукти и домашна рецептура в Пловдив.">
     <title>Tavernaki — Автентична гръцка кухня · Пловдив</title>
@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Тавернаки — Автентична гръцка кухня · Пловдив">
-    <meta name="twitter:description" content="Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара — приготвени с любов. Жива музика в петък.">
+    <meta name="twitter:description" content="Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара, приготвени с любов. Жива музика в петък.">
     <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <link rel="canonical" href="https://tavernaki.bg/">
     <link rel="preload" as="image" href="Visual%20Assets/HERO-PAGE.webp" type="image/webp">
@@ -666,6 +666,16 @@
             .hero-btns { flex-direction: column; }
             .hero-btns a { text-align: center; width: 100%; }
             .hero-btns .btn-primary { display: none; }
+            .hero-btns .btn-ghost {
+                color: var(--stone);
+                background: var(--forest);
+                border: 2px solid var(--forest);
+                box-shadow: 0 4px 16px rgba(45,106,63,0.3);
+            }
+            .hero-btns .btn-ghost:hover {
+                background: var(--forest-dark); border-color: var(--forest-dark);
+                box-shadow: 0 8px 24px rgba(45,106,63,0.4);
+            }
 
             /* Hero: tighten element spacing */
             #hero .hero-eyebrow { margin-bottom: 0.6rem; }
@@ -944,7 +954,7 @@
                 <div class="section-label mb-3" data-i18n="dishes_label">Нашите специалитети</div>
                 <h2 class="section-title mb-4" data-i18n="dishes_title">Вкусът на Гърция</h2>
                 <span class="rule mx-auto block"></span>
-                <p class="section-subtitle mt-6 max-w-lg mx-auto" data-i18n="dishes_sub">Пресни морски дарове, автентични рецепти и щедри порции — подготвени с внимание и любов</p>
+                <p class="section-subtitle mt-6 max-w-lg mx-auto" data-i18n="dishes_sub">Пресни морски дарове, автентични рецепти и щедри порции, приготвени с внимание и любов</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -963,10 +973,8 @@
                     </div>
                     <div class="p-5">
                         <div class="dish-name mb-2" data-i18n="dish1_name">Барбун</div>
-                        <div class="dish-desc" data-i18n="dish1_desc">Пресен барбун, опечен до съвършенство с лимон и зехтин — истинско средиземноморско удоволствие</div>
-                        <div style="margin-top:0.6rem; text-align:right;">
-                            <span class="dish-weight" data-weight="300 г" style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">300 г</span>
-                        </div>
+                        <div class="dish-desc" data-i18n="dish1_desc">Пресен барбун, опечен до съвършенство с лимон и зехтин. Истинско средиземноморско удоволствие.</div>
+                        <span class="dish-weight" data-weight="300 г" style="display:block; margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">300 г</span>
                     </div>
                 </div>
 
@@ -974,20 +982,18 @@
                 <div class="dish-card reveal d2" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
                         <picture>
-                            <source srcset="Visual%20Assets/kinoa-skaridi.webp" type="image/webp">
-                            <img src="Visual Assets/kinoa-skaridi.png" alt="Киноа и скариди" loading="lazy">
+                            <source srcset="menu-images-webp/%D0%9F%D0%B0%D1%81%D1%82%D0%B0%20%D1%81%D1%8A%D1%81%20%D1%81%D0%BA%D0%B0%D1%80%D0%B8%D0%B4%D0%B8.webp" type="image/webp">
+                            <img src="menu-images/Паста със скариди.png" alt="Паста със скариди" loading="lazy">
                         </picture>
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
-                            <span class="dish-price" style="color: #FAF8F3;">11,60 €</span>
+                            <span class="dish-price" style="color: #FAF8F3;">17,15 €</span>
                         </div>
                     </div>
                     <div class="p-5">
-                        <div class="dish-name mb-2" data-i18n="dish2_name">Киноа и скариди</div>
-                        <div class="dish-desc" data-i18n="dish2_desc">Свежа киноа с пресни скариди, лимонов дресинг и ароматни билки — лека, но наситена</div>
-                        <div style="margin-top:0.6rem; text-align:right;">
-                            <span class="dish-weight" data-weight="350 г" style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">350 г</span>
-                        </div>
+                        <div class="dish-name mb-2" data-i18n="dish2_name">Паста със скариди</div>
+                        <div class="dish-desc" data-i18n="dish2_desc">Паста с пресни скариди в ароматен доматен сос. Средиземноморска класика, приготвена с любов.</div>
+                        <span class="dish-weight" data-weight="300 г" style="display:block; margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">300 г</span>
                     </div>
                 </div>
 
@@ -1005,10 +1011,8 @@
                     </div>
                     <div class="p-5">
                         <div class="dish-name mb-2" data-i18n="dish3_name">Плато с морски дарове</div>
-                        <div class="dish-desc" data-i18n="dish3_desc">Щедро плато от пресни морски дарове — за споделена трапеза с аромат на морето</div>
-                        <div style="margin-top:0.6rem; text-align:right;">
-                            <span class="dish-weight" data-weight="600 г" style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">600 г</span>
-                        </div>
+                        <div class="dish-desc" data-i18n="dish3_desc">Щедро плато от пресни морски дарове, идеално за споделена трапеза с аромат на морето.</div>
+                        <span class="dish-weight" data-weight="600 г" style="display:block; margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">600 г</span>
                     </div>
                 </div>
 
@@ -1026,10 +1030,8 @@
                     </div>
                     <div class="p-5">
                         <div class="dish-name mb-2" data-i18n="dish4_name">Свински късчета с чушки</div>
-                        <div class="dish-desc" data-i18n="dish4_desc">Сочни свински късчета с печени чушки и свежа мащерка — богато, топло и традиционно</div>
-                        <div style="margin-top:0.6rem; text-align:right;">
-                            <span class="dish-weight" data-weight="300 г" style="font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">300 г</span>
-                        </div>
+                        <div class="dish-desc" data-i18n="dish4_desc">Сочни свински късчета с печени чушки и свежа мащерка. Богато, топло и традиционно.</div>
+                        <span class="dish-weight" data-weight="300 г" style="display:block; margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">300 г</span>
                     </div>
                 </div>
 
@@ -1092,16 +1094,16 @@
 
                     <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_chef_h">Кухня с душа</h3>
                     <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_chef_p">
-                        Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня — приготвено с разбиране, опит и любов към занаята.
+                        Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня, приготвено с разбиране, опит и любов към занаята.
                     </p>
 
                     <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_music_h">Храна и музика</h3>
                     <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.75rem;" data-i18n="about_music_p">
-                        При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера — вечери, след които се мисли дълго.
+                        При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера. Вечери, след които се мисли дълго.
                     </p>
 
                     <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="lunch_note">
-                        Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна — идеална за обедна пауза.
+                        Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна, идеална за обедна пауза.
                     </p>
                 </div>
 
@@ -1186,19 +1188,19 @@
                     <div class="review-card reveal d1">
                         <div class="review-author mb-2" data-i18n="review_4_author">Георги Иванов</div>
                         <div class="stars mb-3">★★★★★</div>
-                        <p class="review-quote" data-i18n="review_4_quote">„Рибата на скара е невероятна — свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем."</p>
+                        <p class="review-quote" data-i18n="review_4_quote">„Рибата на скара е невероятна: свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем."</p>
                     </div>
 
                     <div class="review-card reveal d2">
                         <div class="review-author mb-2" data-i18n="review_5_author">Sophie Laurent</div>
                         <div class="stars mb-3">★★★★★</div>
-                        <p class="review-quote" data-i18n="review_5_quote">„Безплатните предястия бяха прекрасна изненада. Атмосферата е топла и средиземноморска. Персоналът — изключително любезен."</p>
+                        <p class="review-quote" data-i18n="review_5_quote">„Автентичната гръцка кухня ме спечели от първата хапка. Лятната градина е невероятна, чувствах се като в Гърция. Задължителна спирка в Пловдив."</p>
                     </div>
 
                     <div class="review-card reveal d3">
                         <div class="review-author mb-2" data-i18n="review_6_author">Alexandros Papadopoulos</div>
                         <div class="stars mb-3">★★★★★</div>
-                        <p class="review-quote" data-i18n="review_6_quote">„Истински гръцки дух — точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти."</p>
+                        <p class="review-quote" data-i18n="review_6_quote">„Истински гръцки дух, точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти."</p>
                     </div>
 
                 </div>
@@ -1336,7 +1338,7 @@
                 Заповядайте в Тавернаки
             </h2>
             <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1rem,2vw,1.35rem); color:rgba(240,237,230,0.65); line-height:1.6; margin-bottom:2.5rem; max-width:560px; margin-left:auto; margin-right:auto;" data-i18n="cta_sub">
-                Резервирайте маса или се обадете директно — ние ще се погрижим за всичко останало. Всяка вечер е специална при нас.
+                Резервирайте маса или се обадете директно и ние ще се погрижим за всичко останало. Всяка вечер е специална при нас.
             </p>
 
             <div class="flex flex-wrap gap-4 justify-center">
