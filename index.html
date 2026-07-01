@@ -507,10 +507,10 @@
 
         /* ─── REVIEWS CAROUSEL (mobile only) ─────────── */
         @media (max-width: 767px) {
-            #reviews-carousel { position: relative; }
-            .reviews-track { display: flex; overflow: hidden; }
+            #reviews-carousel { position: relative; overflow: hidden; }
+            .reviews-track { display: flex; transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1); }
             .reviews-track .review-card {
-                min-width: 100%; flex-shrink: 0;
+                flex: 0 0 100%; min-width: 0;
                 transition: none !important; transition-delay: 0s !important;
             }
             .carousel-arrows {
@@ -523,10 +523,12 @@
                 background: transparent; color: var(--forest);
                 font-size: 1.25rem; cursor: pointer;
                 display: flex; align-items: center; justify-content: center;
-                transition: background 0.2s ease, color 0.2s ease;
+                transition: background 0.08s ease, color 0.08s ease, transform 0.08s ease;
+                -webkit-tap-highlight-color: transparent;
+                outline: none;
             }
-            .carousel-btn:hover { background: var(--forest); color: var(--stone); }
-            .carousel-btn:active { transform: scale(0.95); }
+            .carousel-btn:focus, .carousel-btn:focus-visible { outline: none; background: transparent; color: var(--forest); }
+            .carousel-btn:active, .carousel-btn.pressed { background: var(--forest); color: var(--stone); transform: scale(0.95); }
         }
 
         /* ─── DELIVERY BUTTONS ────────────────────────── */
@@ -653,11 +655,15 @@
             #hero { min-height: 100svh; }
 
             /* Hero: centre + constrain width */
+            #hero {
+                align-items: center;
+                justify-content: center;
+            }
             #hero .hero-content {
                 text-align: center;
-                padding-top: 1.5rem;
-                padding-bottom: 1.5rem;
-                margin-top: 1rem;
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-top: 0;
                 max-width: 24rem;
                 margin-left: auto;
                 margin-right: auto;
@@ -666,6 +672,13 @@
             .hero-btns { flex-direction: column; }
             .hero-btns a { text-align: center; width: 100%; }
             .hero-btns .btn-primary { display: none; }
+            .hero-eyebrow { display: none; }
+            .hero-overlay {
+                background:
+                    linear-gradient(to top, rgba(7,21,16,0.92) 0%, rgba(7,21,16,0.55) 45%, rgba(7,21,16,0.25) 100%),
+                    linear-gradient(to right, rgba(7,21,16,0.55) 0%, transparent 70%),
+                    rgba(7,21,16,0.15);
+            }
             .hero-btns .btn-ghost {
                 color: var(--stone);
                 background: var(--forest);
@@ -828,7 +841,7 @@
     <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
     <div id="sticky-phone">
         <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="6" width="20" height="3" rx="1"/><path d="M7 9v9M17 9v9"/></svg>
             РЕЗЕРВИРАЙ МАСА
         </a>
     </div>
@@ -1088,22 +1101,34 @@
                     </p>
 
                     <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_story_h">Нашата история</h3>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_story_p">
+                    <p class="hidden md:block" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_story_p">
                         Създадохме Тавернаки с идеята да предложим не просто ресторант, а място с характер и душа. Вдъхновени от природата, гръцката трапеза и радостта от споделено ястие, изградихме пространство, в което семейства и приятели се завръщат отново и отново.
+                    </p>
+                    <p class="md:hidden" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_story_p_mobile">
+                        Създадохме Тавернаки за семейства и приятели, вдъхновени от природата и гръцката трапеза.
                     </p>
 
                     <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_chef_h">Кухня с душа</h3>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_chef_p">
+                    <p class="hidden md:block" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_chef_p">
                         Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня, приготвено с разбиране, опит и любов към занаята.
+                    </p>
+                    <p class="md:hidden" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="about_chef_p_mobile">
+                        Рецептите са избрани от шеф Димитри с уважение към традицията. Всяко ястие носи автентичния дух на гръцката кухня.
                     </p>
 
                     <h3 style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--forest-dark); margin-bottom:0.5rem;" data-i18n="about_music_h">Храна и музика</h3>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.75rem;" data-i18n="about_music_p">
+                    <p class="hidden md:block" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.75rem;" data-i18n="about_music_p">
                         При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера. Вечери, след които се мисли дълго.
                     </p>
+                    <p class="md:hidden" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.75rem;" data-i18n="about_music_p_mobile">
+                        При специални поводи организираме вечери с гостуващи оркестри от Гърция. Жива музика и незабравима атмосфера.
+                    </p>
 
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="lunch_note">
+                    <p class="hidden md:block" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="lunch_note">
                         Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна, идеална за обедна пауза.
+                    </p>
+                    <p class="md:hidden" style="font-family:'DM Sans',sans-serif; font-size:0.95rem; line-height:1.75; color:#666; margin-bottom:1.5rem;" data-i18n="lunch_note_mobile">
+                        Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия.
                     </p>
                 </div>
 
@@ -1244,41 +1269,43 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                 <!-- Hours -->
-                <div class="reveal-left">
-                    <h3 style="font-family:'Cinzel',serif; font-size:1rem; letter-spacing:0.12em; color:var(--forest-dark); margin-bottom:1.25rem; text-transform:uppercase;" data-i18n="hours_title">Работно Време</h3>
+                <div>
+                    <div class="reveal">
+                        <h3 style="font-family:'Cinzel',serif; font-size:1rem; letter-spacing:0.12em; color:var(--forest-dark); margin-bottom:1.25rem; text-transform:uppercase;" data-i18n="hours_title">Работно Време</h3>
 
-                    <div style="background:#fff; padding: 1.5rem; box-shadow: 0 2px 8px rgba(13,43,26,0.07), 0 8px 20px rgba(13,43,26,0.05);">
-                        <div class="hours-row">
-                            <span class="hours-day" data-i18n="day_mon">Понеделник</span>
-                            <span class="hours-time">10:00 — 00:00</span>
-                        </div>
-                        <div class="hours-row">
-                            <span class="hours-day" data-i18n="day_tue">Вторник</span>
-                            <span class="hours-time">10:00 — 00:00</span>
-                        </div>
-                        <div class="hours-row">
-                            <span class="hours-day" data-i18n="day_wed">Сряда</span>
-                            <span class="hours-time">10:00 — 00:00</span>
-                        </div>
-                        <div class="hours-row">
-                            <span class="hours-day" data-i18n="day_thu">Четвъртък</span>
-                            <span class="hours-time">10:00 — 00:00</span>
-                        </div>
-                        <div class="hours-row">
-                            <span class="hours-day" data-i18n="day_fri">Петък</span>
-                            <span class="hours-time">10:00 — 00:00</span>
-                        </div>
-                        <div class="hours-row">
-                            <span class="hours-day" data-i18n="day_sat">Събота</span>
-                            <span class="hours-time">10:00 — 00:00</span>
-                        </div>
-                        <div class="hours-row">
-                            <span class="hours-day" data-i18n="day_sun">Неделя</span>
-                            <span class="hours-time">10:00 — 23:30</span>
+                        <div style="background:#fff; padding: 1.5rem; box-shadow: 0 2px 8px rgba(13,43,26,0.07), 0 8px 20px rgba(13,43,26,0.05);">
+                            <div class="hours-row">
+                                <span class="hours-day" data-i18n="day_mon">Понеделник</span>
+                                <span class="hours-time">10:00 — 00:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day" data-i18n="day_tue">Вторник</span>
+                                <span class="hours-time">10:00 — 00:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day" data-i18n="day_wed">Сряда</span>
+                                <span class="hours-time">10:00 — 00:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day" data-i18n="day_thu">Четвъртък</span>
+                                <span class="hours-time">10:00 — 00:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day" data-i18n="day_fri">Петък</span>
+                                <span class="hours-time">10:00 — 00:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day" data-i18n="day_sat">Събота</span>
+                                <span class="hours-time">10:00 — 00:00</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="hours-day" data-i18n="day_sun">Неделя</span>
+                                <span class="hours-time">10:00 — 23:30</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="mt-8">
+                    <div class="mt-8 reveal d2">
                         <h3 style="font-family:'Cinzel',serif; font-size:1rem; letter-spacing:0.12em; color:var(--forest-dark); margin-bottom:1rem; text-transform:uppercase;" data-i18n="contacts_title">Контакти</h3>
                         <div style="display:flex; flex-direction:column; gap:0.75rem;">
                             <a href="tel:+359877646206" style="display:flex; align-items:center; gap:0.75rem; font-family:'DM Sans',sans-serif; font-size:0.95rem; color:var(--ink); text-decoration:none; padding:0.75rem; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,0.06); transition:background 0.2s ease;" onmouseover="this.style.background='#F0EDE6'" onmouseout="this.style.background='#fff'">
@@ -1298,13 +1325,15 @@
                 </div>
 
                 <!-- Map -->
-                <div class="reveal-right">
-                    <div style="width:100%; height:320px; overflow:hidden; border:1px solid var(--stone-200); position:relative;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.4849772396624!2d24.726500176097968!3d42.13990767121428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1332b483921%3A0xd36467727670fc5a!2z0JPRgNGK0YbQutCwINGC0LDQstC10YDQvdCwIFRhdmVybmFraQ!5e0!3m2!1sen!2sbg!4v1780653694938!5m2!1sen!2sbg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Tavernaki на Google Maps"></iframe>
+                <div>
+                    <div class="reveal d1">
+                        <div style="width:100%; height:320px; overflow:hidden; border:1px solid var(--stone-200); position:relative;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.4849772396624!2d24.726500176097968!3d42.13990767121428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1332b483921%3A0xd36467727670fc5a!2z0JPRgNGK0YbQutCwINGC0LDQstC10YDQvdCwIFRhdmVybmFraQ!5e0!3m2!1sen!2sbg!4v1780653694938!5m2!1sen!2sbg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Tavernaki на Google Maps"></iframe>
+                        </div>
                     </div>
 
                     <!-- Delivery platforms -->
-                    <div class="mt-6">
+                    <div class="mt-6 reveal d3">
                         <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#888; margin-bottom:1rem;" data-i18n="delivery_label">Поръчайте онлайн чрез</div>
                         <div class="flex gap-3 flex-wrap">
                             <!-- Glovo -->
@@ -1547,19 +1576,55 @@
         // Mobile reviews carousel
         (function() {
             if (window.innerWidth >= 768) return;
+            var carousel = document.getElementById('reviews-carousel');
             var track = document.querySelector('.reviews-track');
-            var cards = track ? track.querySelectorAll('.review-card') : [];
-            if (!track || !cards.length) return;
-            var current = 0;
-            var total = cards.length;
+            var origCards = track ? Array.from(track.querySelectorAll('.review-card')) : [];
+            if (!track || !origCards.length) return;
+            var total = origCards.length;
 
-            function goTo(n) {
-                current = ((n % total) + total) % total;
-                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            // Clone all cards and append — enables seamless infinite loop
+            origCards.forEach(function(card) {
+                track.appendChild(card.cloneNode(true));
+            });
+
+            var current = 0;
+            var animating = false;
+
+            function getW() { return carousel.offsetWidth; }
+
+            function jumpTo(n) {
+                track.style.transition = 'none';
+                current = n;
+                track.style.transform = 'translateX(-' + (current * getW()) + 'px)';
+                track.offsetHeight; // force reflow
+                track.style.transition = 'transform 0.22s cubic-bezier(0.4, 0, 0.2, 1)';
             }
 
-            document.getElementById('reviews-prev').addEventListener('click', function() { goTo(current - 1); });
-            document.getElementById('reviews-next').addEventListener('click', function() { goTo(current + 1); });
+            function goTo(n) {
+                if (animating) return;
+                animating = true;
+                current = n;
+                track.style.transform = 'translateX(-' + (current * getW()) + 'px)';
+            }
+
+            track.addEventListener('transitionend', function() {
+                animating = false;
+                if (current >= total) jumpTo(current - total);
+                if (current < 0) jumpTo(current + total);
+            });
+
+            function flashBtn(btn) {
+                btn.classList.add('pressed');
+                btn.blur();
+                setTimeout(function() { btn.classList.remove('pressed'); }, 150);
+            }
+
+            document.getElementById('reviews-prev').addEventListener('click', function() {
+                flashBtn(this); goTo(current - 1);
+            });
+            document.getElementById('reviews-next').addEventListener('click', function() {
+                flashBtn(this); goTo(current + 1);
+            });
 
             var startX = 0;
             track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
@@ -1568,7 +1633,7 @@
                 if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
             }, { passive: true });
 
-            goTo(0);
+            jumpTo(0);
         })();
     </script>
 

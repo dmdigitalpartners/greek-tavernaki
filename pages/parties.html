@@ -133,7 +133,7 @@
         #sticky-phone.shown { opacity: 1; transform: translateY(0); pointer-events: auto; }
         .sticky-reserve { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; min-height: 52px; background: var(--forest); color: var(--stone); font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
         .sticky-reserve:active { background: var(--forest-dark); }
-        @media (max-width: 640px) { #sticky-phone, #sticky-phone.shown { display: none !important; } }
+        @media (max-width: 640px) { #sticky-phone { display: flex; } }
 
         @media (max-width: 639px) {
             footer { padding-bottom: calc(2rem + 56px) !important; }
@@ -145,7 +145,7 @@
 
     <div id="sticky-phone">
         <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="6" width="20" height="3" rx="1"/><path d="M7 9v9M17 9v9"/></svg>
             РЕЗЕРВИРАЙ МАСА
         </a>
     </div>
@@ -233,7 +233,7 @@
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
                     </div>
                     <div style="font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.12em; color:var(--forest-dark); text-transform:uppercase; margin-bottom:0.6rem;" data-i18n="event3_title">Групови резервации</div>
-                    <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.65;" data-i18n="event3_desc">Семейна среща, събиране на приятели или групово посещение — разполагаме с необходимото пространство и гъвкавост.</p>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.65;" data-i18n="event3_desc">Семейна среща, събиране на приятели или групово посещение. Разполагаме с необходимото пространство и гъвкавост.</p>
                 </div>
 
                 <div class="event-card reveal d4">
@@ -276,7 +276,7 @@
                             </div>
                             <div>
                                 <div style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:var(--forest-dark); text-transform:uppercase; margin-bottom:0.25rem;" data-i18n="feature1_title">Лятна градина</div>
-                                <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.6;" data-i18n="feature1_desc">Просторна тераса и зелена градина — идеална за летни тържества на открито.</p>
+                                <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.6;" data-i18n="feature1_desc">Просторна тераса и зелена градина, идеална за летни тържества на открито.</p>
                             </div>
                         </div>
                         <div class="reveal d2" style="display:flex; gap:1rem; align-items:flex-start;">
@@ -303,7 +303,7 @@
                             </div>
                             <div>
                                 <div style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:var(--forest-dark); text-transform:uppercase; margin-bottom:0.25rem;" data-i18n="feature4_title">Безплатен паркинг</div>
-                                <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.6;" data-i18n="feature4_desc">Просторен паркинг за вас и вашите гости — без допълнително притеснение.</p>
+                                <p style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:#666; line-height:1.6;" data-i18n="feature4_desc">Просторен паркинг за вас и вашите гости, без допълнително притеснение.</p>
                             </div>
                         </div>
                     </div>

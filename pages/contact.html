@@ -135,7 +135,7 @@
         #sticky-phone.shown { opacity: 1; transform: translateY(0); pointer-events: auto; }
         .sticky-reserve { display: flex; align-items: center; justify-content: center; gap: 0.6rem; width: 100%; min-height: 52px; background: var(--forest); color: var(--stone); font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
         .sticky-reserve:active { background: var(--forest-dark); }
-        @media (max-width: 640px) { #sticky-phone, #sticky-phone.shown { display: none !important; } }
+        @media (max-width: 640px) { #sticky-phone { display: flex; } }
 
         @media (max-width: 639px) {
             footer { padding-bottom: calc(2rem + 56px) !important; }
@@ -147,7 +147,7 @@
 
     <div id="sticky-phone">
         <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .98h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.78a16 16 0 006.13 6.13l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="6" width="20" height="3" rx="1"/><path d="M7 9v9M17 9v9"/></svg>
             РЕЗЕРВИРАЙ МАСА
         </a>
     </div>
@@ -196,7 +196,7 @@
         <div class="page-hero-content max-w-7xl mx-auto px-6 text-center">
             <div class="page-hero-label" data-i18n="nav_contact">Контакти</div>
             <h1 class="page-hero-title" data-i18n="contact_hero_title">Работно Време & Адрес</h1>
-            <p class="page-hero-sub" style="max-width:480px; margin:0 auto;" data-i18n="contact_hero_sub">Заповядайте при нас — в уютна среда и с открито сърце</p>
+            <p class="page-hero-sub" style="max-width:480px; margin:0 auto;" data-i18n="contact_hero_sub">Заповядайте при нас, в уютна среда и с открито сърце</p>
         </div>
     </section>
 

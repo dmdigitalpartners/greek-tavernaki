@@ -66,8 +66,10 @@ const t = {
     about_story_p_mobile: 'Създадохме Тавернаки за семейства и приятели, вдъхновени от природата и гръцката трапеза.',
     about_chef_h:    'Кухня с душа',
     about_chef_p:    'Рецептите са специално селектирани от шеф Димитри и гръцки готвачи с дълбоко уважение към традициите. Всяко ястие носи автентичния дух на гръцката кухня, приготвено с разбиране, опит и любов към занаята.',
+    about_chef_p_mobile: 'Рецептите са избрани от шеф Димитри с уважение към традицията. Всяко ястие носи автентичния дух на гръцката кухня.',
     about_music_h:   'Храна и музика',
     about_music_p:   'При специални поводи организираме тематични вечери с гостуващи оркестри от Гърция. Жива музика, гръцки ритми и незабравима атмосфера. Вечери, след които се мисли дълго.',
+    about_music_p_mobile: 'При специални поводи организираме вечери с гостуващи оркестри от Гърция. Жива музика и незабравима атмосфера.',
     // Parties page
     parties_hero_title:      'Специални моменти,\nнезабравими спомени',
     parties_hero_sub:        'Отпразнувайте важните моменти в топлата атмосфера на Тавернаки',
@@ -102,6 +104,7 @@ const t = {
     contact_map_link:      'Отвори в Google Maps',
     // Lunch note — used in About section and menu.html
     lunch_note: 'Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна, идеална за обедна пауза.',
+    lunch_note_mobile: 'Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия.',
     // Gallery
     gallery_label: 'Атмосфера',
     gallery_title: 'Средиземноморски дух',
@@ -299,8 +302,10 @@ const t = {
     about_story_p_mobile: 'We created Tavernaki for families and friends, inspired by nature and the spirit of Greek dining.',
     about_chef_h:    'A Kitchen with Soul',
     about_chef_p:    'Our recipes were carefully selected by Chef Dimitri and Greek chefs with deep respect for tradition. Every dish carries the authentic spirit of Greek cuisine, prepared with understanding, experience and love for the craft.',
+    about_chef_p_mobile: 'Our recipes were selected by Chef Dimitri with deep respect for tradition. Every dish carries the authentic spirit of Greek cuisine.',
     about_music_h:   'Food & Music',
     about_music_p:   'On special occasions we host themed evenings with visiting orchestras from Greece. Live music, Greek rhythms and an unforgettable atmosphere. Evenings that stay with you long after.',
+    about_music_p_mobile: 'On special occasions we host evenings with visiting orchestras from Greece. Live music and an unforgettable atmosphere.',
     // Parties page
     parties_hero_title:      'Special moments,\nunforgettable memories',
     parties_hero_sub:        'Celebrate your most important moments in the warm atmosphere of Tavernaki',
@@ -335,6 +340,7 @@ const t = {
     contact_map_link:      'Open in Google Maps',
     // Lunch note
     lunch_note: 'Every weekday we welcome you with a varied lunch menu of freshly prepared dishes. Fast, tasty and home-style food, perfect for a lunch break.',
+    lunch_note_mobile: 'Every weekday we welcome you with a varied lunch menu of freshly prepared dishes.',
     // Gallery
     gallery_label: 'Atmosphere',
     gallery_title: 'Mediterranean Spirit',
