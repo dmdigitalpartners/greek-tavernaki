@@ -26,7 +26,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'зеле, моркови, целина, чушка, дресинг',
-    allergens:     [],
+    allergens:     ['celery'],
     image:         'menu-images/Салата зеле с моркови.png',
   },
   {
@@ -98,7 +98,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '450 г',
     description_bg:'марули, айсберг, чери домати, пармезан, скариди, калмари, балсамов дресинг',
-    allergens:     ['milk', 'crustaceans'],
+    allergens:     ['milk', 'crustaceans', 'molluscs'],
     image:         'menu-images/Салата с морски дар.png',
   },
   {
@@ -416,7 +416,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'миди, домати, сирене, риган, магданоз',
-    allergens:     ['milk'],
+    allergens:     ['milk', 'molluscs'],
     image:         'menu-images/Миди Саганаки.png',
   },
   {
@@ -739,7 +739,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'пилешко месо, гъби, горчица, сметана, розмарин',
-    allergens:     ['milk'],
+    allergens:     ['milk', 'mustard'],
     image:         'menu-images/Пилешки късчета с розмарин гъби и горчица.png',
   },
   {
@@ -826,7 +826,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'ориз, скариди, миди, калмари, зехтин',
-    allergens:     ['crustaceans'],
+    allergens:     ['crustaceans', 'molluscs'],
     image:         'menu-images/Ризото с морски дарове.png',
   },
   {
@@ -838,7 +838,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'скариди, миди, калмари, салца сос, босилек',
-    allergens:     ['gluten', 'crustaceans'],
+    allergens:     ['gluten', 'crustaceans', 'molluscs'],
     image:         'menu-images/Критарото с морски дарове.png',
   },
   {
@@ -874,7 +874,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'талиатели, пилешко филе, сос Дижон, сметана',
-    allergens:     ['gluten', 'milk'],
+    allergens:     ['gluten', 'milk', 'mustard'],
     image:         'menu-images/Талиатели с пилешко филе и сос Дижон.png',
   },
 
@@ -901,7 +901,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'калмари, брашно, лимон, дзадзики',
-    allergens:     ['gluten', 'milk'],
+    allergens:     ['gluten', 'milk', 'molluscs'],
     image:         'menu-images/Калмари на тиган.png',
   },
   {
@@ -913,7 +913,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'домати, сирене фета, гауда, каперси',
-    allergens:     ['milk'],
+    allergens:     ['milk', 'molluscs'],
     image:         'menu-images/Пълнен калмар.png',
   },
   {
@@ -925,7 +925,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '150 г',
     description_bg:'октопод, зехтин, чесън, лимон',
-    allergens:     [],
+    allergens:     ['molluscs'],
     image:         'menu-images/Октопод на скара.png',
   },
   {
@@ -985,7 +985,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'калмар, зехтин, лимон, дзадзики',
-    allergens:     ['milk'],
+    allergens:     ['milk', 'molluscs'],
     image:         'menu-images/Калмар на плоча.png',
   },
   {
@@ -997,7 +997,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '600 г',
     description_bg:'гаврос, калмар, скариди, миди, октопод',
-    allergens:     ['fish', 'crustaceans'],
+    allergens:     ['fish', 'crustaceans', 'molluscs'],
     image:         'menu-images/plato-morski-darove.png',
   },
   {
@@ -1093,7 +1093,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'миди, зехтин, лимон, чушки, магданоз',
-    allergens:     [],
+    allergens:     ['molluscs'],
     image:         'menu-images/Задушени миди.png',
   },
 

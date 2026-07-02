@@ -486,11 +486,18 @@
             width: 26px;
             height: 26px;
             border-radius: 50%;
+            overflow: hidden;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             cursor: default;
+        }
+        .allergen-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         .dish-price {
             position: absolute;
@@ -537,6 +544,78 @@
         }
         #menu-empty.hidden { display: none; }
 
+        /* ─── ALLERGEN INFO SECTION ───────────────────── */
+        #allergen-info {
+            background: var(--cream);
+            padding: 3.5rem 0;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+        .allergen-notice-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--forest);
+            text-transform: uppercase;
+        }
+        .allergen-notice-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            margin: 0.5rem 0 1rem;
+        }
+        .allergen-notice-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(44,44,44,0.72);
+            max-width: 640px;
+            margin: 0 0 0.6rem;
+        }
+        .allergen-legend-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin: 2.5rem 0 1.25rem;
+        }
+        #allergen-legend-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        @media (min-width: 640px) {
+            #allergen-legend-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            #allergen-legend-grid { grid-template-columns: repeat(7, 1fr); }
+        }
+        .allergen-legend-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.5rem;
+        }
+        .allergen-legend-item img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: block;
+        }
+        .allergen-legend-item span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.72rem;
+            color: rgba(44,44,44,0.75);
+            line-height: 1.3;
+        }
+
         /* ─── MOBILE FOOTER LAYOUT ────────────────────── */
         @media (max-width: 639px) {
             .footer-main-grid {
@@ -574,76 +653,6 @@
 </head>
 
 <body class="bg-stone-50 text-ink font-body">
-
-    <!-- ═══ ALLERGEN SVG ICON DEFINITIONS ═══════════════════════════ -->
-    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
-      <defs>
-        <!-- Gluten: wheat ear with grain pairs and tip -->
-        <symbol id="allergen-gluten" viewBox="0 0 24 24">
-          <line x1="12" y1="22" x2="12" y2="3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M12 18C12 18 8.5 17 8.5 14.5C8.5 12 12 12.5 12 12.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <path d="M12 18C12 18 15.5 17 15.5 14.5C15.5 12 12 12.5 12 12.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <path d="M12 12.5C12 12.5 8.5 11.5 8.5 9C8.5 6.5 12 7 12 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <path d="M12 12.5C12 12.5 15.5 11.5 15.5 9C15.5 6.5 12 7 12 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <ellipse cx="12" cy="4.5" rx="1.8" ry="2.5" fill="white"/>
-        </symbol>
-        <!-- Eggs: egg in egg cup -->
-        <symbol id="allergen-eggs" viewBox="0 0 24 24">
-          <path d="M12 3C9.5 3 8 7 8 10.5C8 13.5 9.8 15.5 12 15.5C14.2 15.5 16 13.5 16 10.5C16 7 14.5 3 12 3Z" stroke="white" stroke-width="1.7" fill="none"/>
-          <path d="M8.5 16C8.5 16 8 18.5 12 18.5C16 18.5 15.5 16 15.5 16" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-          <line x1="12" y1="18.5" x2="12" y2="20.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="9" y1="20.5" x2="15" y2="20.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-        </symbol>
-        <!-- Milk: gable-top carton -->
-        <symbol id="allergen-milk" viewBox="0 0 24 24">
-          <rect x="7" y="10" width="10" height="11.5" stroke="white" stroke-width="1.8" fill="none" rx="0.5"/>
-          <path d="M7 10L12 4.5L17 10" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <line x1="12" y1="4.5" x2="12" y2="10" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="7" y1="10" x2="17" y2="10" stroke="white" stroke-width="1" stroke-linecap="round"/>
-        </symbol>
-        <!-- Nuts: hazelnut with husk and stem -->
-        <symbol id="allergen-nuts" viewBox="0 0 24 24">
-          <path d="M12 7C9.5 7 7.5 10 7.5 13.5C7.5 17 9.5 20.5 12 20.5C14.5 20.5 16.5 17 16.5 13.5C16.5 10 14.5 7 12 7Z" stroke="white" stroke-width="1.7" fill="none"/>
-          <path d="M8.5 10.5C8.5 10.5 9.5 7 12 7C14.5 7 15.5 10.5 15.5 10.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <line x1="12" y1="7" x2="12" y2="4.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M12 5C12 5 14 3.5 15.5 4.5" stroke="white" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </symbol>
-        <!-- Fish: body + forked tail + eye -->
-        <symbol id="allergen-fish" viewBox="0 0 24 24">
-          <path d="M3.5 12C5.5 8.5 9 7 13 8C17 9 19.5 11 20 12C19.5 13 17 15 13 16C9 17 5.5 15.5 3.5 12Z" stroke="white" stroke-width="1.7" fill="none"/>
-          <path d="M20 12L23.5 8.5M20 12L23.5 15.5" stroke="white" stroke-width="1.7" stroke-linecap="round" fill="none"/>
-          <circle cx="9" cy="11" r="1.4" fill="white"/>
-        </symbol>
-        <!-- Crustaceans: crab (body + claws + legs + eyes) -->
-        <symbol id="allergen-crustaceans" viewBox="0 0 24 24">
-          <ellipse cx="12" cy="14" rx="5" ry="4" stroke="white" stroke-width="1.7" fill="none"/>
-          <path d="M7 13L4.5 10.5M7 15L4.5 17.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M17 13L19.5 10.5M17 15L19.5 17.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="9" y1="18" x2="7.5" y2="21" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="12" y1="18" x2="12" y2="21.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="15" y1="18" x2="16.5" y2="21" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="10" y1="10" x2="9.5" y2="7.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          <line x1="14" y1="10" x2="14.5" y2="7.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          <circle cx="9.5" cy="7" r="1.1" fill="white"/>
-          <circle cx="14.5" cy="7" r="1.1" fill="white"/>
-        </symbol>
-        <!-- Sesame: bread bun with seeds -->
-        <symbol id="allergen-sesame" viewBox="0 0 24 24">
-          <rect x="6" y="15" width="12" height="5.5" stroke="white" stroke-width="1.7" fill="none" rx="1"/>
-          <path d="M6 15C6 9.5 18 9.5 18 15" stroke="white" stroke-width="1.7" fill="none"/>
-          <circle cx="9.5" cy="13" r="1" fill="white"/>
-          <circle cx="12" cy="11.8" r="1" fill="white"/>
-          <circle cx="14.5" cy="13" r="1" fill="white"/>
-        </symbol>
-        <!-- Soya: bean pod with 3 bumps -->
-        <symbol id="allergen-soya" viewBox="0 0 24 24">
-          <path d="M8.5 21C5.5 18.5 5 6 9 3.5C10.5 2.5 13.5 2.5 15 3.5C19 6 18.5 18.5 15.5 21C14 22.5 10 22.5 8.5 21Z" stroke="white" stroke-width="1.7" fill="none"/>
-          <circle cx="12" cy="7" r="1.8" stroke="white" stroke-width="1.2" fill="none"/>
-          <circle cx="12" cy="12" r="1.8" stroke="white" stroke-width="1.2" fill="none"/>
-          <circle cx="12" cy="17" r="1.8" stroke="white" stroke-width="1.2" fill="none"/>
-        </symbol>
-      </defs>
-    </svg>
 
     <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
     <div id="sticky-phone">
@@ -738,6 +747,19 @@
         </div>
     </section>
 
+    <!-- ═══ ALLERGEN INFO — permanent notice + legend, all 71 dishes covered ═ -->
+    <section id="allergen-info" aria-labelledby="allergen-notice-heading">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="allergen-notice-label" data-i18n="allergy_notice_label">Важна информация</div>
+            <h2 id="allergen-notice-heading" class="allergen-notice-title" data-i18n="allergy_notice_heading">Информация за алергени</h2>
+            <p class="allergen-notice-text" data-i18n="allergy_notice_p1">Моля, уведомете нашия персонал за всякакви хранителни алергии.</p>
+            <p class="allergen-notice-text" data-i18n="allergy_notice_p2">Кажете ни за вашите изисквания — в някои случаи е възможно да коригираме или премахнем съставки, за да направим ястието подходящо за вас.</p>
+
+            <h3 class="allergen-legend-title" data-i18n="allergen_legend_heading">Легенда на алергените</h3>
+            <ul id="allergen-legend-grid" role="list"></ul>
+        </div>
+    </section>
+
     <!-- ═══ FOOTER — copied from index.html; hrefs updated to index.html anchors ═ -->
     <footer style="background: var(--forest-deep); padding: 4rem 0 2rem;">
         <div class="max-w-7xl mx-auto px-6">
@@ -827,15 +849,22 @@
     <script>
         // ── Allergen icon metadata ──────────────────────────────────────
         var ALLERGEN_META = {
-            gluten:      { color: '#C8A850', label_bg: 'Глутен',      label_en: 'Gluten' },
-            eggs:        { color: '#F0C040', label_bg: 'Яйца',        label_en: 'Eggs' },
-            milk:        { color: '#7DB8D8', label_bg: 'Мляко',       label_en: 'Milk' },
-            nuts:        { color: '#8B5E3C', label_bg: 'Ядки',        label_en: 'Tree Nuts' },
-            fish:        { color: '#3AAFAA', label_bg: 'Риба',        label_en: 'Fish' },
-            crustaceans: { color: '#E8848C', label_bg: 'Ракообразни', label_en: 'Crustaceans' },
-            sesame:      { color: '#C8B88A', label_bg: 'Сусам',       label_en: 'Sesame' },
-            soya:        { color: '#5BAD6F', label_bg: 'Соя',         label_en: 'Soya' },
+            peanuts:     { label_bg: 'Фъстъци',              label_en: 'Peanuts' },
+            mustard:     { label_bg: 'Горчица',               label_en: 'Mustard' },
+            milk:        { label_bg: 'Мляко',                 label_en: 'Milk' },
+            sulphites:   { label_bg: 'Сулфити (серен диоксид)', label_en: 'Sulphites (Sulphur Dioxide)' },
+            crustaceans: { label_bg: 'Ракообразни',           label_en: 'Crustaceans' },
+            fish:        { label_bg: 'Риба',                  label_en: 'Fish' },
+            gluten:      { label_bg: 'Глутен',                label_en: 'Gluten' },
+            soya:        { label_bg: 'Соя',                   label_en: 'Soya' },
+            eggs:        { label_bg: 'Яйца',                  label_en: 'Eggs' },
+            nuts:        { label_bg: 'Ядки',                  label_en: 'Tree Nuts' },
+            sesame:      { label_bg: 'Сусам',                 label_en: 'Sesame' },
+            molluscs:    { label_bg: 'Мекотели',              label_en: 'Molluscs' },
+            celery:      { label_bg: 'Целина',                label_en: 'Celery' },
+            lupin:       { label_bg: 'Лупина',                label_en: 'Lupin' },
         };
+        var ALLERGEN_LEGEND_ORDER = ['peanuts','mustard','milk','sulphites','crustaceans','fish','gluten','soya','eggs','nuts','sesame','molluscs','celery','lupin'];
 
         // ── Dish card renderer ──────────────────────────────────────────
         function renderMenu() {
@@ -859,8 +888,8 @@
                     var meta = ALLERGEN_META[key];
                     if (!meta) return '';
                     var label = lang === 'en' ? meta.label_en : meta.label_bg;
-                    return '<span class="allergen-icon" style="background:' + meta.color + ';" title="' + label + '" aria-label="' + label + '">' +
-                        '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><use href="#allergen-' + key + '"/></svg>' +
+                    return '<span class="allergen-icon" title="' + label + '">' +
+                        '<img src="brand_assets/allergen-icons/' + key + '.png" width="26" height="26" alt="' + label + '" loading="lazy">' +
                         '</span>';
                 }).join('');
 
@@ -889,6 +918,40 @@
                     '</div>';
                 grid.appendChild(card);
             });
+        }
+
+        // ── Allergen legend renderer ──────────────────────────────────────
+        function renderAllergenLegend() {
+            var lang = getLang();
+            var list = document.getElementById('allergen-legend-grid');
+            if (!list) return;
+            list.innerHTML = ALLERGEN_LEGEND_ORDER.map(function(key) {
+                var meta = ALLERGEN_META[key];
+                var label = lang === 'en' ? meta.label_en : meta.label_bg;
+                return '<li class="allergen-legend-item">' +
+                    '<img src="brand_assets/allergen-icons/' + key + '.png" width="44" height="44" alt="' + label + '" loading="lazy">' +
+                    '<span>' + label + '</span>' +
+                    '</li>';
+            }).join('');
+        }
+
+        // Keep per-dish allergen icon alt/title text + the legend in sync with
+        // the language toggle (renderMenu only runs once on load; applyLang
+        // re-runs on every toggle — see the applyAllergenLang hook it calls).
+        function applyAllergenLang(lang) {
+            document.querySelectorAll('[data-dish-id]').forEach(function(card) {
+                var dish = window.menuData.find(function(d) { return d.id === card.dataset.dishId; });
+                if (!dish) return;
+                card.querySelectorAll('.allergen-icon').forEach(function(span, i) {
+                    var meta = ALLERGEN_META[dish.allergens[i]];
+                    if (!meta) return;
+                    var label = lang === 'en' ? meta.label_en : meta.label_bg;
+                    span.title = label;
+                    var img = span.querySelector('img');
+                    if (img) img.alt = label;
+                });
+            });
+            renderAllergenLegend();
         }
 
         // ── Category filter ─────────────────────────────────────────────
@@ -957,9 +1020,11 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             renderMenu();                                               // 1. create all 71 cards
+            renderAllergenLegend();                                     // 1b. build the legend grid
             var lang = getLang();
             applyLang(lang);                                            // 2. apply language strings (cards now exist)
             applyWeightLang(lang);                                      // 3. translate weight units
+            applyAllergenLang(lang);                                    // 3b. translate allergen icon labels
             var hash = location.hash.replace('#', '') || 'salads';
             filterCategory(hash, false);                                // 4. apply initial filter — no scroll on load
             document.querySelectorAll('.cat-tab').forEach(function(btn) {

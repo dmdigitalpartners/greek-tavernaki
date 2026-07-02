@@ -214,6 +214,12 @@ const t = {
     allergens_on_request: 'Информация за алергени при поискване',
     price_per_unit:       '/ 100г',
     menu_empty:           'Няма налични ястия.',
+    // Allergen info section
+    allergy_notice_label:    'Важна информация',
+    allergy_notice_heading:  'Информация за алергени',
+    allergy_notice_p1:       'Моля, уведомете нашия персонал за всякакви хранителни алергии.',
+    allergy_notice_p2:       'Кажете ни за вашите изисквания — в някои случаи е възможно да коригираме или премахнем съставки, за да направим ястието подходящо за вас.',
+    allergen_legend_heading: 'Легенда на алергените',
     // Page titles — per-page (all pages)
     page_title_about:    'За нас | Тавернаки — Гръцки ресторант с история · Пловдив',
     page_title_contact:  'Контакти & Работно Време | Тавернаки · Пловдив',
@@ -450,6 +456,12 @@ const t = {
     allergens_on_request: 'Allergen info on request',
     price_per_unit:       '/ 100g',
     menu_empty:           'No dishes available.',
+    // Allergen info section
+    allergy_notice_label:    'Important Information',
+    allergy_notice_heading:  'Allergen Information',
+    allergy_notice_p1:       'Please make sure you inform our staff of any allergies.',
+    allergy_notice_p2:       'Please let us know your requirements, as it may be possible in some instances for us to amend or remove ingredients to make the dish suitable.',
+    allergen_legend_heading: 'Allergen Legend',
     // Page titles — per-page (all pages)
     page_title_about:    'About Us | Tavernaki — Greek Restaurant with History · Plovdiv',
     page_title_contact:  'Contact & Opening Hours | Tavernaki · Plovdiv',
@@ -561,6 +573,9 @@ function applyLang(lang) {
 
   // Menu page: update weight unit (г ↔ g) when language changes
   if (typeof applyWeightLang === 'function') applyWeightLang(lang);
+
+  // Menu page: update allergen icon alt/title text + legend when language changes
+  if (typeof applyAllergenLang === 'function') applyAllergenLang(lang);
 }
 
 function toggleLang() {
