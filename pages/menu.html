@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="71 гръцки ястия — салати, стартери, предястия, специалитети, месо, риба, морски дарове и паста. Виж пълното меню на Тавернаки, Пловдив.">
     <meta property="og:title" content="Меню | Тавернаки — Автентична гръцка кухня">
-    <meta property="og:description" content="115 ястия: салати, предястия, мезета, скара, риба, морски дарове, паста и обедно меню.">
+    <meta property="og:description" content="89 ястия: салати, предястия, мезета, скара, риба, морски дарове, паста и обедно меню.">
     <title>Меню — 71 гръцки ястия | Тавернаки · Пловдив</title>
     <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <meta property="og:url" content="https://tavernaki.bg/menu">
@@ -461,13 +461,36 @@
             line-height: 1.2;
             margin-bottom: 0.5rem;
         }
+        .dish-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 0.35rem;
+            gap: 0.4rem;
+        }
         .dish-weight {
             display: block;
             font-family: 'DM Sans', sans-serif;
             font-size: 0.74rem;
             color: rgba(44,44,44,0.38);
             letter-spacing: 0.03em;
-            margin-top: 0.35rem;
+            flex-shrink: 0;
+        }
+        .dish-allergens {
+            display: flex;
+            gap: 3px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .allergen-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            cursor: default;
         }
         .dish-price {
             position: absolute;
@@ -552,6 +575,76 @@
 
 <body class="bg-stone-50 text-ink font-body">
 
+    <!-- ═══ ALLERGEN SVG ICON DEFINITIONS ═══════════════════════════ -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+      <defs>
+        <!-- Gluten: wheat ear with grain pairs and tip -->
+        <symbol id="allergen-gluten" viewBox="0 0 24 24">
+          <line x1="12" y1="22" x2="12" y2="3" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M12 18C12 18 8.5 17 8.5 14.5C8.5 12 12 12.5 12 12.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M12 18C12 18 15.5 17 15.5 14.5C15.5 12 12 12.5 12 12.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M12 12.5C12 12.5 8.5 11.5 8.5 9C8.5 6.5 12 7 12 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M12 12.5C12 12.5 15.5 11.5 15.5 9C15.5 6.5 12 7 12 7" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="12" cy="4.5" rx="1.8" ry="2.5" fill="white"/>
+        </symbol>
+        <!-- Eggs: egg in egg cup -->
+        <symbol id="allergen-eggs" viewBox="0 0 24 24">
+          <path d="M12 3C9.5 3 8 7 8 10.5C8 13.5 9.8 15.5 12 15.5C14.2 15.5 16 13.5 16 10.5C16 7 14.5 3 12 3Z" stroke="white" stroke-width="1.7" fill="none"/>
+          <path d="M8.5 16C8.5 16 8 18.5 12 18.5C16 18.5 15.5 16 15.5 16" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <line x1="12" y1="18.5" x2="12" y2="20.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="9" y1="20.5" x2="15" y2="20.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        </symbol>
+        <!-- Milk: gable-top carton -->
+        <symbol id="allergen-milk" viewBox="0 0 24 24">
+          <rect x="7" y="10" width="10" height="11.5" stroke="white" stroke-width="1.8" fill="none" rx="0.5"/>
+          <path d="M7 10L12 4.5L17 10" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="12" y1="4.5" x2="12" y2="10" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="7" y1="10" x2="17" y2="10" stroke="white" stroke-width="1" stroke-linecap="round"/>
+        </symbol>
+        <!-- Nuts: hazelnut with husk and stem -->
+        <symbol id="allergen-nuts" viewBox="0 0 24 24">
+          <path d="M12 7C9.5 7 7.5 10 7.5 13.5C7.5 17 9.5 20.5 12 20.5C14.5 20.5 16.5 17 16.5 13.5C16.5 10 14.5 7 12 7Z" stroke="white" stroke-width="1.7" fill="none"/>
+          <path d="M8.5 10.5C8.5 10.5 9.5 7 12 7C14.5 7 15.5 10.5 15.5 10.5" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="12" y1="7" x2="12" y2="4.5" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M12 5C12 5 14 3.5 15.5 4.5" stroke="white" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        </symbol>
+        <!-- Fish: body + forked tail + eye -->
+        <symbol id="allergen-fish" viewBox="0 0 24 24">
+          <path d="M3.5 12C5.5 8.5 9 7 13 8C17 9 19.5 11 20 12C19.5 13 17 15 13 16C9 17 5.5 15.5 3.5 12Z" stroke="white" stroke-width="1.7" fill="none"/>
+          <path d="M20 12L23.5 8.5M20 12L23.5 15.5" stroke="white" stroke-width="1.7" stroke-linecap="round" fill="none"/>
+          <circle cx="9" cy="11" r="1.4" fill="white"/>
+        </symbol>
+        <!-- Crustaceans: crab (body + claws + legs + eyes) -->
+        <symbol id="allergen-crustaceans" viewBox="0 0 24 24">
+          <ellipse cx="12" cy="14" rx="5" ry="4" stroke="white" stroke-width="1.7" fill="none"/>
+          <path d="M7 13L4.5 10.5M7 15L4.5 17.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M17 13L19.5 10.5M17 15L19.5 17.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="9" y1="18" x2="7.5" y2="21" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="12" y1="18" x2="12" y2="21.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="15" y1="18" x2="16.5" y2="21" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="10" y1="10" x2="9.5" y2="7.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="14" y1="10" x2="14.5" y2="7.5" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="9.5" cy="7" r="1.1" fill="white"/>
+          <circle cx="14.5" cy="7" r="1.1" fill="white"/>
+        </symbol>
+        <!-- Sesame: bread bun with seeds -->
+        <symbol id="allergen-sesame" viewBox="0 0 24 24">
+          <rect x="6" y="15" width="12" height="5.5" stroke="white" stroke-width="1.7" fill="none" rx="1"/>
+          <path d="M6 15C6 9.5 18 9.5 18 15" stroke="white" stroke-width="1.7" fill="none"/>
+          <circle cx="9.5" cy="13" r="1" fill="white"/>
+          <circle cx="12" cy="11.8" r="1" fill="white"/>
+          <circle cx="14.5" cy="13" r="1" fill="white"/>
+        </symbol>
+        <!-- Soya: bean pod with 3 bumps -->
+        <symbol id="allergen-soya" viewBox="0 0 24 24">
+          <path d="M8.5 21C5.5 18.5 5 6 9 3.5C10.5 2.5 13.5 2.5 15 3.5C19 6 18.5 18.5 15.5 21C14 22.5 10 22.5 8.5 21Z" stroke="white" stroke-width="1.7" fill="none"/>
+          <circle cx="12" cy="7" r="1.8" stroke="white" stroke-width="1.2" fill="none"/>
+          <circle cx="12" cy="12" r="1.8" stroke="white" stroke-width="1.2" fill="none"/>
+          <circle cx="12" cy="17" r="1.8" stroke="white" stroke-width="1.2" fill="none"/>
+        </symbol>
+      </defs>
+    </svg>
+
     <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
     <div id="sticky-phone">
         <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
@@ -614,7 +707,7 @@
         <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;width:100%;">
             <div class="menu-hero-label mb-4" data-i18n="menu_hero_label">Пловдив · България</div>
             <h1 class="menu-hero-title mb-3" data-i18n="menu_hero_title">Нашето меню</h1>
-            <p class="menu-hero-sub" data-i18n="menu_hero_sub">115 ястия · 11 категории · Пресни продукти всеки ден</p>
+            <p class="menu-hero-sub" data-i18n="menu_hero_sub">89 ястия · 11 категории · Пресни продукти всеки ден</p>
         </div>
     </section>
 
@@ -732,15 +825,24 @@
     <script src="js/translations.js"></script>
 
     <script>
+        // ── Allergen icon metadata ──────────────────────────────────────
+        var ALLERGEN_META = {
+            gluten:      { color: '#C8A850', label_bg: 'Глутен',      label_en: 'Gluten' },
+            eggs:        { color: '#F0C040', label_bg: 'Яйца',        label_en: 'Eggs' },
+            milk:        { color: '#7DB8D8', label_bg: 'Мляко',       label_en: 'Milk' },
+            nuts:        { color: '#8B5E3C', label_bg: 'Ядки',        label_en: 'Tree Nuts' },
+            fish:        { color: '#3AAFAA', label_bg: 'Риба',        label_en: 'Fish' },
+            crustaceans: { color: '#E8848C', label_bg: 'Ракообразни', label_en: 'Crustaceans' },
+            sesame:      { color: '#C8B88A', label_bg: 'Сусам',       label_en: 'Sesame' },
+            soya:        { color: '#5BAD6F', label_bg: 'Соя',         label_en: 'Soya' },
+        };
+
         // ── Dish card renderer ──────────────────────────────────────────
         function renderMenu() {
             var lang = getLang();
             var grid = document.getElementById('dish-grid');
             window.menuData.forEach(function(dish) {
                 var name = lang === 'en' ? dish.name_en : dish.name_bg;
-                var allergenText = dish.allergens === 'Requires Restaurant Verification'
-                    ? t[lang].allergens_on_request
-                    : dish.allergens;
                 var priceDisplay;
                 if (dish.price == null) {
                     priceDisplay = dish.price_unit ? '— / ' + dish.price_unit : '—';
@@ -751,6 +853,16 @@
                         ? eur + ' € (' + bgn + ' лв.) / ' + dish.price_unit
                         : eur + ' € (' + bgn + ' лв.)';
                 }
+
+                var allergens = Array.isArray(dish.allergens) ? dish.allergens : [];
+                var allergenIconsHTML = allergens.map(function(key) {
+                    var meta = ALLERGEN_META[key];
+                    if (!meta) return '';
+                    var label = lang === 'en' ? meta.label_en : meta.label_bg;
+                    return '<span class="allergen-icon" style="background:' + meta.color + ';" title="' + label + '" aria-label="' + label + '">' +
+                        '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><use href="#allergen-' + key + '"/></svg>' +
+                        '</span>';
+                }).join('');
 
                 var card = document.createElement('div');
                 card.className = 'dish-card';
@@ -770,7 +882,10 @@
                     '<div class="dish-body">' +
                         '<h3 class="dish-name">' + name + '</h3>' +
                         (dish.description_bg ? '<p class="dish-desc">' + dish.description_bg + '</p>' : '') +
-                        (dish.weight ? '<span class="dish-weight" data-weight="' + dish.weight + '">' + dish.weight + '</span>' : '') +
+                        '<div class="dish-footer">' +
+                            '<span class="dish-weight" data-weight="' + (dish.weight || '') + '">' + (dish.weight || '') + '</span>' +
+                            (allergenIconsHTML ? '<div class="dish-allergens">' + allergenIconsHTML + '</div>' : '<div></div>') +
+                        '</div>' +
                     '</div>';
                 grid.appendChild(card);
             });

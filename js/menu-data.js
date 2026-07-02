@@ -14,7 +14,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'домат, краставица, чушка, лук, маслини, сирене фета, магданоз, риган, каперси',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Селска Салата.png',
   },
   {
@@ -26,7 +26,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'зеле, моркови, целина, чушка, дресинг',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Салата зеле с моркови.png',
   },
   {
@@ -38,7 +38,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'хлебче дакос, домат, натрошено сирене фета, маслини, риган',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Салата Дакос крит.png',
   },
   {
@@ -50,7 +50,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'марули, чери домат, сушени смокини, кедрови ядки, сирене манури, балсамов дресинг',
-    allergens:     null,
+    allergens:     ['milk', 'nuts'],
     image:         'menu-images/Зелена салата.png',
   },
   {
@@ -62,7 +62,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'марули, рукола, червено цвекло, сушени домати, катък, ябълка, гриловано халуми, орехи, цитрусов дресинг',
-    allergens:     null,
+    allergens:     ['milk', 'nuts'],
     image:         'menu-images/Салата Рока с халуми.png',
   },
   {
@@ -74,7 +74,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'айсберг, крутони, бекон, пилешко филе, чери домат, пармезан, сос цезар',
-    allergens:     null,
+    allergens:     ['gluten', 'milk', 'fish'],
     image:         'menu-images/Салата Цезар.png',
   },
   {
@@ -86,7 +86,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'домат, моцарела, рукола, босилеков дресинг',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Салата Греко капрезе.png',
   },
   {
@@ -98,7 +98,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '450 г',
     description_bg:'марули, айсберг, чери домати, пармезан, скариди, калмари, балсамов дресинг',
-    allergens:     null,
+    allergens:     ['milk', 'crustaceans'],
     image:         'menu-images/Салата с морски дар.png',
   },
   {
@@ -110,7 +110,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'домати, печени чушки, сирене фета, червен лук, риган, дресинг',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Салата с печени чушки.png',
   },
   {
@@ -122,7 +122,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'киноа, скариди, чери домати, моркови, авокадо, крутони, дресинг',
-    allergens:     null,
+    allergens:     ['gluten', 'crustaceans'],
     image:         'menu-images/Киноа и скариди.png',
   },
   {
@@ -134,7 +134,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'домати, лук, сирене, челена и червена чушка, краставици, маслини, плочка сирене',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Редена салата.png',
   },
   {
@@ -146,7 +146,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'спанак, натрошено сирене фета, пресен лук, копър, медени корички',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Салата със спанак.png',
   },
 
@@ -161,7 +161,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '200 г',
     description_bg:'сирене фета, тестена обвивка, мед, сусам, орехи',
-    allergens:     null,
+    allergens:     ['gluten', 'milk', 'sesame', 'nuts'],
     image:         'menu-images/Фета сирене обвито в хрупкава коричка с орехи и мед.png',
   },
   {
@@ -173,7 +173,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '100 г',
     description_bg:'сирене фета, зехтин, риган',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Фета сирене със зехтин и риган.png',
   },
   {
@@ -185,7 +185,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '150 г',
     description_bg:'сирене халуми, балсамов дресинг, чери домати',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Гриловано Халуми.png',
   },
   {
@@ -197,7 +197,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '100 г',
     description_bg:'люти чушки, зехтин, оцет, магданоз',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Люти чушки.png',
   },
   {
@@ -209,7 +209,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '180 г',
     description_bg:'кисело мляко, краставица, чесън, копър, зехтин',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Дзадзики.png',
   },
   {
@@ -221,7 +221,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '180 г',
     description_bg:'сирене фета, люта чушка, зехтин',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Тирокафтери.png',
   },
   {
@@ -233,7 +233,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '180 г',
     description_bg:'рибен хайвер, зехтин, лимон, хляб',
-    allergens:     null,
+    allergens:     ['fish', 'gluten'],
     image:         'menu-images/Тарама.png',
   },
   {
@@ -245,7 +245,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '550 г',
     description_bg:'дзадзики, тирокафтери, тарама, маслини',
-    allergens:     null,
+    allergens:     ['milk', 'fish', 'gluten'],
     image:         'menu-images/Плато разядки.png',
   },
   {
@@ -257,7 +257,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '60 г',
     description_bg:'питка, зехтин, риган',
-    allergens:     null,
+    allergens:     ['gluten'],
     image:         'menu-images/Гръцка питка.png',
   },
   {
@@ -269,7 +269,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'кисело мляко, краставица, копър, чесън',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Таратор.png',
   },
   {
@@ -281,7 +281,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'пиле, чушка, домати, боб, магданоз',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Паприка.png',
   },
   {
@@ -293,7 +293,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '200 г',
     description_bg:'сирене фета, домат, чушка',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пикантно фета сирене печено на фолио.png',
   },
 
@@ -308,7 +308,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'тиквички, патладжан, морков, домат, гъби, чушка, лук',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Зеленчуци на скара.png',
   },
   {
@@ -320,7 +320,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '200 г',
     description_bg:'тиквички, брашно, дзадзики',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Пържени тиквички с дзадзики.png',
   },
   {
@@ -332,7 +332,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '250 г',
     description_bg:'картофи',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Пържени картофи.png',
   },
   {
@@ -344,7 +344,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'картофи, настъргано сирене',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пържени картофи със сирене.png',
   },
   {
@@ -356,7 +356,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'телешко месо, червена и зелена чушка, домат, пресен лук, гауда',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Кавърма Саганаки.png',
   },
   {
@@ -368,7 +368,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'скариди, домати, сирене, риган, магданоз',
-    allergens:     null,
+    allergens:     ['crustaceans', 'milk'],
     image:         'menu-images/Скариди Саганаки.png',
   },
   {
@@ -380,7 +380,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'гъби, бекон, чушки, сирене гауда, магданоз',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пълнени гъби с бекон чушки гауда.png',
   },
   {
@@ -392,7 +392,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'домат, червена и зелена чушка, сирене фета, гравиера, гауда, риган',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Буюрди гювече.png',
   },
   {
@@ -404,7 +404,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'патладжан, домат, сирене фета, риган, чесън, магданоз',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пълнен патладжан.png',
   },
   {
@@ -416,7 +416,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'миди, домати, сирене, риган, магданоз',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Миди Саганаки.png',
   },
   {
@@ -428,7 +428,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '200 г',
     description_bg:'зеленчукови, със сирена и с месо',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Крокети микс.png',
   },
   {
@@ -440,7 +440,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '250 г',
     description_bg:'бейби картофи, зехтин, чесън, паприка',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Мачкани бейби картофи.png',
   },
   {
@@ -452,7 +452,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '250 г',
     description_bg:'чушки, домати, домашен сос, сирене фета',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пържени чушки и домати.png',
   },
   {
@@ -464,7 +464,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'чушки, патладжан, доматен сос',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Пържени чушки и патладжани.png',
   },
   {
@@ -476,7 +476,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'патладжан, зехтин, чесън, босилек',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Печен патладжан.png',
   },
 
@@ -491,7 +491,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '450 г',
     description_bg:'котлет с ребро от свинско месо с гарнитура пържени картофи и дзадзики',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Кралски котлет.png',
   },
 
@@ -504,7 +504,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'свинско месо, гъби, сметана, пържени картофи',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Свински шницел с гъби и сметана.png',
   },
   {
@@ -516,7 +516,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'свински бекон, тиквички, патладжан, лук, дзадзики',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Свински бекон на скара с гриловани зеленчуци.png',
   },
   {
@@ -528,7 +528,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'свинско бон филе, гъби, сметана, сирена',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Свинско бон филе със сос от сирена2.png',
   },
   {
@@ -540,7 +540,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'телешко и агнешко месо, кисело мляко, салса сос',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Кебап с кисело мляко и салса.png',
   },
   {
@@ -552,7 +552,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'пилешко месо, гъби, сметана, картофи',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пилешки шницел с гъби и сметана.png',
   },
   {
@@ -564,7 +564,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'телешко месо, розмарин, червени боровинки',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Телешко бон филе.png',
   },
 
@@ -579,7 +579,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'пилешко месо, пържени картофи, дзадзики, лимон',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Сувлаки пилешко порция.png',
   },
   {
@@ -591,7 +591,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'свинско месо, пържени картофи, дзадзики, лимон',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Сувлаки свинско порция.png',
   },
   {
@@ -603,7 +603,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'пилешко филе, пържени картофи, дзадзики, лимон',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пилешко филе на скара.png',
   },
   {
@@ -615,7 +615,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'телешка кайма, сирене гравиера, пържени картофи, дзадзики',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пълнен бифтек със сирене гравиера.png',
   },
   {
@@ -627,7 +627,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'телешка кайма, пържени картофи, дзадзики',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Бифтек.png',
   },
 
@@ -640,7 +640,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '1000 г',
     description_bg:'пилешко филе, свинско шишче, пилешко шишче, бифтек, селска наденица',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Дъска с меса за двама.png',
   },
   {
@@ -652,7 +652,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'свинска вратна пържола, пържени картофи, дзадзики',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Свинска вратна пържола.png',
   },
   {
@@ -664,7 +664,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '450 г',
     description_bg:'свинско месо, пилешко месо, питка, дзадзики, магданоз',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Сувлаки микс.png',
   },
   {
@@ -676,7 +676,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'телешко месо, питка, сирене фета, чушки, маслини',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Телешко сувлаки.png',
   },
   {
@@ -688,7 +688,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'наденица, чери домати, мащерка, дзадзики',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Селска наденица.png',
   },
   {
@@ -700,7 +700,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'телешко месо, масло, розмарин',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Телешка пържола.png',
   },
   {
@@ -712,7 +712,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'агнешки ребра, мед, сусам, чери домати',
-    allergens:     null,
+    allergens:     ['sesame'],
     image:         'menu-images/Агнешки ребра.png',
   },
   {
@@ -724,7 +724,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'агнешка кайма, лук, подправки',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Агнешки кебап.png',
   },
 
@@ -739,7 +739,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'пилешко месо, гъби, горчица, сметана, розмарин',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пилешки късчета с розмарин гъби и горчица.png',
   },
   {
@@ -751,7 +751,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'свинско месо, чушки, мащерка, лимон',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Свински късчета с чушки и мащерка.png',
   },
   {
@@ -763,7 +763,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'телешки дроб, карамелизиран лук, гъби, лимон',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Телешки дроб с карамелизиран лук.png',
   },
 
@@ -778,7 +778,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'сметана, чери домати, пушена сьомга, пармезан, мак',
-    allergens:     null,
+    allergens:     ['gluten', 'fish', 'milk'],
     image:         'menu-images/Папарделе със сьомга.png',
   },
   {
@@ -790,7 +790,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'папарделе, телешко месо, доматен сос, пармезан, магданоз',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Папарделе с телешко.png',
   },
   {
@@ -802,7 +802,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '250 г',
     description_bg:'домати, пармезан',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Лингуини със салса сос.png',
   },
   {
@@ -814,7 +814,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'ориз, пилешко месо, гъби, чушки, пармезан',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Ризото с пилешко и зеленчуци.png',
   },
   {
@@ -826,7 +826,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'ориз, скариди, миди, калмари, зехтин',
-    allergens:     null,
+    allergens:     ['crustaceans'],
     image:         'menu-images/Ризото с морски дарове.png',
   },
   {
@@ -838,7 +838,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'скариди, миди, калмари, салца сос, босилек',
-    allergens:     null,
+    allergens:     ['gluten', 'crustaceans'],
     image:         'menu-images/Критарото с морски дарове.png',
   },
   {
@@ -850,7 +850,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'скариди, чери домати, салца сос, босилек',
-    allergens:     null,
+    allergens:     ['gluten', 'crustaceans'],
     image:         'menu-images/Паста със скариди.png',
   },
   {
@@ -862,7 +862,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'чушки, гъби, сметанов сос, естрагон',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Пене с пилешко и сметана.png',
   },
   {
@@ -874,7 +874,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'талиатели, пилешко филе, сос Дижон, сметана',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Талиатели с пилешко филе и сос Дижон.png',
   },
 
@@ -889,7 +889,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '250 г',
     description_bg:'гаврос, брашно, лимон, магданоз',
-    allergens:     null,
+    allergens:     ['fish', 'gluten'],
     image:         'menu-images/Гаврос на тиган.png',
   },
   {
@@ -901,7 +901,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'калмари, брашно, лимон, дзадзики',
-    allergens:     null,
+    allergens:     ['gluten', 'milk'],
     image:         'menu-images/Калмари на тиган.png',
   },
   {
@@ -913,7 +913,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'домати, сирене фета, гауда, каперси',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Пълнен калмар.png',
   },
   {
@@ -925,7 +925,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '150 г',
     description_bg:'октопод, зехтин, чесън, лимон',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Октопод на скара.png',
   },
   {
@@ -937,7 +937,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'скариди, зехтин, чери домати, магданоз, лимон',
-    allergens:     null,
+    allergens:     ['crustaceans'],
     image:         'menu-images/Скариди на скара.png',
   },
   {
@@ -949,7 +949,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '200 г',
     description_bg:'пушена скумрия, лук, лимон, магданоз',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/Пушена скумрия.png',
   },
   {
@@ -961,7 +961,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '200 г',
     description_bg:'гаврос, зехтин, лук, лимон, магданоз',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/Маринован гаврос.png',
   },
   {
@@ -973,7 +973,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'скариди, зехтин, чери домати, лимон, магданоз',
-    allergens:     null,
+    allergens:     ['crustaceans'],
     image:         'menu-images/Скариди на тиган.png',
   },
   {
@@ -985,7 +985,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'калмар, зехтин, лимон, дзадзики',
-    allergens:     null,
+    allergens:     ['milk'],
     image:         'menu-images/Калмар на плоча.png',
   },
   {
@@ -997,7 +997,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '600 г',
     description_bg:'гаврос, калмар, скариди, миди, октопод',
-    allergens:     null,
+    allergens:     ['fish', 'crustaceans'],
     image:         'menu-images/plato-morski-darove.png',
   },
   {
@@ -1009,7 +1009,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'барбун, зехтин, лимон, чесън, магданоз',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/barbun.png',
   },
   {
@@ -1021,7 +1021,7 @@ window.menuData = [
     price_unit:    '100 г',
     weight:        '400 г',
     description_bg:'лаврак, картофи, спанак, чери домати, зехтин, лимон',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/Лаврак на скара.png',
   },
   {
@@ -1033,7 +1033,7 @@ window.menuData = [
     price_unit:    '100 г',
     weight:        '450 г',
     description_bg:'ципура, рукола, червена чушка, лимон, зехтин',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/Ципура.png',
   },
   {
@@ -1045,7 +1045,7 @@ window.menuData = [
     price_unit:    '100 г',
     weight:        '500 г',
     description_bg:'ципура дива, картофи, розмарин, лимон, зехтин',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/Ципура дива.png',
   },
   {
@@ -1057,7 +1057,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '300 г',
     description_bg:'сьомга, зехтин, лимон, розмарин',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/Сьомга на скара.png',
   },
   {
@@ -1069,7 +1069,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '250 г',
     description_bg:'гаврос, брашно, лимон, рукола, магданоз',
-    allergens:     null,
+    allergens:     ['fish', 'gluten'],
     image:         'menu-images/Гаврос на скара.png',
   },
   {
@@ -1081,7 +1081,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '350 г',
     description_bg:'пъстърва, зехтин, лимон, розмарин, домати',
-    allergens:     null,
+    allergens:     ['fish'],
     image:         'menu-images/Пъстърва на тиган.png',
   },
   {
@@ -1093,7 +1093,7 @@ window.menuData = [
     price_unit:    null,
     weight:        '400 г',
     description_bg:'миди, зехтин, лимон, чушки, магданоз',
-    allergens:     null,
+    allergens:     [],
     image:         'menu-images/Задушени миди.png',
   },
 
