@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="71 гръцки ястия — салати, стартери, предястия, специалитети, месо, риба, морски дарове и паста. Виж пълното меню на Тавернаки, Пловдив.">
+    <meta name="description" content="85 гръцки ястия — салати, стартери, предястия, специалитети, месо, риба, морски дарове и паста. Виж пълното меню на Тавернаки, Пловдив.">
     <meta property="og:title" content="Меню | Тавернаки — Автентична гръцка кухня">
-    <meta property="og:description" content="89 ястия: салати, предястия, мезета, скара, риба, морски дарове, паста и обедно меню.">
-    <title>Меню — 71 гръцки ястия | Тавернаки · Пловдив</title>
+    <meta property="og:description" content="85 ястия: салати, предястия, мезета, скара, риба, морски дарове, паста и обедно меню.">
+    <title>Меню — 85 гръцки ястия | Тавернаки · Пловдив</title>
     <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <meta property="og:url" content="https://tavernaki.bg/menu">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Меню — 115 гръцки ястия | Тавернаки · Пловдив">
-    <meta name="twitter:description" content="115 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.">
+    <meta name="twitter:title" content="Меню — 85 гръцки ястия | Тавернаки · Пловдив">
+    <meta name="twitter:description" content="85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.">
     <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
     <link rel="canonical" href="https://tavernaki.bg/menu">
     <link rel="preload" as="image" href="Visual%20Assets/greek%20food.webp" type="image/webp">
@@ -716,7 +716,7 @@
         <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;width:100%;">
             <div class="menu-hero-label mb-4" data-i18n="menu_hero_label">Пловдив · България</div>
             <h1 class="menu-hero-title mb-3" data-i18n="menu_hero_title">Нашето меню</h1>
-            <p class="menu-hero-sub" data-i18n="menu_hero_sub">89 ястия · 11 категории · Пресни продукти всеки ден</p>
+            <p class="menu-hero-sub" data-i18n="menu_hero_sub">85 ястия · 8 категории · Пресни продукти всеки ден</p>
         </div>
     </section>
 
@@ -747,7 +747,7 @@
         </div>
     </section>
 
-    <!-- ═══ ALLERGEN INFO — permanent notice + legend, all 71 dishes covered ═ -->
+    <!-- ═══ ALLERGEN INFO — permanent notice + legend, all 85 dishes covered ═ -->
     <section id="allergen-info" aria-labelledby="allergen-notice-heading">
         <div class="max-w-7xl mx-auto px-6">
             <div class="allergen-notice-label" data-i18n="allergy_notice_label">Важна информация</div>
@@ -1019,7 +1019,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            renderMenu();                                               // 1. create all 71 cards
+            renderMenu();                                               // 1. create all 85 cards
             renderAllergenLegend();                                     // 1b. build the legend grid
             var lang = getLang();
             applyLang(lang);                                            // 2. apply language strings (cards now exist)
@@ -1038,9 +1038,9 @@
         if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
             document.addEventListener('DOMContentLoaded', function() {
                 var expected = {
-                    salads: 12, starters: 10, appetizers: 12,
-                    specialties: 5, 'bbq-meat': 8, 'pan-meat': 3,
-                    pasta: 9, fish: 12
+                    salads: 12, starters: 11, appetizers: 13,
+                    specialties: 7, 'bbq-meat': 13, 'pan-meat': 3,
+                    pasta: 9, fish: 17
                 };
                 var actual = {};
                 window.menuData.forEach(function(d) {
@@ -1052,7 +1052,7 @@
                         'Category "' + cat + '": expected ' + expected[cat] + ', got ' + (actual[cat] || 0)
                     );
                 });
-                console.log('Menu validation complete. Total:', window.menuData.length, '(expected 71)');
+                console.log('Menu validation complete. Total:', window.menuData.length, '(expected 85)');
             });
         }
     </script>
