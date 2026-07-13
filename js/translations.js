@@ -183,9 +183,10 @@ const t = {
     contact_address_line2: 'кв. Младежки хълм, 4002 Пловдив',
     contact_address_city:  'Пловдив, България',
     // Gallery strip image alt text
-    alt_about_interior: 'Интериорът на Тавернаки',
-    alt_about_terrace:  'Тераса на Тавернаки',
-    alt_history_img:    'Интериорът на Тавернаки — топла средиземноморска атмосфера',
+    alt_about_interior: 'Закритата веранда на Тавернаки',
+    alt_about_terrace:  'Детайл от масата в градината на Тавернаки',
+    alt_history_img:    'Маса в градината на Тавернаки с маслинови дръвчета',
+    alt_welcome_img:    'Сервирана маса в градината на Тавернаки',
     // Reviews
     review_1_quote: 'Калмарите бяха едни от най-вкусните, които съм опитвала. Изключителна гръцка атмосфера, бързо и качествено обслужване, щедри порции.',
     review_2_quote: 'Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома.',
@@ -425,9 +426,10 @@ const t = {
     contact_address_line2: 'Mladezhki Halm Quarter, 4002 Plovdiv',
     contact_address_city:  'Plovdiv, Bulgaria',
     // Gallery strip image alt text
-    alt_about_interior: 'Tavernaki Interior',
-    alt_about_terrace:  'Tavernaki Terrace',
-    alt_history_img:    'Tavernaki Interior — warm Mediterranean atmosphere',
+    alt_about_interior: 'Tavernaki\'s covered veranda',
+    alt_about_terrace:  'Table detail in the Tavernaki garden',
+    alt_history_img:    'Table in the Tavernaki garden among olive trees',
+    alt_welcome_img:    'Set table in the Tavernaki garden',
     // Reviews
     review_1_quote: 'The calamari were among the best I\'ve ever had. Exceptional Greek atmosphere, fast and quality service, generous portions.',
     review_2_quote: 'Incredibly delicious! Live Greek music on Fridays. Authentic Greek atmosphere, just like home.',
