@@ -4,7 +4,7 @@
 - **Invoke the `frontend-design` skill** before writing any frontend code, every session, no exceptions.
 
 ## Core Rules
-- NEVER push to GitHub until explicitly told "push to GitHub"
+- ALWAYS commit and push to GitHub after every change, by default — no need to ask first (this triggers an automatic Vercel production deploy on every push, which is intended)
 - ALWAYS preview changes on localhost before reporting done
 - Delete temporary screenshots after each major build phase
 
