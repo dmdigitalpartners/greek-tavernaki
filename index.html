@@ -652,8 +652,9 @@
 
         /* ─── MOBILE OPTIMIZATIONS ───────────────────────── */
         @media (max-width: 639px) {
-            /* Prevent hero resize when Chrome address bar shows/hides */
-            #hero { min-height: 100svh; }
+            /* Shorter hero on mobile: keeps the landscape hero video from
+               being scaled up so far that only its center strip stays visible */
+            #hero { min-height: 65svh; }
 
             /* Hero: centre + constrain width */
             #hero {
