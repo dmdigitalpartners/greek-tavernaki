@@ -246,7 +246,8 @@
             position: absolute; inset: 0;
             overflow: hidden;
         }
-        .hero-bg-img img {
+        .hero-bg-img img,
+        .hero-bg-img video {
             width: 100%; height: 100%; object-fit: cover; object-position: center;
             display: block;
         }
@@ -891,10 +892,9 @@
     <!-- ═══ HERO ══════════════════════════════════════════════════════ -->
     <section id="hero" class="grain">
         <div class="hero-bg-img">
-            <picture>
-                <source srcset="Visual%20Assets/HERO-PAGE.webp" type="image/webp">
-                <img src="Visual Assets/HERO-PAGE.png" alt="Tavernaki — Автентична гръцка таверна" data-i18n-alt="alt_hero_home" fetchpriority="high">
-            </picture>
+            <video autoplay muted loop playsinline preload="auto" poster="Visual Assets/HERO-PAGE.png" aria-hidden="true">
+                <source src="Visual Assets/hero-video.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="hero-overlay"></div>
 
