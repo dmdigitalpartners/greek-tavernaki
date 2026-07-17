@@ -619,6 +619,15 @@
         }
 
         /* Sticky reserve bar on mobile */
+        /* Permanent backdrop so the bar's space is never transparent, even
+           while the button above it is animating in/out or off-screen */
+        #sticky-phone-bg {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 199;
+            display: none;
+            height: calc(52px + env(safe-area-inset-bottom, 0px));
+            background: var(--forest);
+            pointer-events: none;
+        }
         #sticky-phone {
             position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
             display: none;
@@ -648,6 +657,7 @@
         .sticky-reserve:active { background: var(--forest-dark); }
         @media (max-width: 640px) {
             #sticky-phone { display: flex; }
+            #sticky-phone-bg { display: block; }
         }
 
         /* ─── MOBILE OPTIMIZATIONS ───────────────────────── */
@@ -669,11 +679,6 @@
                 max-width: 24rem;
                 margin-left: auto;
                 margin-right: auto;
-                background: rgba(7,21,16,0.55);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                border-radius: 20px;
-                box-shadow: 0 20px 50px -15px rgba(7,21,16,0.55), 0 6px 18px -8px rgba(7,21,16,0.4);
             }
             #hero .hero-btns { justify-content: center; }
             .hero-btns { flex-direction: column; }
@@ -845,6 +850,7 @@
     </div>
 
     <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
+    <div id="sticky-phone-bg"></div>
     <div id="sticky-phone">
         <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="6" width="20" height="3" rx="1"/><path d="M7 9v9M17 9v9"/></svg>
