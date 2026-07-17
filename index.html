@@ -652,34 +652,38 @@
 
         /* ─── MOBILE OPTIMIZATIONS ───────────────────────── */
         @media (max-width: 639px) {
-            /* Shorter hero on mobile: keeps the landscape hero video from
-               being scaled up so far that only its center strip stays visible */
-            #hero { min-height: 65svh; }
+            /* Content-sized hero on mobile: taller than the text needs would
+               force the landscape hero video to crop far more off the sides */
+            #hero { min-height: max(56svh, 460px); padding-bottom: 1.5rem; }
 
-            /* Hero: centre + constrain width */
+            /* Hero: bottom-anchor the content card, constrain width */
             #hero {
-                align-items: center;
+                align-items: flex-end;
                 justify-content: center;
             }
             #hero .hero-content {
                 text-align: center;
-                padding-top: 0;
-                padding-bottom: 0;
+                padding-top: 1.75rem;
+                padding-bottom: 2rem;
                 margin-top: 0;
                 max-width: 24rem;
                 margin-left: auto;
                 margin-right: auto;
+                background: rgba(7,21,16,0.55);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 20px;
+                box-shadow: 0 20px 50px -15px rgba(7,21,16,0.55), 0 6px 18px -8px rgba(7,21,16,0.4);
             }
             #hero .hero-btns { justify-content: center; }
             .hero-btns { flex-direction: column; }
             .hero-btns a { text-align: center; width: 100%; }
             .hero-btns .btn-primary { display: none; }
             .hero-eyebrow { display: none; }
+            /* Overlay now only needs to fade the lower portion behind the
+               content card — the video plays unobstructed above it */
             .hero-overlay {
-                background:
-                    linear-gradient(to top, rgba(7,21,16,0.95) 0%, rgba(7,21,16,0.65) 45%, rgba(7,21,16,0.35) 100%),
-                    linear-gradient(to right, rgba(7,21,16,0.65) 0%, transparent 70%),
-                    rgba(7,21,16,0.25);
+                background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, rgba(7,21,16,0.15) 55%, transparent 100%);
             }
             .hero-btns .btn-ghost {
                 color: var(--stone);
