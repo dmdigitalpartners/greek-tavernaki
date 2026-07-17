@@ -7,13 +7,13 @@
     <meta property="og:title" content="Tavernaki — Автентична гръцка кухня · Пловдив">
     <meta property="og:description" content="Автентичната гръцка кухня, традиционно поднесена с любов. Пресни сезонни продукти и домашна рецептура в Пловдив.">
     <title>Tavernaki — Автентична гръцка кухня · Пловдив</title>
-    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <meta property="og:url" content="https://tavernaki.bg/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Тавернаки — Автентична гръцка кухня · Пловдив">
     <meta name="twitter:description" content="Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара, приготвени с любов. Жива музика в петък.">
-    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <link rel="canonical" href="https://tavernaki.bg/">
     <link rel="preload" as="image" href="Visual%20Assets/HERO-PAGE.webp" type="image/webp">
 
@@ -800,7 +800,18 @@
             .footer-socials-mobile { display: flex !important; }
             footer { padding-bottom: calc(2rem + 56px) !important; }
         }
-        picture { display: contents; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .skip-link {
+            position: absolute; top: -100px; left: 1rem; z-index: 200;
+            background: var(--forest-deep); color: var(--cream);
+            padding: 0.75rem 1.25rem; border-radius: 6px;
+            font-family: 'DM Sans', sans-serif; font-size: 0.9rem; text-decoration: none;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus { top: 1rem; }
     </style>
 
     <!-- Schema.org: Restaurant structured data for Google rich results -->
@@ -842,9 +853,11 @@
 
 <body class="bg-stone-50 text-ink font-body">
 
+    <a href="#main-content" class="skip-link" data-i18n="skip_to_content">Към съдържанието</a>
+
     <!-- ═══ LOADING OVERLAY ═══════════════════════════════════════════ -->
     <div id="loader">
-        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"
+        <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"
              style="width: 320px; max-width: 75vw; height: auto; display: block; margin-bottom: 1rem; filter: brightness(0) invert(1); animation: loaderPulse 1.8s ease-in-out infinite;">
         <div class="loader-sub" data-i18n="loader_sub">Автентична гръцка кухня · Пловдив</div>
     </div>
@@ -862,7 +875,7 @@
     <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <a href="/" class="nav-logo">
-                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
+                <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
             </a>
 
             <!-- Desktop links -->
@@ -900,10 +913,11 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- ═══ HERO ══════════════════════════════════════════════════════ -->
     <section id="hero" class="grain">
         <div class="hero-bg-img">
-            <video autoplay muted loop playsinline preload="auto" poster="Visual Assets/HERO-PAGE.png" aria-hidden="true">
+            <video autoplay muted loop playsinline preload="auto" poster="Visual Assets/HERO-PAGE.webp" aria-hidden="true">
                 <source src="Visual Assets/hero-video.mp4" type="video/mp4">
             </video>
         </div>
@@ -913,7 +927,8 @@
             <div class="hero-eyebrow mb-5"><span data-i18n="hero_eyebrow_loc">Пловдив · България</span> · <span class="eyebrow-break" data-i18n="hero_eyebrow_sub">Автентична гръцка таверна</span></div>
 
             <h1 class="hero-title mb-6" style="display:flex; align-items:flex-start;">
-                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"
+                <span class="sr-only" data-i18n="hero_h1_text">Тавернаки — Автентична гръцка кухня в Пловдив</span>
+                <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"
                      style="max-width: min(320px, 80vw); width: 100%; height: auto; display: block;
                             filter: brightness(0) invert(1) drop-shadow(0 4px 20px rgba(0,0,0,0.5));">
             </h1>
@@ -986,10 +1001,7 @@
                 <!-- Dish 1 -->
                 <div class="dish-card reveal d1" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <picture>
-                            <source srcset="Visual%20Assets/barbun.webp" type="image/webp">
-                            <img src="Visual Assets/barbun.png" alt="Барбун — пресна морска риба на скара" loading="lazy">
-                        </picture>
+                        <img src="Visual Assets/barbun.webp" alt="Барбун — пресна морска риба на скара" loading="lazy">
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">19,95 €</span>
@@ -1005,10 +1017,7 @@
                 <!-- Dish 2 -->
                 <div class="dish-card reveal d2" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <picture>
-                            <source srcset="menu-images-webp/%D0%9F%D0%B0%D1%81%D1%82%D0%B0%20%D1%81%D1%8A%D1%81%20%D1%81%D0%BA%D0%B0%D1%80%D0%B8%D0%B4%D0%B8.webp" type="image/webp">
-                            <img src="menu-images/Паста със скариди.png" alt="Паста със скариди" loading="lazy">
-                        </picture>
+                        <img src="menu-images-webp/Паста със скариди.webp" alt="Паста със скариди" loading="lazy">
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">17,15 €</span>
@@ -1024,10 +1033,7 @@
                 <!-- Dish 3 -->
                 <div class="dish-card reveal d3" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <picture>
-                            <source srcset="Visual%20Assets/plato-morski-darove.webp" type="image/webp">
-                            <img src="Visual Assets/plato-morski-darove.png" alt="Плато с морски дарове" loading="lazy">
-                        </picture>
+                        <img src="Visual Assets/plato-morski-darove.webp" alt="Плато с морски дарове" loading="lazy">
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">42,30 €</span>
@@ -1043,10 +1049,7 @@
                 <!-- Dish 4 -->
                 <div class="dish-card reveal d4" style="box-shadow: 0 4px 6px rgba(13,43,26,0.07), 0 12px 24px rgba(13,43,26,0.09);">
                     <div class="dish-card-img-wrap">
-                        <picture>
-                            <source srcset="menu-images-webp/%D0%A1%D0%B2%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%20%D0%BA%D1%8A%D1%81%D1%87%D0%B5%D1%82%D0%B0%20%D1%81%20%D1%87%D1%83%D1%88%D0%BA%D0%B8%20%D0%B8%20%D0%BC%D0%B0%D1%89%D0%B5%D1%80%D0%BA%D0%B0.webp" type="image/webp">
-                            <img src="menu-images/Свински късчета с чушки и мащерка.png" alt="Свински късчета с чушки и мащерка" loading="lazy">
-                        </picture>
+                        <img src="menu-images-webp/Свински късчета с чушки и мащерка.webp" alt="Свински късчета с чушки и мащерка" loading="lazy">
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,16,0.55) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-3 left-4 right-4" style="z-index:2;">
                             <span class="dish-price" style="color: #FAF8F3;">11,05 €</span>
@@ -1076,16 +1079,13 @@
                 <!-- Image -->
                 <div class="about-img-col reveal-left">
                     <div class="relative" style="aspect-ratio: 4/5; overflow: hidden;">
-                        <picture>
-                            <source srcset="Visual%20Assets/welcome-table.webp" type="image/webp">
-                            <img
-                                src="Visual Assets/welcome-table.png"
-                                alt="Сервирана маса в градината на Тавернаки" data-i18n-alt="alt_welcome_img"
-                                class="w-full h-full object-cover"
-                                style="filter: brightness(0.9);"
-                                loading="lazy"
-                            >
-                        </picture>
+                        <img
+                            src="Visual Assets/welcome-table.webp"
+                            alt="Сервирана маса в градината на Тавернаки" data-i18n-alt="alt_welcome_img"
+                            class="w-full h-full object-cover"
+                            style="filter: brightness(0.9);"
+                            loading="lazy"
+                        >
                         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(7,21,16,0.4) 0%, transparent 60%); pointer-events:none;"></div>
 
                         <!-- Floating badge -->
@@ -1157,28 +1157,16 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-1 mt-8">
             <div class="gallery-item reveal" style="height: 320px;">
-                <picture>
-                    <source srcset="Visual%20Assets/atmosphere-interior.webp" type="image/webp">
-                    <img src="Visual Assets/atmosphere-interior.png" alt="Интериорът на Тавернаки" loading="lazy">
-                </picture>
+                <img src="Visual Assets/atmosphere-interior.webp" alt="Интериорът на Тавернаки" loading="lazy">
             </div>
             <div class="gallery-item reveal d1" style="height: 320px; margin-top: 40px;">
-                <picture>
-                    <source srcset="Visual%20Assets/atmosphere-table.webp" type="image/webp">
-                    <img src="Visual Assets/atmosphere-table.png" alt="Кътът с логото на Тавернаки" loading="lazy">
-                </picture>
+                <img src="Visual Assets/atmosphere-table.webp" alt="Кътът с логото на Тавернаки" loading="lazy">
             </div>
             <div class="gallery-item reveal d2" style="height: 320px;">
-                <picture>
-                    <source srcset="Visual%20Assets/atmosphere-terrace.webp" type="image/webp">
-                    <img src="Visual Assets/atmosphere-terrace.png" alt="Тераса на Тавернаки" loading="lazy">
-                </picture>
+                <img src="Visual Assets/atmosphere-terrace.webp" alt="Тераса на Тавернаки" loading="lazy">
             </div>
             <div class="gallery-item reveal d3" style="height: 320px; margin-top: 40px;">
-                <picture>
-                    <source srcset="Visual%20Assets/atmosphere-exterior.webp" type="image/webp">
-                    <img src="Visual Assets/atmosphere-exterior.png" alt="Градината на Тавернаки" loading="lazy">
-                </picture>
+                <img src="Visual Assets/atmosphere-exterior.webp" alt="Градината на Тавернаки" loading="lazy">
             </div>
         </div>
 
@@ -1205,37 +1193,37 @@
 
                     <div class="review-card reveal d1">
                         <div class="review-author mb-2" data-i18n="review_1_author">Emma Richardson</div>
-                        <div class="stars mb-3">★★★★★</div>
+                        <div class="stars mb-3" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                         <p class="review-quote" data-i18n="review_1_quote">„Калмарите бяха едни от най-вкусните, които съм опитвала. Изключителна гръцка атмосфера, бързо и качествено обслужване, щедри порции."</p>
                     </div>
 
                     <div class="review-card reveal d2">
                         <div class="review-author mb-2" data-i18n="review_2_author">Nikos Sidiropoulos</div>
-                        <div class="stars mb-3">★★★★★</div>
+                        <div class="stars mb-3" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                         <p class="review-quote" data-i18n="review_2_quote">„Невероятно вкусно! Жива гръцка музика в петък. Истинска гръцка атмосфера, точно като у дома."</p>
                     </div>
 
                     <div class="review-card reveal d3">
                         <div class="review-author mb-2" data-i18n="review_3_author">Mattia Santoro</div>
-                        <div class="stars mb-3">★★★★★</div>
+                        <div class="stars mb-3" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                         <p class="review-quote" data-i18n="review_3_quote">„Комплиментарна вода и десерт, пресни морски дарове. Страхотно преживяване. Има меню на английски."</p>
                     </div>
 
                     <div class="review-card reveal d1">
                         <div class="review-author mb-2" data-i18n="review_4_author">Георги Иванов</div>
-                        <div class="stars mb-3">★★★★★</div>
+                        <div class="stars mb-3" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                         <p class="review-quote" data-i18n="review_4_quote">„Рибата на скара е невероятна: свежа, перфектно приготвена. Лятната градина е уютна и приятна. Определено ще се върнем."</p>
                     </div>
 
                     <div class="review-card reveal d2">
                         <div class="review-author mb-2" data-i18n="review_5_author">Sophie Laurent</div>
-                        <div class="stars mb-3">★★★★★</div>
+                        <div class="stars mb-3" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                         <p class="review-quote" data-i18n="review_5_quote">„Автентичната гръцка кухня ме спечели от първата хапка. Лятната градина е невероятна, чувствах се като в Гърция. Задължителна спирка в Пловдив."</p>
                     </div>
 
                     <div class="review-card reveal d3">
                         <div class="review-author mb-2" data-i18n="review_6_author">Alexandros Papadopoulos</div>
-                        <div class="stars mb-3">★★★★★</div>
+                        <div class="stars mb-3" role="img" aria-label="5 out of 5 stars">★★★★★</div>
                         <p class="review-quote" data-i18n="review_6_quote">„Истински гръцки дух, точно такъв, какъвто го познавам от Атина. Отлично съотношение качество-цена и автентични рецепти."</p>
                     </div>
 
@@ -1252,13 +1240,13 @@
             <div class="flex items-center justify-center gap-4 mt-12 reveal">
                 <div style="text-align:center;">
                     <div style="font-family:'Cinzel',serif; font-size:3rem; font-weight:700; color:var(--forest-dark); line-height:1;">4.1</div>
-                    <div class="stars" style="font-size:1rem;">★★★★</div>
+                    <div class="stars" style="font-size:1rem;" aria-hidden="true">★★★★</div>
                     <div style="font-family:'DM Sans',sans-serif; font-size:0.8rem; color:#888; margin-top:0.25rem;" data-i18n="reviews_count1">637+ оценки</div>
                 </div>
                 <div style="width:1px; height:60px; background:rgba(0,0,0,0.1);"></div>
                 <div style="text-align:center;">
                     <div style="font-family:'Cinzel',serif; font-size:3rem; font-weight:700; color:var(--forest-dark); line-height:1;">4.4</div>
-                    <div class="stars" style="font-size:1rem;">★★★★</div>
+                    <div class="stars" style="font-size:1rem;" aria-hidden="true">★★★★</div>
                     <div style="font-family:'DM Sans',sans-serif; font-size:0.8rem; color:#888; margin-top:0.25rem;" data-i18n="reviews_count2">629 отзива · RestaurantGuru</div>
 
                 </div>
@@ -1396,6 +1384,8 @@
     </section>
 
     <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+    </main>
+
     <footer style="background: var(--forest-deep); padding: 4rem 0 2rem;">
         <div class="max-w-7xl mx-auto px-6">
 
@@ -1404,7 +1394,7 @@
                 <!-- Brand (desktop col 1 / mobile: full-width top) -->
                 <div class="footer-brand-col">
                     <div style="margin-bottom:0.85rem; display:inline-block;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
+                        <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" class="footer-slogan" data-i18n="footer_slogan">
                         Автентичната гръцка кухня, традиционно поднесена с любов
@@ -1466,10 +1456,10 @@
 
             <!-- Copyright bar -->
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.25);" data-i18n="footer_copyright">
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6);" data-i18n="footer_copyright">
                     © 2025 Tavernaki · Всички права запазени
                 </div>
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.2); text-align:center;" data-i18n="footer_delivery">
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6); text-align:center;" data-i18n="footer_delivery">
                     Доставка чрез Glovo · Wolt · Takeaway.com
                 </div>
             </div>

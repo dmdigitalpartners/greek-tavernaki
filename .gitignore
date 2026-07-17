@@ -14,6 +14,13 @@ temporary screenshots/
 .DS_Store
 Thumbs.db
 
+# Raw image originals — webp-only is served; PNGs kept out of git/deploy
+menu-images/
+Visual Assets/*.png
+brand_assets/*.png
+brand_assets/allergen-icons/*.png
+*.MOV
+
 # Environment variables (if ever added)
 .env
 .env.local

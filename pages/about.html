@@ -7,14 +7,24 @@
     <meta property="og:title" content="За нас | Тавернаки — Автентична гръцка кухня">
     <meta property="og:description" content="Над 5 години автентична гръцка кухня с рецепти от шеф Димитри и пресни сезонни продукти. Тавернаки, Пловдив.">
     <title>За нас | Тавернаки — Гръцки ресторант с история · Пловдив</title>
-    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <meta property="og:url" content="https://tavernaki.bg/about">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="За нас | Тавернаки — Гръцки ресторант с история · Пловдив">
     <meta name="twitter:description" content="Над 5 години автентична гръцка кухня в Пловдив. Рецепти от шеф Димитри, пресни сезонни продукти и домашна атмосфера.">
-    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <link rel="canonical" href="https://tavernaki.bg/about">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://tavernaki.bg/" },
+        { "@type": "ListItem", "position": 2, "name": "За нас", "item": "https://tavernaki.bg/about" }
+      ]
+    }
+    </script>
     <link rel="preload" as="image" href="Visual%20Assets/about%20us%20pic.webp" type="image/webp">
 
     <script>
@@ -198,10 +208,23 @@
             .about-text-col { order: 1; }
             footer { padding-bottom: calc(2rem + 56px) !important; }
         }
-        picture { display: contents; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .skip-link {
+            position: absolute; top: -100px; left: 1rem; z-index: 200;
+            background: var(--forest-deep); color: var(--cream);
+            padding: 0.75rem 1.25rem; border-radius: 6px;
+            font-family: 'DM Sans', sans-serif; font-size: 0.9rem; text-decoration: none;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus { top: 1rem; }
     </style>
 </head>
 <body class="bg-stone-50 text-ink font-body">
+
+    <a href="#main-content" class="skip-link" data-i18n="skip_to_content">Към съдържанието</a>
 
     <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
     <div id="sticky-phone">
@@ -215,7 +238,7 @@
     <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <a href="/" class="nav-logo">
-                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
+                <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
             </a>
             <div class="hidden md:flex items-center gap-6">
                 <a href="/menu" class="nav-link" data-i18n="nav_menu">Меню</a>
@@ -246,13 +269,12 @@
         </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <picture>
-                <source srcset="Visual%20Assets/about%20us%20pic.webp" type="image/webp">
-                <img src="Visual Assets/about us pic.png" alt="" loading="eager" fetchpriority="high">
-            </picture>
+            <img src="Visual Assets/about us pic.webp" alt="" loading="eager" fetchpriority="high">
         </div>
         <div class="page-hero-overlay"></div>
         <div class="max-w-7xl mx-auto px-6 page-hero-content text-center">
@@ -270,13 +292,10 @@
                 <!-- Image -->
                 <div class="about-img-col reveal-left">
                     <div class="relative" style="aspect-ratio: 4/5; overflow: hidden;">
-                        <picture>
-                            <source srcset="Visual%20Assets/History-Image.webp" type="image/webp">
-                            <img src="Visual Assets/History-Image.png"
-                                 alt="Маса в градината на Тавернаки с маслинови дръвчета" data-i18n-alt="alt_history_img"
-                                 class="w-full h-full object-cover" style="filter: brightness(0.9);"
-                                 loading="lazy">
-                        </picture>
+                        <img src="Visual Assets/History-Image.webp"
+                             alt="Маса в градината на Тавернаки с маслинови дръвчета" data-i18n-alt="alt_history_img"
+                             class="w-full h-full object-cover" style="filter: brightness(0.9);"
+                             loading="lazy">
                         <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(7,21,16,0.4) 0%, transparent 60%); pointer-events:none;"></div>
                         <div class="absolute bottom-6 left-6 right-6 p-5" style="background: rgba(250,248,243,0.97); box-shadow: 0 4px 24px rgba(0,0,0,0.12);">
                             <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em; color:var(--red); text-transform:uppercase; margin-bottom:0.4rem;" data-i18n="about_badge_label">Оценени от гостите</div>
@@ -290,16 +309,10 @@
                     <!-- Gallery strip -->
                     <div class="grid grid-cols-2 gap-2 mt-4">
                         <div style="overflow:hidden; height:140px;">
-                            <picture>
-                                <source srcset="Visual%20Assets/about-veranda.webp" type="image/webp">
-                                <img src="Visual Assets/about-veranda.png" alt="Закритата веранда на Тавернаки" data-i18n-alt="alt_about_interior" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
-                            </picture>
+                            <img src="Visual Assets/about-veranda.webp" alt="Закритата веранда на Тавернаки" data-i18n-alt="alt_about_interior" class="w-full h-full object-cover" style="transition: transform 0.55s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
                         </div>
                         <div style="overflow:hidden; height:140px;">
-                            <picture>
-                                <source srcset="Visual%20Assets/about-detail.webp" type="image/webp">
-                                <img src="Visual Assets/about-detail.png" alt="Детайл от масата в градината на Тавернаки" data-i18n-alt="alt_about_terrace" class="w-full h-full object-cover" style="transition: transform 0.55s ease; object-position: center 30%;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
-                            </picture>
+                            <img src="Visual Assets/about-detail.webp" alt="Детайл от масата в градината на Тавернаки" data-i18n-alt="alt_about_terrace" class="w-full h-full object-cover" style="transition: transform 0.55s ease; object-position: center 30%;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='none'" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -403,12 +416,14 @@
     </section>
 
     <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+    </main>
+
     <footer style="background: var(--forest-deep); padding: 4rem 0 2rem;">
         <div class="max-w-7xl mx-auto px-6">
             <div class="footer-main-grid grid grid-cols-1 md:grid-cols-3 gap-12 pb-12" style="border-bottom: 1px solid rgba(240,237,230,0.08);">
                 <div class="footer-brand-col">
                     <div style="margin-bottom:0.85rem; display:inline-block;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
+                        <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" data-i18n="footer_slogan">
                         Автентичната гръцка кухня, традиционно поднесена с любов
@@ -441,8 +456,8 @@
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.25);" data-i18n="footer_copyright">© 2025 Tavernaki · Всички права запазени</div>
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.2); text-align:center;" data-i18n="footer_delivery">Доставка чрез Glovo · Wolt · Takeaway.com</div>
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6);" data-i18n="footer_copyright">© 2025 Tavernaki · Всички права запазени</div>
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6); text-align:center;" data-i18n="footer_delivery">Доставка чрез Glovo · Wolt · Takeaway.com</div>
             </div>
         </div>
     </footer>

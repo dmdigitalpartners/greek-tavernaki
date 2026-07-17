@@ -7,14 +7,24 @@
     <meta property="og:title" content="Тържества | Тавернаки — Автентична гръцка кухня">
     <meta property="og:description" content="Рождени дни, годишнини, фирмени вечери в Тавернаки. Персонализирано меню, лятна градина. Тел: 0877 64 62 06.">
     <title>Тържества & Специални Поводи | Тавернаки · Пловдив</title>
-    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <meta property="og:url" content="https://tavernaki.bg/parties">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Тържества & Специални Поводи | Тавернаки · Пловдив">
     <meta name="twitter:description" content="Рождени дни, годишнини и фирмени вечери в Тавернаки, Пловдив. Персонализирано меню, лятна градина, посветен персонал.">
-    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <link rel="canonical" href="https://tavernaki.bg/parties">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://tavernaki.bg/" },
+        { "@type": "ListItem", "position": 2, "name": "Тържества", "item": "https://tavernaki.bg/parties" }
+      ]
+    }
+    </script>
     <link rel="preload" as="image" href="Visual%20Assets/parties-hero.webp" type="image/webp">
 
     <script>
@@ -138,10 +148,23 @@
         @media (max-width: 639px) {
             footer { padding-bottom: calc(2rem + 56px) !important; }
         }
-        picture { display: contents; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .skip-link {
+            position: absolute; top: -100px; left: 1rem; z-index: 200;
+            background: var(--forest-deep); color: var(--cream);
+            padding: 0.75rem 1.25rem; border-radius: 6px;
+            font-family: 'DM Sans', sans-serif; font-size: 0.9rem; text-decoration: none;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus { top: 1rem; }
     </style>
 </head>
 <body class="bg-stone-50 text-ink font-body">
+
+    <a href="#main-content" class="skip-link" data-i18n="skip_to_content">Към съдържанието</a>
 
     <div id="sticky-phone">
         <a href="tel:+359877646206" class="sticky-reserve" data-i18n="sticky_reserve">
@@ -152,7 +175,7 @@
 
     <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="/" class="nav-logo"><img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"></a>
+            <a href="/" class="nav-logo"><img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo"></a>
             <div class="hidden md:flex items-center gap-6">
                 <a href="/menu" class="nav-link" data-i18n="nav_menu">Меню</a>
                 <a href="/about" class="nav-link" data-i18n="nav_about">За нас</a>
@@ -182,13 +205,12 @@
         </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section class="page-hero">
         <div class="page-hero-bg">
-            <picture>
-                <source srcset="Visual%20Assets/parties-hero.webp" type="image/webp">
-                <img src="Visual Assets/parties-hero.png" alt="Тавернаки — тържества и специални поводи" data-i18n-alt="alt_parties_hero" loading="eager" fetchpriority="high">
-            </picture>
+            <img src="Visual Assets/parties-hero.webp" alt="Тавернаки — тържества и специални поводи" data-i18n-alt="alt_parties_hero" loading="eager" fetchpriority="high">
         </div>
         <div class="page-hero-overlay"></div>
         <div class="page-hero-content max-w-7xl mx-auto px-6 text-center">
@@ -253,13 +275,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
 
                 <div class="reveal-left">
-                    <picture>
-                        <source srcset="Visual%20Assets/parties-advantages.webp" type="image/webp">
-                        <img src="Visual Assets/parties-advantages.png" alt="Тавернаки — уютна веранда за тържества"
-                             style="width:100%; height:420px; object-fit:cover; display:block;
-                                    box-shadow: 0 8px 32px rgba(13,43,26,0.15);"
-                             loading="lazy">
-                    </picture>
+                    <img src="Visual Assets/parties-advantages.webp" alt="Тавернаки — уютна веранда за тържества"
+                         style="width:100%; height:420px; object-fit:cover; display:block;
+                                box-shadow: 0 8px 32px rgba(13,43,26,0.15);"
+                         loading="lazy">
                 </div>
 
                 <div>
@@ -332,12 +351,14 @@
     </section>
 
     <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+    </main>
+
     <footer style="background: var(--forest-deep); padding: 4rem 0 2rem;">
         <div class="max-w-7xl mx-auto px-6">
             <div class="footer-main-grid grid grid-cols-1 md:grid-cols-3 gap-12 pb-12" style="border-bottom: 1px solid rgba(240,237,230,0.08);">
                 <div class="footer-brand-col">
                     <div style="margin-bottom:0.85rem; display:inline-block;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
+                        <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" data-i18n="footer_slogan">Автентичната гръцка кухня, традиционно поднесена с любов</p>
                     <div class="footer-socials-desktop" style="margin-top:1.5rem;">
@@ -368,8 +389,8 @@
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.25);" data-i18n="footer_copyright">© 2025 Tavernaki · Всички права запазени</div>
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.2); text-align:center;" data-i18n="footer_delivery">Доставка чрез Glovo · Wolt · Takeaway.com</div>
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6);" data-i18n="footer_copyright">© 2025 Tavernaki · Всички права запазени</div>
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6); text-align:center;" data-i18n="footer_delivery">Доставка чрез Glovo · Wolt · Takeaway.com</div>
             </div>
         </div>
     </footer>

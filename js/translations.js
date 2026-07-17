@@ -20,6 +20,12 @@ const t = {
     // Meta descriptions
     meta_desc_home: 'Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара, приготвени с любов. Жива музика в петък. Резервации: 0877 64 62 06.',
     meta_desc_menu: '85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Виж пълното меню на Тавернаки, Пловдив.',
+    skip_to_content: 'Към съдържанието',
+    // 404 page
+    notfound_title: 'Тази страница не съществува',
+    notfound_sub:   'Изглежда сте объркали адреса, или страницата вече не съществува. Върнете се към началото или разгледайте менюто ни.',
+    notfound_home:  'Начало',
+    notfound_menu:  'Виж менюто',
     // Navbar
     nav_home:    'Начало',
     nav_menu:    'Меню',
@@ -31,6 +37,7 @@ const t = {
     toggle_label: 'EN',
     sticky_reserve: 'РЕЗЕРВИРАЙ МАСА',
     // Hero
+    hero_h1_text:     'Тавернаки — Автентична гръцка кухня в Пловдив',
     hero_tagline:     'Автентичната гръцка кухня,',
     hero_sub:         'традиционно поднесена с любов',
     hero_cta_reserve: 'Резервирай маса',
@@ -263,6 +270,12 @@ const t = {
     // Meta descriptions
     meta_desc_home: 'Tavernaki — authentic Greek cuisine in Plovdiv. Fresh fish, seafood, grilled meats, pasta. Reserve a table: 0877 64 62 06.',
     meta_desc_menu: 'Full menu of Tavernaki — Plovdiv. Salads, appetizers, BBQ, fish, seafood, pasta and risotto.',
+    skip_to_content: 'Skip to content',
+    // 404 page
+    notfound_title: 'This page doesn\'t exist',
+    notfound_sub:   'Looks like the address is wrong, or the page no longer exists. Head back home or browse our menu.',
+    notfound_home:  'Home',
+    notfound_menu:  'View Menu',
     // Navbar
     nav_home:    'Home',
     nav_menu:    'Menu',
@@ -274,6 +287,7 @@ const t = {
     toggle_label: 'BG',
     sticky_reserve: 'RESERVE A TABLE',
     // Hero
+    hero_h1_text:     'Tavernaki — Authentic Greek Cuisine in Plovdiv',
     hero_tagline:     'Authentic Greek cuisine,',
     hero_sub:         'traditionally served with love',
     hero_cta_reserve: 'Reserve a table',
@@ -534,10 +548,12 @@ function applyLang(lang) {
       var dish = window.menuData.find(function(d) { return d.id === id; });
       if (!dish) return;
       var nameEl = card.querySelector('.dish-name');
+      var descEl = card.querySelector('.dish-desc');
       var allergenLabelEl = card.querySelector('.allergen-label');
       var allergenValEl = card.querySelector('.allergen-val');
       var placeholder = card.querySelector('.dish-placeholder');
       if (nameEl) nameEl.textContent = lang === 'en' ? dish.name_en : dish.name_bg;
+      if (descEl) descEl.textContent = (lang === 'en' && dish.description_en) ? dish.description_en : dish.description_bg;
       if (placeholder) placeholder.setAttribute('aria-label', lang === 'en' ? dish.name_en : dish.name_bg);
       if (allergenLabelEl) allergenLabelEl.textContent = curr.allergens_label;
       if (allergenValEl) {

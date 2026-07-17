@@ -10,6 +10,7 @@ const JOBS = [
   { srcDir: path.join(ROOT, 'menu-images'),   outDir: path.join(ROOT, 'menu-images-webp') },
   { srcDir: path.join(ROOT, 'Visual Assets'), outDir: path.join(ROOT, 'Visual Assets')    },
   { srcDir: path.join(ROOT, 'brand_assets'),  outDir: path.join(ROOT, 'brand_assets')     },
+  { srcDir: path.join(ROOT, 'brand_assets', 'allergen-icons'), outDir: path.join(ROOT, 'brand_assets', 'allergen-icons') },
 ];
 
 async function fileExists(p) {

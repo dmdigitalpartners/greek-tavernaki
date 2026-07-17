@@ -8,14 +8,24 @@
     <meta property="og:title" content="Меню | Тавернаки — Автентична гръцка кухня">
     <meta property="og:description" content="85 ястия: салати, предястия, мезета, скара, риба, морски дарове, паста и обедно меню.">
     <title>Меню — 85 гръцки ястия | Тавернаки · Пловдив</title>
-    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta property="og:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <meta property="og:url" content="https://tavernaki.bg/menu">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Меню — 85 гръцки ястия | Тавернаки · Пловдив">
     <meta name="twitter:description" content="85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.">
-    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.png">
+    <meta name="twitter:image" content="https://tavernaki.bg/brand_assets/plato-morski-darove.webp">
     <link rel="canonical" href="https://tavernaki.bg/menu">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://tavernaki.bg/" },
+        { "@type": "ListItem", "position": 2, "name": "Меню", "item": "https://tavernaki.bg/menu" }
+      ]
+    }
+    </script>
     <link rel="preload" as="image" href="Visual%20Assets/greek%20food.webp" type="image/webp">
 
     <!-- Flash prevention: sets data-lang before any render to avoid BG→EN flicker -->
@@ -648,11 +658,24 @@
             /* Mobile tab scroll: slightly more padding */
             .cat-tabs-inner { padding: 0 0.25rem; }
         }
-        picture { display: contents; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+        .skip-link {
+            position: absolute; top: -100px; left: 1rem; z-index: 200;
+            background: var(--forest-deep); color: var(--cream);
+            padding: 0.75rem 1.25rem; border-radius: 6px;
+            font-family: 'DM Sans', sans-serif; font-size: 0.9rem; text-decoration: none;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus { top: 1rem; }
     </style>
 </head>
 
 <body class="bg-stone-50 text-ink font-body">
+
+    <a href="#main-content" class="skip-link" data-i18n="skip_to_content">Към съдържанието</a>
 
     <!-- ═══ STICKY MOBILE RESERVE BAR ════════════════════════════════ -->
     <div id="sticky-phone">
@@ -666,7 +689,7 @@
     <nav id="nav" aria-label="Главно меню" data-i18n-aria="aria_main_nav">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <a href="/" class="nav-logo">
-                <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
+                <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo">
             </a>
 
             <!-- Desktop links -->
@@ -704,13 +727,12 @@
         </div>
     </nav>
 
+    <main id="main-content">
+
     <!-- ═══ PAGE HERO ════════════════════════════════════════════════ -->
     <section id="menu-hero" class="grain">
         <div class="page-hero-bg">
-            <picture>
-                <source srcset="Visual%20Assets/greek%20food.webp" type="image/webp">
-                <img src="Visual Assets/greek food.png" alt="" loading="eager" fetchpriority="high">
-            </picture>
+            <img src="Visual Assets/greek food.webp" alt="" loading="eager" fetchpriority="high">
         </div>
         <div class="page-hero-overlay"></div>
         <div class="max-w-7xl mx-auto px-6 text-center" style="position:relative;z-index:2;width:100%;">
@@ -761,6 +783,8 @@
     </section>
 
     <!-- ═══ FOOTER — copied from index.html; hrefs updated to index.html anchors ═ -->
+    </main>
+
     <footer style="background: var(--forest-deep); padding: 4rem 0 2rem;">
         <div class="max-w-7xl mx-auto px-6">
 
@@ -769,7 +793,7 @@
                 <!-- Brand -->
                 <div class="footer-brand-col">
                     <div style="margin-bottom:0.85rem; display:inline-block;">
-                        <img src="brand_assets/logo.png" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
+                        <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
                     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" class="footer-slogan" data-i18n="footer_slogan">
                         Автентичната гръцка кухня, традиционно поднесена с любов
@@ -830,10 +854,10 @@
 
             <!-- Copyright -->
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.25);" data-i18n="footer_copyright">
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6);" data-i18n="footer_copyright">
                     © 2025 Tavernaki · Всички права запазени
                 </div>
-                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.2); text-align:center;">
+                <div style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(240,237,230,0.6); text-align:center;">
                     Доставка чрез Glovo · Wolt · Takeaway.com
                 </div>
             </div>
@@ -889,7 +913,7 @@
                     if (!meta) return '';
                     var label = lang === 'en' ? meta.label_en : meta.label_bg;
                     return '<span class="allergen-icon" title="' + label + '">' +
-                        '<img src="brand_assets/allergen-icons/' + key + '.png" width="26" height="26" alt="' + label + '" loading="lazy">' +
+                        '<img src="brand_assets/allergen-icons/' + key + '.webp" width="26" height="26" alt="' + label + '" loading="lazy">' +
                         '</span>';
                 }).join('');
 
@@ -900,17 +924,17 @@
                 card.innerHTML =
                     '<div class="dish-img-wrap">' +
                         (dish.image
-                            ? '<picture>' +
-                                '<source srcset="' + dish.image.replace('menu-images/', 'menu-images-webp/').replace('.png', '.webp') + '" type="image/webp">' +
-                                '<img src="' + dish.image + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy">' +
-                              '</picture>'
+                            ? '<img src="' + dish.image.replace('menu-images/', 'menu-images-webp/').replace('.png', '.webp') + '" alt="' + name.replace(/"/g, '&quot;') + '" loading="lazy">'
                             : '<div class="dish-placeholder" role="img" aria-label="' + name.replace(/"/g, '&quot;') + '"></div>') +
                         '<div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,21,16,0.55) 0%,transparent 60%);pointer-events:none;"></div>' +
                         '<span class="dish-price">' + priceDisplay + '</span>' +
                     '</div>' +
                     '<div class="dish-body">' +
                         '<h3 class="dish-name">' + name + '</h3>' +
-                        (dish.description_bg ? '<p class="dish-desc">' + dish.description_bg + '</p>' : '') +
+                        (function() {
+                            var desc = (lang === 'en' && dish.description_en) ? dish.description_en : dish.description_bg;
+                            return desc ? '<p class="dish-desc">' + desc + '</p>' : '';
+                        })() +
                         '<div class="dish-footer">' +
                             '<span class="dish-weight" data-weight="' + (dish.weight || '') + '">' + (dish.weight || '') + '</span>' +
                             (allergenIconsHTML ? '<div class="dish-allergens">' + allergenIconsHTML + '</div>' : '<div></div>') +
@@ -929,10 +953,61 @@
                 var meta = ALLERGEN_META[key];
                 var label = lang === 'en' ? meta.label_en : meta.label_bg;
                 return '<li class="allergen-legend-item">' +
-                    '<img src="brand_assets/allergen-icons/' + key + '.png" width="44" height="44" alt="' + label + '" loading="lazy">' +
+                    '<img src="brand_assets/allergen-icons/' + key + '.webp" width="44" height="44" alt="' + label + '" loading="lazy">' +
                     '<span>' + label + '</span>' +
                     '</li>';
             }).join('');
+        }
+
+        // ── Menu schema.org JSON-LD (built from window.menuData) ──────────
+        var CATEGORY_SCHEMA_NAMES = {
+            'salads':      'Salads',
+            'starters':    'Starters',
+            'appetizers':  'Appetizers',
+            'specialties': 'Specialties',
+            'bbq-meat':    'Grilled & Meat Dishes',
+            'pan-meat':    'Pan-Fried Dishes',
+            'pasta':       'Pasta & Risotto',
+            'fish':        'Fish & Seafood',
+        };
+        var CATEGORY_ORDER = ['salads', 'starters', 'appetizers', 'specialties', 'bbq-meat', 'pan-meat', 'pasta', 'fish'];
+
+        function renderMenuSchema() {
+            var sections = CATEGORY_ORDER.map(function(cat) {
+                var dishes = window.menuData.filter(function(d) { return d.category === cat; });
+                return {
+                    '@type': 'MenuSection',
+                    'name': CATEGORY_SCHEMA_NAMES[cat],
+                    'hasMenuItem': dishes.map(function(d) {
+                        var item = {
+                            '@type': 'MenuItem',
+                            'name': d.name_en,
+                            'description': d.description_en,
+                        };
+                        if (d.price != null) {
+                            item.offers = {
+                                '@type': 'Offer',
+                                'price': d.price.toFixed(2),
+                                'priceCurrency': 'BGN',
+                            };
+                        }
+                        return item;
+                    }),
+                };
+            });
+
+            var schema = {
+                '@context': 'https://schema.org',
+                '@type': 'Menu',
+                'name': 'Tavernaki Menu',
+                'inLanguage': 'en',
+                'hasMenuSection': sections,
+            };
+
+            var script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify(schema);
+            document.head.appendChild(script);
         }
 
         // Keep per-dish allergen icon alt/title text + the legend in sync with
@@ -1021,6 +1096,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             renderMenu();                                               // 1. create all 85 cards
             renderAllergenLegend();                                     // 1b. build the legend grid
+            renderMenuSchema();                                         // 1c. inject Menu/MenuItem JSON-LD
             var lang = getLang();
             applyLang(lang);                                            // 2. apply language strings (cards now exist)
             applyWeightLang(lang);                                      // 3. translate weight units

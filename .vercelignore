@@ -6,3 +6,8 @@ serve.mjs
 components
 _tools
 _docs
+menu-images
+Visual Assets/*.png
+brand_assets/*.png
+brand_assets/allergen-icons/*.png
+*.MOV
