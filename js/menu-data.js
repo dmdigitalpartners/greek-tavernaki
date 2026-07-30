@@ -80,7 +80,7 @@ window.menuData = [
     weight:        '400 г',
     description_bg:'айсберг, крутони, бекон, пилешко филе, чери домат, пармезан, сос цезар',
     description_en:'iceberg lettuce, croutons, bacon, chicken fillet, cherry tomato, parmesan, Caesar dressing',
-    allergens:     ['gluten', 'milk', 'fish'],
+    allergens:     ['gluten', 'milk', 'fish', 'eggs'],
     image:         'menu-images/Салата Цезар.png',
   },
   {
@@ -132,7 +132,7 @@ window.menuData = [
     weight:        '350 г',
     description_bg:'киноа, скариди, чери домати, моркови, авокадо, крутони, дресинг',
     description_en:'quinoa, shrimp, cherry tomatoes, carrots, avocado, croutons, dressing',
-    allergens:     ['gluten', 'crustaceans'],
+    allergens:     ['gluten', 'crustaceans', 'milk'],
     image:         'menu-images/Киноа и скариди.png',
   },
   {
@@ -333,7 +333,7 @@ window.menuData = [
     weight:        '200 г',
     description_bg:'тиквички, брашно, дзадзики',
     description_en:'zucchini, flour, tzatziki',
-    allergens:     ['gluten', 'milk'],
+    allergens:     ['gluten', 'milk', 'eggs'],
     image:         'menu-images/Пържени тиквички с дзадзики.png',
   },
   {
@@ -450,7 +450,7 @@ window.menuData = [
     weight:        '200 г',
     description_bg:'зеленчукови, със сирена и с месо',
     description_en:'vegetable, cheese, and meat croquettes',
-    allergens:     ['gluten', 'milk'],
+    allergens:     ['gluten', 'milk', 'eggs'],
     image:         'menu-images/Крокети микс.png',
   },
   {
@@ -505,7 +505,7 @@ window.menuData = [
     weight:        '350 г',
     description_bg:'свинско месо, гъби, сметана, пържени картофи',
     description_en:'pork, mushrooms, cream, fries',
-    allergens:     ['milk'],
+    allergens:     ['milk', 'gluten', 'eggs'],
     image:         'menu-images/Свински шницел с гъби и сметана.png',
   },
   {
@@ -557,7 +557,7 @@ window.menuData = [
     weight:        '400 г',
     description_bg:'пилешко месо, гъби, сметана, картофи',
     description_en:'chicken, mushrooms, cream, potatoes',
-    allergens:     ['milk'],
+    allergens:     ['milk', 'gluten', 'eggs'],
     image:         'menu-images/Пилешки шницел с гъби и сметана.png',
   },
   {
@@ -570,7 +570,7 @@ window.menuData = [
     weight:        '300 г',
     description_bg:'телешко месо, бейби картофи, пепър сос',
     description_en:'veal, baby potatoes, pepper sauce',
-    allergens:     [],
+    allergens:     ['milk'],
     image:         'menu-images/Телешко бон филе.png',
   },
 
@@ -652,7 +652,7 @@ window.menuData = [
     weight:        '1000 г',
     description_bg:'пилешко филе, свинско шишче, пилешко шишче, бифтек, селска наденица',
     description_en:'chicken fillet, pork skewer, chicken skewer, beef patty, village sausage',
-    allergens:     [],
+    allergens:     ['milk'],
     image:         'menu-images/Дъска с меса за двама.png',
   },
   {
@@ -743,7 +743,7 @@ window.menuData = [
     weight:        '350 г',
     description_bg:'телешка и агнешка кайма, лук, подправки',
     description_en:'veal and lamb mince, onion, spices',
-    allergens:     [],
+    allergens:     ['milk'],
     image:         'menu-images/Кебап телешко и агнешко.png',
   },
 
@@ -866,7 +866,7 @@ window.menuData = [
     weight:        '350 г',
     description_bg:'скариди, миди, калмари, салца сос, босилек',
     description_en:'shrimp, mussels, calamari, salsa sauce, basil',
-    allergens:     ['gluten', 'crustaceans', 'molluscs'],
+    allergens:     ['gluten', 'crustaceans', 'molluscs', 'milk'],
     image:         'menu-images/Критарото с морски дарове.png',
   },
   {
@@ -1025,7 +1025,7 @@ window.menuData = [
     weight:        '300 г',
     description_bg:'калмар, зехтин, лимон, дзадзики',
     description_en:'calamari, olive oil, lemon, tzatziki',
-    allergens:     ['milk', 'molluscs'],
+    allergens:     ['milk', 'molluscs', 'gluten'],
     image:         'menu-images/Калмар на плоча.png',
   },
   {
@@ -1038,7 +1038,7 @@ window.menuData = [
     weight:        '600 г',
     description_bg:'гаврос, калмар, скариди, миди, октопод',
     description_en:'anchovy, calamari, shrimp, mussels, octopus',
-    allergens:     ['fish', 'crustaceans', 'molluscs'],
+    allergens:     ['fish', 'crustaceans', 'molluscs', 'gluten', 'milk'],
     image:         'menu-images/plato-morski-darove.png',
   },
   {

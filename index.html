@@ -448,6 +448,29 @@
             color: #777;
             line-height: 1.6;
         }
+        .dish-allergens {
+            display: flex;
+            gap: 3px;
+            flex-wrap: wrap;
+            margin-top: 0.6rem;
+        }
+        .allergen-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            cursor: default;
+        }
+        .allergen-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
         /* ─── GALLERY ─────────────────────────────────── */
         .gallery-item {
@@ -1010,6 +1033,9 @@
                     <div class="p-5">
                         <div class="dish-name mb-2" data-i18n="dish1_name">Барбун</div>
                         <div class="dish-desc" data-i18n="dish1_desc">Пресен барбун, опечен до съвършенство с лимон и зехтин. Истинско средиземноморско удоволствие.</div>
+                        <div class="dish-allergens">
+                            <span class="allergen-icon" title="Риба"><img src="brand_assets/allergen-icons/fish.webp" width="26" height="26" alt="Риба" loading="lazy"></span>
+                        </div>
                         <span class="dish-weight" data-weight="300 г" style="display:block; margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">300 г</span>
                     </div>
                 </div>
@@ -1026,6 +1052,10 @@
                     <div class="p-5">
                         <div class="dish-name mb-2" data-i18n="dish2_name">Паста със скариди</div>
                         <div class="dish-desc" data-i18n="dish2_desc">Паста с пресни скариди в ароматен доматен сос. Средиземноморска класика, приготвена с любов.</div>
+                        <div class="dish-allergens">
+                            <span class="allergen-icon" title="Глутен"><img src="brand_assets/allergen-icons/gluten.webp" width="26" height="26" alt="Глутен" loading="lazy"></span>
+                            <span class="allergen-icon" title="Ракообразни"><img src="brand_assets/allergen-icons/crustaceans.webp" width="26" height="26" alt="Ракообразни" loading="lazy"></span>
+                        </div>
                         <span class="dish-weight" data-weight="300 г" style="display:block; margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">300 г</span>
                     </div>
                 </div>
@@ -1042,6 +1072,13 @@
                     <div class="p-5">
                         <div class="dish-name mb-2" data-i18n="dish3_name">Плато с морски дарове</div>
                         <div class="dish-desc" data-i18n="dish3_desc">Щедро плато от пресни морски дарове, идеално за споделена трапеза с аромат на морето.</div>
+                        <div class="dish-allergens">
+                            <span class="allergen-icon" title="Риба"><img src="brand_assets/allergen-icons/fish.webp" width="26" height="26" alt="Риба" loading="lazy"></span>
+                            <span class="allergen-icon" title="Ракообразни"><img src="brand_assets/allergen-icons/crustaceans.webp" width="26" height="26" alt="Ракообразни" loading="lazy"></span>
+                            <span class="allergen-icon" title="Мекотели"><img src="brand_assets/allergen-icons/molluscs.webp" width="26" height="26" alt="Мекотели" loading="lazy"></span>
+                            <span class="allergen-icon" title="Глутен"><img src="brand_assets/allergen-icons/gluten.webp" width="26" height="26" alt="Глутен" loading="lazy"></span>
+                            <span class="allergen-icon" title="Мляко"><img src="brand_assets/allergen-icons/milk.webp" width="26" height="26" alt="Мляко" loading="lazy"></span>
+                        </div>
                         <span class="dish-weight" data-weight="600 г" style="display:block; margin-top:0.6rem; font-family:'DM Sans',sans-serif; font-size:0.72rem; color:rgba(13,43,26,0.4); letter-spacing:0.03em;">600 г</span>
                     </div>
                 </div>
