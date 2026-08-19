@@ -26,7 +26,11 @@
       })();
     </script>
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%232D6A3F'/><text y='.82em' font-size='72' x='50%25' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>T</text></svg>">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +105,7 @@
         .loader-sub {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            color: rgba(240,237,230,0.45);
+            color: rgba(240,237,230,0.6);
             font-size: 0.85rem;
             letter-spacing: 0.12em;
             margin-top: 0.6rem;
@@ -570,7 +574,7 @@
         }
         .dlv-btn:hover {
             background: rgba(255,255,255,0.13);
-            border-color: rgba(240,237,230,0.45);
+            border-color: rgba(240,237,230,0.6);
             transform: translateY(-3px);
         }
         .dlv-btn:active { transform: translateY(0); }
@@ -910,13 +914,13 @@
             </div>
 
             <div class="hidden md:flex items-center gap-4">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="EN — Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
                 <a href="tel:+359877646206" class="nav-reserve" data-i18n="nav_reserve">Резервирай маса</a>
             </div>
 
             <!-- Mobile right: lang toggle + hamburger -->
             <div class="flex items-center gap-2 md:hidden">
-                <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
+                <button class="lang-toggle" onclick="toggleLang()" aria-label="EN — Switch language" data-i18n-aria="aria_lang_toggle">EN</button>
                 <button id="hamburger" class="hamburger flex flex-col justify-center items-center w-10 h-10" aria-label="Отвори меню" aria-expanded="false" data-i18n-aria="aria_open_menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -1187,7 +1191,7 @@
     <!-- ═══ GALLERY ════════════════════════════════════════════════════ -->
     <section id="gallery" style="background: var(--forest-deep);">
         <div class="max-w-7xl mx-auto px-6 pt-24 pb-8 text-center reveal">
-            <div class="section-label mb-3" style="color: rgba(240,237,230,0.5);" data-i18n="gallery_label">Атмосфера</div>
+            <div class="section-label mb-3" style="color: rgba(240,237,230,0.6);" data-i18n="gallery_label">Атмосфера</div>
             <h2 class="section-title mb-4" style="color: var(--stone);" data-i18n="gallery_title">Средиземноморски дух</h2>
             <span class="rule mx-auto block" style="background: var(--red);"></span>
         </div>
@@ -1211,7 +1215,7 @@
             <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.2rem; color:rgba(240,237,230,0.6);" data-i18n="gallery_quote">
                 "Храната е вкусна, добре приготвена, атмосферата е типична за гръцка таверна"
             </p>
-            <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.15em; color:rgba(240,237,230,0.35); margin-top:0.75rem;" data-i18n="gallery_quote_author">ПЕТЪР С.</div>
+            <div style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.15em; color:rgba(240,237,230,0.6); margin-top:0.75rem;" data-i18n="gallery_quote_author">ПЕТЪР С.</div>
         </div>
     </section>
 
@@ -1398,7 +1402,7 @@
         <div style="position:absolute; inset:0; background: radial-gradient(ellipse at 80% 50%, rgba(45,106,63,0.4) 0%, transparent 60%), radial-gradient(ellipse at 10% 50%, rgba(7,21,16,0.6) 0%, transparent 50%); pointer-events:none;"></div>
 
         <div class="max-w-4xl mx-auto px-6 text-center reveal" style="position:relative; z-index:1;">
-            <div class="section-label mb-4" style="color:rgba(240,237,230,0.5);" data-i18n="cta_label">Резервации</div>
+            <div class="section-label mb-4" style="color:rgba(240,237,230,0.6);" data-i18n="cta_label">Резервации</div>
             <h2 style="font-family:'Cinzel',serif; font-weight:700; font-size:clamp(2rem,5vw,3.5rem); letter-spacing:-0.02em; color:var(--stone); line-height:1.1; margin-bottom:1.25rem;" data-i18n="cta_title">
                 Заповядайте в Тавернаки
             </h2>
@@ -1413,7 +1417,7 @@
             </div>
 
             <div style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(240,237,230,0.1);">
-                <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(240,237,230,0.4); letter-spacing:0.05em;" data-i18n="cta_info">
+                <p style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(240,237,230,0.6); letter-spacing:0.05em;" data-i18n="cta_info">
                     Открито всеки ден 10:00 — 00:00 · Безплатен паркинг · Достъпен за хора с увреждания
                 </p>
             </div>
@@ -1433,12 +1437,12 @@
                     <div style="margin-bottom:0.85rem; display:inline-block;">
                         <img src="brand_assets/logo.webp" alt="Tavernaki Greek Restaurant" data-i18n-alt="alt_logo" style="height:36px; width:auto; display:block; filter: brightness(0) invert(1); opacity:0.85;">
                     </div>
-                    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.45); line-height:1.6; max-width:220px;" class="footer-slogan" data-i18n="footer_slogan">
+                    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.9rem; color:rgba(240,237,230,0.6); line-height:1.6; max-width:220px;" class="footer-slogan" data-i18n="footer_slogan">
                         Автентичната гръцка кухня, традиционно поднесена с любов
                     </p>
                     <!-- Socials: desktop only inside brand col -->
                     <div class="footer-socials-desktop" style="margin-top:1.5rem;">
-                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:0.75rem;" data-i18n="footer_social">Социални Медии</div>
+                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.6); text-transform:uppercase; margin-bottom:0.75rem;" data-i18n="footer_social">Социални Медии</div>
                     <div class="flex gap-3">
                         <a href="https://facebook.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -1452,7 +1456,7 @@
 
                 <!-- Navigation (desktop col 2 / mobile: left half) -->
                 <div class="footer-nav-col">
-                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_nav_head">Навигация</div>
+                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.6); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_nav_head">Навигация</div>
                     <div style="display:flex; flex-direction:column; gap:0.75rem;">
                         <a href="/" class="footer-link" data-i18n="nav_home">Начало</a>
                         <a href="/menu" class="footer-link" data-i18n="nav_menu">Меню</a>
@@ -1464,11 +1468,11 @@
 
                 <!-- Contact (desktop col 3 / mobile: right half) -->
                 <div class="footer-contact-col">
-                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_contact_head">Контакти</div>
+                    <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.6); text-transform:uppercase; margin-bottom:1.25rem;" data-i18n="footer_contact_head">Контакти</div>
                     <div style="display:flex; flex-direction:column; gap:0.6rem;">
                         <a href="tel:+359877646206" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">0877 64 62 06</a>
                         <a href="mailto:tavernaki@abv.bg" style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); text-decoration:none; transition:color 0.2s ease;" onmouseover="this.style.color='var(--stone)'" onmouseout="this.style.color='rgba(240,237,230,0.6)'">tavernaki@abv.bg</a>
-                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.45); line-height:1.5;">
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.875rem; color:rgba(240,237,230,0.6); line-height:1.5;">
                             <span data-i18n="contact_address_line1">бул. Пещерско шосе 28а</span><br>
                             <span data-i18n="contact_address_line2">кв. Младежки хълм, 4002 Пловдив</span><br>
                             <span data-i18n="contact_address_city">Пловдив, България</span>
@@ -1480,7 +1484,7 @@
 
             <!-- Socials: mobile only, centered below nav + contact -->
             <div class="footer-socials-mobile flex-col items-center gap-3 py-8" style="display:none; border-bottom: 1px solid rgba(240,237,230,0.08);">
-                <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.35); text-transform:uppercase; margin-bottom:0.25rem;" data-i18n="footer_social">Социални Медии</div>
+                <div style="font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(240,237,230,0.6); text-transform:uppercase; margin-bottom:0.25rem;" data-i18n="footer_social">Социални Медии</div>
                 <div class="flex gap-3">
                     <a href="https://facebook.com/tavernakiplovdiv" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>

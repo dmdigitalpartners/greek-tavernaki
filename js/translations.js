@@ -26,6 +26,7 @@ const t = {
     notfound_sub:   'Изглежда сте объркали адреса, или страницата вече не съществува. Върнете се към началото или разгледайте менюто ни.',
     notfound_home:  'Начало',
     notfound_menu:  'Виж менюто',
+    notfound_contact: 'Контакти',
     // Navbar
     nav_home:    'Начало',
     nav_menu:    'Меню',
@@ -249,7 +250,7 @@ const t = {
     og_desc_contact: 'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Тел: 0877 64 62 06.',
     og_desc_parties: 'Рождени дни, годишнини, фирмени вечери в Тавернаки. Персонализирано меню, лятна градина. Тел: 0877 64 62 06.',
     // Accessible ARIA labels
-    aria_lang_toggle:      'Смяна на езика',
+    aria_lang_toggle:      'EN — смяна на езика',
     aria_main_nav:         'Главно меню',
     aria_open_menu:        'Отвори меню',
     aria_mobile_menu:      'Мобилно меню',
@@ -276,6 +277,7 @@ const t = {
     notfound_sub:   'Looks like the address is wrong, or the page no longer exists. Head back home or browse our menu.',
     notfound_home:  'Home',
     notfound_menu:  'View Menu',
+    notfound_contact: 'Contact',
     // Navbar
     nav_home:    'Home',
     nav_menu:    'Menu',
@@ -499,7 +501,7 @@ const t = {
     og_desc_contact: 'Tavernaki — 28a Peshtersko Shose Blvd, Plovdiv. Open every day 10:00–00:00. Tel: 0877 64 62 06.',
     og_desc_parties: 'Birthdays, anniversaries, corporate dinners at Tavernaki. Personalised menu, summer garden. Tel: 0877 64 62 06.',
     // Accessible ARIA labels
-    aria_lang_toggle:      'Switch language',
+    aria_lang_toggle:      'EN — switch language',
     aria_main_nav:         'Main navigation',
     aria_open_menu:        'Open menu',
     aria_mobile_menu:      'Mobile menu',
