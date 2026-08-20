@@ -1,7 +1,6 @@
 // Loaded AFTER site-config.js and menu-data.js
 // DO NOT call applyLang() from this file — pages own their own init() order.
 const LANG_KEY = 'tavernaki-lang';
-const SITE_URL = 'https://tavernaki.bg';
 
 function getLang() {
   try { return localStorage.getItem(LANG_KEY) || 'bg'; }
@@ -15,10 +14,10 @@ function setLang(lang) {
 const t = {
   bg: {
     // Page titles
-    page_title_home: 'Тавернаки — Автентична гръцка кухня',
+    page_title_home: 'Tavernaki — Гръцки ресторант в Пловдив',
     page_title_menu: 'Меню — 85 гръцки ястия | Тавернаки · Пловдив',
     // Meta descriptions
-    meta_desc_home: 'Автентична гръцка кухня в Пловдив. Пресна риба, морски дарове, скара, приготвени с любов. Жива музика в петък. Резервации: 0877 64 62 06.',
+    meta_desc_home: 'Тавернаки — автентична гръцка кухня в Пловдив. Пресна риба, морски дарове и скара, приготвени с любов в топла таверна атмосфера. Резервации: 0877 64 62 06.',
     meta_desc_menu: '85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Виж пълното меню на Тавернаки, Пловдив.',
     skip_to_content: 'Към съдържанието',
     // 404 page
@@ -46,8 +45,6 @@ const t = {
     // Trust bar
     trust_parking:        'Безплатен паркинг',
     trust_parking_sub:    'За гостите на ресторанта',
-    trust_music:          'Жива гръцка музика',
-    trust_music_sub:      'Всеки петък',
     trust_quality:        'Домашно приготвено',
     trust_quality_sub:    'Пресни сезонни продукти',
     // Dishes section
@@ -266,7 +263,7 @@ const t = {
   },
   en: {
     // Page titles
-    page_title_home: 'Tavernaki — Authentic Greek Cuisine',
+    page_title_home: 'Tavernaki — Greek Restaurant in Plovdiv',
     page_title_menu: 'Menu — 85 Greek Dishes | Tavernaki · Plovdiv',
     // Meta descriptions
     meta_desc_home: 'Tavernaki — authentic Greek cuisine in Plovdiv. Fresh fish, seafood, grilled meats, pasta. Reserve a table: 0877 64 62 06.',
@@ -297,8 +294,6 @@ const t = {
     // Trust bar
     trust_parking:        'Free Parking',
     trust_parking_sub:    'For restaurant guests',
-    trust_music:          'Live Greek Music',
-    trust_music_sub:      'Every Friday',
     trust_quality:        'Homemade food',
     trust_quality_sub:    'Fresh seasonal ingredients',
     // Dishes section
