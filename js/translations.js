@@ -17,7 +17,7 @@ const t = {
     page_title_home: 'Tavernaki — Гръцки ресторант в Пловдив',
     page_title_menu: 'Меню — 85 гръцки ястия | Тавернаки · Пловдив',
     // Meta descriptions
-    meta_desc_home: 'Тавернаки — автентична гръцка кухня в Пловдив. Пресна риба, морски дарове и скара, приготвени с любов в топла таверна атмосфера. Резервации: 0877 64 62 06.',
+    meta_desc_home: 'Тавернаки — гръцки ресторант в Пловдив. Автентична кухня, пресна риба и морски дарове, приготвени с любов в топла таверна атмосфера.',
     meta_desc_menu: '85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Виж пълното меню на Тавернаки, Пловдив.',
     skip_to_content: 'Към съдържанието',
     // 404 page
@@ -37,7 +37,7 @@ const t = {
     toggle_label: 'EN',
     sticky_reserve: 'РЕЗЕРВИРАЙ МАСА',
     // Hero
-    hero_h1_text:     'Тавернаки — Автентична гръцка кухня в Пловдив',
+    hero_h1_text:     'Tavernaki — Гръцки ресторант в Пловдив',
     hero_tagline:     'Автентичната гръцка кухня,',
     hero_sub:         'традиционно поднесена с любов',
     hero_cta_reserve: 'Резервирай маса',
@@ -266,7 +266,7 @@ const t = {
     page_title_home: 'Tavernaki — Greek Restaurant in Plovdiv',
     page_title_menu: 'Menu — 85 Greek Dishes | Tavernaki · Plovdiv',
     // Meta descriptions
-    meta_desc_home: 'Tavernaki — authentic Greek cuisine in Plovdiv. Fresh fish, seafood, grilled meats, pasta. Reserve a table: 0877 64 62 06.',
+    meta_desc_home: 'Tavernaki — Greek restaurant in Plovdiv. Authentic cuisine, fresh fish and seafood, prepared with love in a warm tavern atmosphere.',
     meta_desc_menu: 'Full menu of Tavernaki — Plovdiv. Salads, appetizers, BBQ, fish, seafood, pasta and risotto.',
     skip_to_content: 'Skip to content',
     // 404 page
@@ -286,7 +286,7 @@ const t = {
     toggle_label: 'BG',
     sticky_reserve: 'RESERVE A TABLE',
     // Hero
-    hero_h1_text:     'Tavernaki — Authentic Greek Cuisine in Plovdiv',
+    hero_h1_text:     'Tavernaki — Greek Restaurant in Plovdiv',
     hero_tagline:     'Authentic Greek cuisine,',
     hero_sub:         'traditionally served with love',
     hero_cta_reserve: 'Reserve a table',
