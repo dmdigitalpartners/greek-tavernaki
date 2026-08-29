@@ -267,34 +267,40 @@ The video now attaches only after `load`, and is skipped entirely on Data Saver,
 `prefers-reduced-motion`. The poster is a complete hero on its own, so those viewers lose nothing but the
 motion.
 
-### LCP — an honest accounting
+### LCP — inconclusive, and I am not going to claim otherwise
 
-Local LCP numbers after the change are **mixed and partly worse**, and it would be misleading to present
-them as a win:
+**I could not measure a trustworthy LCP delta.** Run-to-run variance in my lab setup (±1000 ms or more on
+the same URL) is larger than the effect being measured, so no before/after LCP claim in either direction is
+defensible from this data.
 
-| Page (mobile) | Before | After (local) |
-|---|---:|---:|
-| `/` | 3332 ms | 3860 ms |
-| `/menu` | 4416 ms | 5100 ms |
-| `/about` | 4256 ms | 4004 ms |
-| `/contact` | 848 ms | 1340 ms |
-| `/parties` | 2388 ms | 2604 ms |
+Evidence that the measurements are too noisy to use:
 
-**These local figures are pessimistic and not comparable to production.** `serve.mjs` sends HTML
-uncompressed; Vercel serves it Brotli-compressed (verified: `Content-Encoding: br`). Pre-rendering the menu
-grew `pages/menu.html` from 55 KB to 175 KB raw — but only **25.7 KB gzipped**, because 85 near-identical
-cards compress extremely well. The local test pays the full 175 KB; production pays ~26 KB.
+- The preview homepage measured **4644 ms** in one round and **3640 ms** in another, minutes apart, same URL,
+  same emulation profile.
+- Local figures against `serve.mjs` are separately unusable: it sends HTML uncompressed, while Vercel serves
+  Brotli (verified `Content-Encoding: br`). Pre-rendering grew `pages/menu.html` from 55 KB to 175 KB raw,
+  but over the wire it is **27.3 KB** — the local test pays a cost production does not.
 
-Run-to-run variance was also high (up to ±1300 ms on the same URL), so these numbers carry real error bars.
+One hypothesis was tested and **disproved**: that the deferred video was registering as a late LCP candidate.
+Blocking the video entirely changed median LCP by ~150 ms (3484 ms vs 3640 ms), within noise, and the LCP
+element was `HERO-PAGE.webp` in both cases. The LCP element on every page is simply its hero image.
 
-What was done for LCP regardless:
-- Responsive `srcset` on all four subpage heroes (768w / 1280w / original). The heroes were the measured LCP
-  element on every page and were shipping at up to 1672px / 277 KB to 390px phones. The 768w variants are
-  47–71 KB.
+What was done for LCP, on structural grounds rather than measured ones:
+
+- Responsive `srcset` on all four subpage heroes (768w / 1280w / original). The heroes are the LCP element on
+  every page and were shipping at up to 1672px / 277 KB to 390px phones. The 768w variants are 47–71 KB.
 - Homepage video poster re-encoded 1536w → 1280w (155 KB → 109 KB). `poster` has no `srcset` equivalent.
 - `fetchpriority="high"` on the hero preload.
+- The 11 MB video is off the critical path — verifiable from the markup, not from a timing measurement.
 
-**LCP must be confirmed on the deployed preview, not locally.** See §10.
+**LCP must be judged from PageSpeed Insights and CrUX field data on production.** See §10.
+
+### One thing that did not change
+
+Total page weight for a fast-connection visitor who stays past `load` is **still ~11.5 MB on the homepage**
+(measured on the preview). The video is deferred, not removed — it no longer blocks rendering, and it is
+skipped entirely on Data Saver / 2G / reduced-motion, but everyone else still eventually downloads it.
+**Re-encoding it is the outstanding fix** (see §9); ffmpeg was not available on this machine.
 
 ### One thing tried and reverted
 
@@ -365,15 +371,19 @@ presentation choice, not an SEO defect, and not mine to change — but it is wor
 
 ## 10. Measurement plan
 
-### Immediately after merge and deploy
+### Already verified on the Vercel preview deployment
 
-1. Confirm the redirects on production (these could not be tested locally — `serve.mjs` does not read
-   `vercel.json`):
-   - `/index.html` → 308 → `/`
-   - `/pages/menu.html` → 308 → `/menu` (and the other three)
-   - `/menu/` → 308 → `/menu`
-   - `*.vercel.app` returns `X-Robots-Tag: noindex`
-   - Confirm **no redirect loop** on `/menu` (redirect and rewrite interact here)
+These could not be tested locally (`serve.mjs` does not read `vercel.json`), so they were checked against
+the PR preview build and all pass:
+
+- `/index.html`, `/pages/{menu,about,contact,parties}.html` and `/menu/` all return **308**, single hop, to
+  the correct clean URL — **no redirect loops** (the redirect and rewrite interact on `/menu`)
+- `*.vercel.app` returns `X-Robots-Tag: noindex, nofollow`
+- Cache-Control: 30d on images, 1d on JS/CSS, 1h on sitemap, revalidating on HTML
+- CSP now allows `https://*.clarity.ms` and no longer references the Tailwind CDN
+- `/menu` transfers **27.3 KB** Brotli-compressed
+
+### Immediately after merge and deploy
 2. Run `node _tools/seo-check.mjs https://www.tavernaki-plovdiv.com` against production.
 3. Run **PageSpeed Insights** on `/` and `/menu`, mobile — this is the real LCP number, against
    Brotli-compressed HTML. Local figures in §7 are pessimistic.
