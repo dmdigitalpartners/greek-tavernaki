@@ -1,10 +1,15 @@
 {
   "name": "greek-tavernaki",
   "version": "1.0.0",
-  "description": "",
+  "description": "Restaurant website for Greek Tavernaki, Plovdiv.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "tailwindcss -c tailwind.config.js -i _tools/tailwind-input.css -o css/tavernaki.css --minify && node _tools/inline-css.mjs",
+    "prerender:menu": "node _tools/prerender-menu.mjs",
+    "build": "npm run prerender:menu && npm run build:css",
+    "serve": "node serve.mjs",
+    "seo:check": "node _tools/seo-check.mjs",
+    "seo:cwv": "node _tools/measure-cwv.mjs"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +19,7 @@
     "puppeteer": "^25.1.0"
   },
   "devDependencies": {
-    "sharp": "^0.35.2"
+    "sharp": "^0.35.2",
+    "tailwindcss": "^3.4.19"
   }
 }

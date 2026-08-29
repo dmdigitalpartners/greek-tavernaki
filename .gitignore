@@ -6,6 +6,7 @@ node_modules/
 
 # Claude Code (local config — paths are machine-specific)
 .claude/
+.impeccable/
 
 # Claude Code temp files
 temporary screenshots/
