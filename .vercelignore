@@ -11,3 +11,7 @@ Visual Assets/*.png
 brand_assets/*.png
 brand_assets/allergen-icons/*.png
 *.MOV
+tailwind.config.js
+package.json
+package-lock.json
+css

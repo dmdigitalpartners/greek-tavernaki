@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  changefreq and priority are deliberately omitted: Google ignores both.
+  lastmod is kept because Google does use it, and is only meaningful if it
+  reflects a real change to the page — update it when the page actually changes.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.tavernaki-plovdiv.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-29</lastmod>
   </url>
   <url>
     <loc>https://www.tavernaki-plovdiv.com/menu</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-08-29</lastmod>
   </url>
   <url>
     <loc>https://www.tavernaki-plovdiv.com/parties</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-29</lastmod>
   </url>
   <url>
     <loc>https://www.tavernaki-plovdiv.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-08-29</lastmod>
   </url>
   <url>
     <loc>https://www.tavernaki-plovdiv.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-08-29</lastmod>
   </url>
 </urlset>
