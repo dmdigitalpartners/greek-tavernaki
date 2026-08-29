@@ -64,6 +64,7 @@ const t = {
     value3_sub:          'Внимание към всяка чиния, всяка маса, всеки гост',
     // About — 5 blocks (client copy)
     about_welcome_h: 'Добре дошли в Тавернаки',
+    about_section_h: 'Пет години автентична гръцка кухня в Пловдив',
     about_welcome_p: 'Вече повече от пет години посрещаме своите гости с внимание към всеки детайл. Тавернаки е уютно място с топла вътрешна зала и красива лятна градина, където истинската гръцка кухня се среща с домашния уют. Приготвяме всичко от пресни и сезонни продукти с грижа за всяка чиния.',
     about_welcome_p_mobile: 'Пет години автентична гръцка кухня в уютна атмосфера, приготвена с грижа за всеки детайл.',
     about_story_h:   'Нашата история',
@@ -121,6 +122,11 @@ const t = {
     // Location & hours
     location_label:  'Намерете ни',
     location_title:  'Работно Време & Адрес',
+    location_section_h: 'Как да ни намерите в Пловдив',
+    link_seafood:    'Риба и морски дарове',
+    link_menu_about: 'Разгледайте менюто',
+    link_contact_parties: 'Вижте адрес и работно време',
+    link_parties_menu: 'Планирате тържество?',
     hours_title:     'Работно Време',
     contacts_title:  'Контакти',
     day_mon: 'Понеделник',
@@ -137,7 +143,7 @@ const t = {
     cta_sub:      'Резервирайте маса или се обадете директно и ние ще се погрижим за всичко останало. Всяка вечер е специална при нас.',
     cta_btn_call: 'Обадете се: 0877 64 62 06',
     cta_btn_wa:   'WhatsApp резервация',
-    cta_info:     'Открито всеки ден 10:00 — 00:00 · Безплатен паркинг · Достъпен за хора с увреждания',
+    cta_info:     'Открито всеки ден от 10:00 · Безплатен паркинг · Достъпен за хора с увреждания',
     // Footer
     footer_slogan:       'Автентичната гръцка кухня, традиционно поднесена с любов',
     footer_social:       'Социални Медии',
@@ -232,7 +238,7 @@ const t = {
     page_title_parties:  'Тържества & Специални Поводи | Тавернаки · Пловдив',
     // Meta descriptions — per-page (all pages)
     meta_desc_about:    'Над 5 години автентична гръцка кухня в Пловдив. Рецепти от шеф Димитри, пресни сезонни продукти и домашна атмосфера в Тавернаки.',
-    meta_desc_contact:  'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Тел: 0877 64 62 06. Безплатен паркинг.',
+    meta_desc_contact:  'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Отворено всеки ден от 10:00. Тел: 0877 64 62 06. Безплатен паркинг.',
     meta_desc_parties:  'Рождени дни, годишнини и фирмени вечери в Тавернаки, Пловдив. Персонализирано меню, лятна градина, посветен персонал. Тел: 0877 64 62 06.',
     // OG titles — all pages
     og_title_home:    'Тавернаки — Автентична гръцка кухня · Пловдив',
@@ -244,7 +250,7 @@ const t = {
     og_desc_home:    'Автентичната гръцка кухня, традиционно поднесена с любов. Пресни сезонни продукти и домашна рецептура в Пловдив.',
     og_desc_menu:    '85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.',
     og_desc_about:   'Над 5 години автентична гръцка кухня с рецепти от шеф Димитри и пресни сезонни продукти. Тавернаки, Пловдив.',
-    og_desc_contact: 'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Открито всеки ден 10:00–00:00. Тел: 0877 64 62 06.',
+    og_desc_contact: 'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Отворено всеки ден от 10:00. Тел: 0877 64 62 06.',
     og_desc_parties: 'Рождени дни, годишнини, фирмени вечери в Тавернаки. Персонализирано меню, лятна градина. Тел: 0877 64 62 06.',
     // Accessible ARIA labels
     aria_lang_toggle:      'EN — смяна на езика',
@@ -313,6 +319,7 @@ const t = {
     value3_sub:          'Care for every plate, every table, every guest',
     // About — 5 blocks
     about_welcome_h: 'Welcome to Tavernaki',
+    about_section_h: 'Five years of authentic Greek cooking in Plovdiv',
     about_welcome_p: 'For over five years we have welcomed our guests with attention to every detail. Tavernaki is a cosy place with a warm indoor hall and a beautiful summer garden, where authentic Greek cuisine meets the comfort of home. We prepare everything from fresh, seasonal ingredients with care for every plate.',
     about_welcome_p_mobile: 'Five years of authentic Greek cuisine in a cosy setting, crafted with care for every detail.',
     about_story_h:   'Our Story',
@@ -370,6 +377,11 @@ const t = {
     // Location & hours
     location_label:  'Find Us',
     location_title:  'Opening Hours & Address',
+    location_section_h: 'How to find us in Plovdiv',
+    link_seafood:    'Fish & seafood',
+    link_menu_about: 'Browse the menu',
+    link_contact_parties: 'See address and opening hours',
+    link_parties_menu: 'Planning a celebration?',
     hours_title:     'Opening Hours',
     contacts_title:  'Contact',
     day_mon: 'Monday',
@@ -481,7 +493,7 @@ const t = {
     page_title_parties:  'Celebrations & Special Occasions | Tavernaki · Plovdiv',
     // Meta descriptions — per-page (all pages)
     meta_desc_about:    'Over 5 years of authentic Greek cuisine in Plovdiv. Recipes by Chef Dimitri, fresh seasonal ingredients and a homely atmosphere at Tavernaki.',
-    meta_desc_contact:  'Tavernaki — 28a Peshtерsko Shose Blvd, Plovdiv. Open every day 10:00–00:00. Tel: 0877 64 62 06. Free parking.',
+    meta_desc_contact:  'Tavernaki — 28a Peshtersko Shose Blvd, Plovdiv. Open every day from 10:00. Tel: 0877 64 62 06. Free parking.',
     meta_desc_parties:  'Birthdays, anniversaries and corporate dinners at Tavernaki, Plovdiv. Personalised menu, summer garden, dedicated staff. Tel: 0877 64 62 06.',
     // OG titles — all pages
     og_title_home:    'Tavernaki — Authentic Greek Cuisine · Plovdiv',
@@ -493,7 +505,7 @@ const t = {
     og_desc_home:    'Authentic Greek cuisine, traditionally served with love. Fresh seasonal ingredients and home-style recipes in Plovdiv.',
     og_desc_menu:    '85 Greek dishes — salads, BBQ, fish, seafood, pasta, dips and lunch menu. Tavernaki, Plovdiv.',
     og_desc_about:   'Over 5 years of authentic Greek cuisine with recipes by Chef Dimitri and fresh seasonal ingredients. Tavernaki, Plovdiv.',
-    og_desc_contact: 'Tavernaki — 28a Peshtersko Shose Blvd, Plovdiv. Open every day 10:00–00:00. Tel: 0877 64 62 06.',
+    og_desc_contact: 'Tavernaki — 28a Peshtersko Shose Blvd, Plovdiv. Open every day from 10:00. Tel: 0877 64 62 06.',
     og_desc_parties: 'Birthdays, anniversaries, corporate dinners at Tavernaki. Personalised menu, summer garden. Tel: 0877 64 62 06.',
     // Accessible ARIA labels
     aria_lang_toggle:      'EN — switch language',
