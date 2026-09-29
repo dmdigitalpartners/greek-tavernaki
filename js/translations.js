@@ -111,6 +111,8 @@ const t = {
     // Lunch note — used in About section and menu.html
     lunch_note: 'Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия. Бърза, вкусна и домашна храна, идеална за обедна пауза.',
     lunch_note_mobile: 'Всеки делничен ден ви очакваме с разнообразно обедно меню от прясно приготвени ястия.',
+    // About: closing summary paragraph (all breakpoints)
+    about_local_p: 'Тавернаки е гръцки ресторант в Пловдив, на булевард Пещерско шосе. Вече пет години посрещаме гостите си с автентична гръцка кухня, приготвена от пресни и сезонни продукти по рецепти на шеф Димитри. Уютната вътрешна зала и лятната градина правят Тавернаки предпочитано място за вечеря с приятели и семейство в Пловдив.',
     // Gallery
     gallery_label: 'Атмосфера',
     gallery_title: 'Средиземноморски дух',
@@ -366,6 +368,8 @@ const t = {
     // Lunch note
     lunch_note: 'Every weekday we welcome you with a varied lunch menu of freshly prepared dishes. Fast, tasty and home-style food, perfect for a lunch break.',
     lunch_note_mobile: 'Every weekday we welcome you with a varied lunch menu of freshly prepared dishes.',
+    // About: closing summary paragraph (all breakpoints)
+    about_local_p: 'Tavernaki is a Greek restaurant in Plovdiv, on Peshtersko Shose Boulevard. For five years we have welcomed our guests with authentic Greek cuisine, prepared from fresh, seasonal ingredients to Chef Dimitri\'s recipes. The cosy indoor hall and the summer garden make Tavernaki a favourite place for dinner with friends and family in Plovdiv.',
     // Gallery
     gallery_label: 'Atmosphere',
     gallery_title: 'Mediterranean Spirit',
