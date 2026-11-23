@@ -134,7 +134,7 @@ window.menuData = [
     weight:        '400 г',
     description_bg:'',
     description_en:'',
-    allergens:     ['milk'],
+    allergens:     [],
     image:         'menu-images/Варени картофи с червен лук.png',
   },
   {
