@@ -1118,7 +1118,7 @@ window.menuData = [
     description_bg:'ципура, рукола, червена чушка, лимон, зехтин',
     description_en:'sea bream, arugula, red pepper, lemon, olive oil',
     allergens:     ['fish'],
-    image:         'menu-images/Лаврак на скара.png',
+    image:         'menu-images/Ципура.png',
   },
   {
     id:            'sardela-na-skara',
@@ -1157,7 +1157,7 @@ window.menuData = [
     description_bg:'',
     description_en:'',
     allergens:     ['fish'],
-    image:         null,
+    image:         'menu-images/Лаврак на скара.png',
   },
   {
     id:            'tsipura-lavrak-fagri-2kg',
@@ -1170,7 +1170,7 @@ window.menuData = [
     description_bg:'',
     description_en:'',
     allergens:     ['fish'],
-    image:         null,
+    image:         'menu-images/Лаврак на скара.png',
   },
   {
     id:            'divi-tsipura-lavrak-fagri',
@@ -1183,7 +1183,7 @@ window.menuData = [
     description_bg:'',
     description_en:'',
     allergens:     ['fish'],
-    image:         null,
+    image:         'menu-images/Ципура дива.png',
   },
   {
     id:            'zadusheni-midi',
