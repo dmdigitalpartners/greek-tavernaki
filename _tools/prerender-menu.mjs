@@ -174,7 +174,8 @@ const menuSchema = {
     hasMenuItem: dishes
       .filter((d) => d.category === cat)
       .map((d) => {
-        const item = { '@type': 'MenuItem', name: d.name_en, description: d.description_en };
+        const item = { '@type': 'MenuItem', name: d.name_en };
+        if (d.description_en) item.description = d.description_en;
         if (d.price != null) {
           item.offers = { '@type': 'Offer', price: d.price.toFixed(2), priceCurrency: 'EUR' };
           const ref = UNIT_REFERENCE[d.price_unit];
