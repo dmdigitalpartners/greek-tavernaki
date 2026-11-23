@@ -15,10 +15,10 @@ const t = {
   bg: {
     // Page titles
     page_title_home: 'Tavernaki — Гръцки ресторант в Пловдив',
-    page_title_menu: 'Меню — 85 гръцки ястия | Тавернаки · Пловдив',
+    page_title_menu: 'Меню — 90 гръцки ястия | Тавернаки · Пловдив',
     // Meta descriptions
     meta_desc_home: 'Тавернаки — гръцки ресторант в Пловдив. Автентична кухня, пресна риба и морски дарове, приготвени с любов в топла таверна атмосфера.',
-    meta_desc_menu: '85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Виж пълното меню на Тавернаки, Пловдив.',
+    meta_desc_menu: '90 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Виж пълното меню на Тавернаки, Пловдив.',
     skip_to_content: 'Към съдържанието',
     // 404 page
     notfound_title: 'Тази страница не съществува',
@@ -161,7 +161,7 @@ const t = {
     // Menu hero
     menu_hero_title: 'Нашето меню',
     menu_hero_label: 'Пловдив · България',
-    menu_hero_sub:   '85 ястия · 8 категории · Пресни продукти всеки ден',
+    menu_hero_sub:   '90 ястия · 9 категории · Пресни продукти всеки ден',
     // Loader
     loader_sub: 'Автентична гръцка кухня · Пловдив',
     // Hero eyebrow
@@ -222,11 +222,11 @@ const t = {
     cat_pan_meat:    'Месни Ястия на Тиган',
     cat_specialties: 'Специалитети',
     cat_fish:        'Риба и Морски Дарове',
+    cat_desserts:    'Десерти',
     cat_lunch:       'Обедно Меню (Пон–Пет)',
     // Menu page UI
     allergens_label:      'Алергени:',
     allergens_on_request: 'Информация за алергени при поискване',
-    price_per_unit:       '/ 100г',
     menu_empty:           'Няма налични ястия.',
     // Allergen info section
     allergy_notice_label:    'Важна информация',
@@ -244,13 +244,13 @@ const t = {
     meta_desc_parties:  'Рождени дни, годишнини и фирмени вечери в Тавернаки, Пловдив. Персонализирано меню, лятна градина, посветен персонал. Тел: 0877 64 62 06.',
     // OG titles — all pages
     og_title_home:    'Тавернаки — Автентична гръцка кухня · Пловдив',
-    og_title_menu:    'Меню — 85 гръцки ястия | Тавернаки · Пловдив',
+    og_title_menu:    'Меню — 90 гръцки ястия | Тавернаки · Пловдив',
     og_title_about:   'За нас | Тавернаки — Гръцки ресторант с история · Пловдив',
     og_title_contact: 'Контакти & Работно Време | Тавернаки · Пловдив',
     og_title_parties: 'Тържества & Специални Поводи | Тавернаки · Пловдив',
     // OG descriptions — all pages
     og_desc_home:    'Автентичната гръцка кухня, традиционно поднесена с любов. Пресни сезонни продукти и домашна рецептура в Пловдив.',
-    og_desc_menu:    '85 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.',
+    og_desc_menu:    '90 гръцки ястия — салати, скара, риба, морски дарове, паста, мезета и обедно меню. Тавернаки, Пловдив.',
     og_desc_about:   'Над 5 години автентична гръцка кухня с рецепти от шеф Димитри и пресни сезонни продукти. Тавернаки, Пловдив.',
     og_desc_contact: 'Тавернаки — бул. Пещерско шосе 28а, Пловдив. Отворено всеки ден от 10:00. Тел: 0877 64 62 06.',
     og_desc_parties: 'Рождени дни, годишнини, фирмени вечери в Тавернаки. Персонализирано меню, лятна градина. Тел: 0877 64 62 06.',
@@ -272,7 +272,7 @@ const t = {
   en: {
     // Page titles
     page_title_home: 'Tavernaki — Greek Restaurant in Plovdiv',
-    page_title_menu: 'Menu — 85 Greek Dishes | Tavernaki · Plovdiv',
+    page_title_menu: 'Menu — 90 Greek Dishes | Tavernaki · Plovdiv',
     // Meta descriptions
     meta_desc_home: 'Tavernaki — Greek restaurant in Plovdiv. Authentic cuisine, fresh fish and seafood, prepared with love in a warm tavern atmosphere.',
     meta_desc_menu: 'Full menu of Tavernaki — Plovdiv. Salads, appetizers, BBQ, fish, seafood, pasta and risotto.',
@@ -418,7 +418,7 @@ const t = {
     // Menu hero
     menu_hero_title: 'Our Menu',
     menu_hero_label: 'Plovdiv · Bulgaria',
-    menu_hero_sub:   '85 dishes · 8 categories · Fresh products every day',
+    menu_hero_sub:   '90 dishes · 9 categories · Fresh products every day',
     // Loader
     loader_sub: 'Authentic Greek cuisine · Plovdiv',
     // Hero eyebrow
@@ -479,11 +479,11 @@ const t = {
     cat_pan_meat:    'Pan Fried Meat Dishes',
     cat_specialties: 'Specialties',
     cat_fish:        'Fish & Seafood',
+    cat_desserts:    'Desserts',
     cat_lunch:       'Lunch Menu (Mon–Fri)',
     // Menu page UI
     allergens_label:      'Allergens:',
     allergens_on_request: 'Allergen info on request',
-    price_per_unit:       '/ 100g',
     menu_empty:           'No dishes available.',
     // Allergen info section
     allergy_notice_label:    'Important Information',
@@ -501,13 +501,13 @@ const t = {
     meta_desc_parties:  'Birthdays, anniversaries and corporate dinners at Tavernaki, Plovdiv. Personalised menu, summer garden, dedicated staff. Tel: 0877 64 62 06.',
     // OG titles — all pages
     og_title_home:    'Tavernaki — Authentic Greek Cuisine · Plovdiv',
-    og_title_menu:    'Menu — 85 Greek Dishes | Tavernaki · Plovdiv',
+    og_title_menu:    'Menu — 90 Greek Dishes | Tavernaki · Plovdiv',
     og_title_about:   'About Us | Tavernaki — Greek Restaurant with History · Plovdiv',
     og_title_contact: 'Contact & Opening Hours | Tavernaki · Plovdiv',
     og_title_parties: 'Celebrations & Special Occasions | Tavernaki · Plovdiv',
     // OG descriptions — all pages
     og_desc_home:    'Authentic Greek cuisine, traditionally served with love. Fresh seasonal ingredients and home-style recipes in Plovdiv.',
-    og_desc_menu:    '85 Greek dishes — salads, BBQ, fish, seafood, pasta, dips and lunch menu. Tavernaki, Plovdiv.',
+    og_desc_menu:    '90 Greek dishes — salads, BBQ, fish, seafood, pasta, dips and lunch menu. Tavernaki, Plovdiv.',
     og_desc_about:   'Over 5 years of authentic Greek cuisine with recipes by Chef Dimitri and fresh seasonal ingredients. Tavernaki, Plovdiv.',
     og_desc_contact: 'Tavernaki — 28a Peshtersko Shose Blvd, Plovdiv. Open every day from 10:00. Tel: 0877 64 62 06.',
     og_desc_parties: 'Birthdays, anniversaries, corporate dinners at Tavernaki. Personalised menu, summer garden. Tel: 0877 64 62 06.',
@@ -574,10 +574,7 @@ function applyLang(lang) {
           ? curr.allergens_on_request
           : dish.allergens;
       }
-      var priceEl = card.querySelector('.dish-price');
-      if (priceEl && dish.price_unit && dish.price != null) {
-        priceEl.textContent = '€' + dish.price.toFixed(2) + ' ' + curr.price_per_unit;
-      }
+      // Prices are left as rendered; applyWeightLang() translates the per-weight unit.
     });
   }
 

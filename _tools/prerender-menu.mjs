@@ -1,10 +1,10 @@
 /**
  * Pre-render the menu into pages/menu.html.
  *
- * Why: renderMenu() built all 85 dish cards client-side, so the served HTML
+ * Why: renderMenu() built every dish card client-side, so the served HTML
  * contained zero dish names. The menu is the site's most commercially valuable
  * content and it was invisible to the first indexing wave — and the grid
- * inflating from empty to 85 cards was the page's main layout shift.
+ * inflating from empty to ~90 cards was the page's main layout shift.
  *
  * This emits the same markup renderMenu() produces (Bulgarian — the indexed
  * language) straight into the HTML, plus the Menu/MenuSection/MenuItem JSON-LD
@@ -55,8 +55,9 @@ const CATEGORY_SCHEMA_NAMES = {
   salads: 'Salads', starters: 'Starters', appetizers: 'Appetizers',
   specialties: 'Specialties', 'bbq-meat': 'Grilled & Meat Dishes',
   'pan-meat': 'Pan-Fried Dishes', pasta: 'Pasta & Risotto', fish: 'Fish & Seafood',
+  desserts: 'Desserts',
 };
-const CATEGORY_ORDER = ['salads', 'starters', 'appetizers', 'specialties', 'bbq-meat', 'pan-meat', 'pasta', 'fish'];
+const CATEGORY_ORDER = ['salads', 'starters', 'appetizers', 'specialties', 'bbq-meat', 'pan-meat', 'pasta', 'fish', 'desserts'];
 
 // --- helpers ----------------------------------------------------------------
 
@@ -66,11 +67,12 @@ const escAttr = (s) => esc(s).replace(/"/g, '&quot;');
 const webpPath = (image) =>
   image ? image.replace('menu-images/', 'menu-images-webp/').replace('.png', '.webp') : null;
 
+// Prices are stored in EUR exactly as printed on the menu. price_unit marks
+// dishes sold by weight ('100 г', 'кг'). No price (e.g. the daily desserts) → no badge.
 function priceDisplay(dish) {
-  if (dish.price == null) return dish.price_unit ? `— / ${dish.price_unit}` : '—';
-  const eur = (dish.price / 1.95583).toFixed(2).replace('.', ',');
-  const bgn = dish.price.toFixed(2).replace('.', ',');
-  return dish.price_unit ? `${eur} € (${bgn} лв.) / ${dish.price_unit}` : `${eur} € (${bgn} лв.)`;
+  if (dish.price == null) return '';
+  const eur = dish.price.toFixed(2).replace('.', ',');
+  return dish.price_unit ? `${eur} € / ${dish.price_unit}` : `${eur} €`;
 }
 
 /** Intrinsic dimensions, so the browser knows each image's real aspect ratio. */
@@ -138,7 +140,7 @@ for (const dish of dishes) {
       `<div class="dish-img-wrap">` +
         imgHTML +
         `<div class="absolute inset-0" style="background:linear-gradient(to top,rgba(7,21,16,0.55) 0%,transparent 60%);pointer-events:none;"></div>` +
-        `<span class="dish-price">${esc(priceDisplay(dish))}</span>` +
+        (priceDisplay(dish) ? `<span class="dish-price">${esc(priceDisplay(dish))}</span>` : '') +
       `</div>` +
       `<div class="dish-body">` +
         `<h3 class="dish-name">${esc(name)}</h3>` +
@@ -154,6 +156,12 @@ for (const dish of dishes) {
 
 // --- build the schema -------------------------------------------------------
 
+// Sold-by-weight dishes: the price is per 100 g / per kg, not per portion.
+const UNIT_REFERENCE = {
+  '100 г': { value: 100, unitCode: 'GRM' },
+  'кг': { value: 1, unitCode: 'KGM' },
+};
+
 const menuSchema = {
   '@context': 'https://schema.org',
   '@type': 'Menu',
@@ -166,9 +174,17 @@ const menuSchema = {
     hasMenuItem: dishes
       .filter((d) => d.category === cat)
       .map((d) => {
-        const item = { '@type': 'MenuItem', name: d.name_en, description: d.description_en };
+        const item = { '@type': 'MenuItem', name: d.name_en };
+        if (d.description_en) item.description = d.description_en;
         if (d.price != null) {
-          item.offers = { '@type': 'Offer', price: d.price.toFixed(2), priceCurrency: 'BGN' };
+          item.offers = { '@type': 'Offer', price: d.price.toFixed(2), priceCurrency: 'EUR' };
+          const ref = UNIT_REFERENCE[d.price_unit];
+          if (ref) {
+            item.offers.priceSpecification = {
+              '@type': 'UnitPriceSpecification', price: d.price.toFixed(2), priceCurrency: 'EUR',
+              referenceQuantity: { '@type': 'QuantitativeValue', ...ref },
+            };
+          }
         }
         return item;
       }),

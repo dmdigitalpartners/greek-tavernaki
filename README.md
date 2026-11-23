@@ -5,7 +5,7 @@ The website for **Tavernaki**, a Greek restaurant in Plovdiv, Bulgaria (бул. 
 ## What it offers
 
 - **Home** (`index.html`) — hero video, specialty dishes, trust signals (free parking, home-cooked food), reservation and menu CTAs.
-- **Menu** (`pages/menu.html`) — a full bilingual (Bulgarian/English) catalogue of roughly 85 dishes across salads, grill, fish, seafood, pasta, mezze and a lunch menu, each with a photo and allergen icons (`brand_assets/allergen-icons/`). The menu is pre-rendered at build time for SEO (see below).
+- **Menu** (`pages/menu.html`) — a full bilingual (Bulgarian/English) catalogue of roughly 90 dishes across salads, grill, fish, seafood, pasta, mezze and a lunch menu, each with a photo and allergen icons (`brand_assets/allergen-icons/`). The menu is pre-rendered at build time for SEO (see below).
 - **About** (`pages/about.html`) — restaurant story and mission.
 - **Parties** (`pages/parties.html`) — private events / celebrations page.
 - **Contact** (`pages/contact.html`) — address, phone, hours.
