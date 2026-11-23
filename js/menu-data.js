@@ -479,7 +479,7 @@ window.menuData = [
     description_bg:'със сладко от боровинки',
     description_en:'with blueberry jam',
     allergens:     ['gluten', 'milk'],
-    image:         null, // placeholder until a proper photo is available
+    image:         'menu-images/Топени сиренца.png',
   },
   {
     id:            'machkani-beybi-kartofi',
