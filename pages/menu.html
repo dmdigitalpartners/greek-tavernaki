@@ -505,8 +505,17 @@
         /* ─── DISH GRID ───────────────────────────────── */
         #menu-section {
             background: var(--stone);
-            padding: 2.5rem 0 5rem;
+            padding: 2.5rem 0 0;       /* bottom spacing comes from .menu-parties-link */
             min-height: 40vh;
+        }
+        /* "Планирате тържество?" — centred between the last dish and the allergen section */
+        .menu-parties-link {
+            text-align: center;
+            padding-top: 4.5rem;
+            padding-bottom: 4.5rem;
+        }
+        @media (max-width: 767px) {
+            .menu-parties-link { padding-top: 3rem; padding-bottom: 3rem; }
         }
         #dish-grid {
             display: grid;
@@ -977,7 +986,7 @@
         </div>
         <!-- Group bookings are a separate intent from browsing dishes, and
              /parties is the least internally-linked page on the site. -->
-        <div class="max-w-7xl mx-auto px-6" style="text-align:center; padding-bottom:3rem;">
+        <div class="max-w-7xl mx-auto px-6 menu-parties-link">
             <a href="/parties" style="font-family:'DM Sans',sans-serif; font-size:0.9rem; color:var(--forest-dark); text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1px; opacity:0.8; transition:opacity 0.25s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'" data-i18n="link_parties_menu">Планирате тържество?</a>
         </div>
     </section>
