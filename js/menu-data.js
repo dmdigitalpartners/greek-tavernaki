@@ -134,7 +134,7 @@ window.menuData = [
     weight:        '400 г',
     description_bg:'',
     description_en:'',
-    allergens:     [],
+    allergens:     ['milk'],
     image:         'menu-images/Варени картофи с червен лук.png',
   },
   {
@@ -228,7 +228,7 @@ window.menuData = [
     weight:        '100 г',
     description_bg:'люти чушки, зехтин, оцет, магданоз',
     description_en:'hot peppers, olive oil, vinegar, parsley',
-    allergens:     [],
+    allergens:     ['sulphites'],
     image:         'menu-images/Люти чушки.png',
   },
   {
@@ -306,7 +306,7 @@ window.menuData = [
     weight:        '180 г',
     description_bg:'пиле, чушка, домати, боб, магданоз',
     description_en:'chicken, pepper, tomatoes, beans, parsley',
-    allergens:     [],
+    allergens:     ['milk'],
     image:         'menu-images/Паприка.png',
   },
   {
@@ -812,7 +812,7 @@ window.menuData = [
     weight:        '300 г',
     description_bg:'свинско месо, чушки, мащерка, лимон',
     description_en:'pork, peppers, thyme, lemon',
-    allergens:     [],
+    allergens:     ['gluten', 'sulphites'],
     image:         'menu-images/Свински късчета с чушки и мащерка.png',
   },
   {
@@ -825,7 +825,7 @@ window.menuData = [
     weight:        '300 г',
     description_bg:'телешки дроб, карамелизиран лук, гъби, лимон',
     description_en:'veal liver, caramelized onion, mushrooms, lemon',
-    allergens:     [],
+    allergens:     ['gluten', 'milk', 'sulphites'],
     image:         'menu-images/Телешки дроб с карамелизиран лук.png',
   },
 
