@@ -6,10 +6,11 @@
   "scripts": {
     "build:css": "tailwindcss -c tailwind.config.js -i _tools/tailwind-input.css -o css/tavernaki.css --minify && node _tools/inline-css.mjs",
     "prerender:menu": "node _tools/prerender-menu.mjs",
-    "build": "npm run prerender:menu && npm run build:css",
+    "build": "npm run prerender:menu && npm run build:css && npm run build:versions",
     "serve": "node serve.mjs",
     "seo:check": "node _tools/seo-check.mjs",
-    "seo:cwv": "node _tools/measure-cwv.mjs"
+    "seo:cwv": "node _tools/measure-cwv.mjs",
+    "build:versions": "node _tools/version-assets.mjs"
   },
   "keywords": [],
   "author": "",
