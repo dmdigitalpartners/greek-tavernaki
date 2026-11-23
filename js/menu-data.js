@@ -1212,7 +1212,7 @@ window.menuData = [
     description_bg:'Попитайте Вашия сервитьор за актуалните предложения за деня.',
     description_en:'Ask your waiter about today’s dessert offers.',
     allergens:     [],
-    image:         null,
+    image:         'menu-images/Десерти.png',
   },
 
 ];
