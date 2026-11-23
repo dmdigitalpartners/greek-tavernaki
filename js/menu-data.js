@@ -135,7 +135,7 @@ window.menuData = [
     description_bg:'',
     description_en:'',
     allergens:     [],
-    image:         'menu-images/Варени картофи с червен лук.png',
+    image:         null, // placeholder until a better photo is available
   },
   {
     id:            'kinoa-i-skaridi',
