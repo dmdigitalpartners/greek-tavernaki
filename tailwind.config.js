@@ -24,8 +24,9 @@ module.exports = {
   safelist: ['hidden'],
   // The scanner also reads the hand-written CSS in each page's <style> block and
   // mistakes the property `text-wrap: balance` (menu tabs) for the `text-wrap`
-  // utility class, emitting an unused rule.
-  blocklist: ['text-wrap'],
+  // utility class, emitting an unused rule. Same for `position: static` and the
+  // 'resize' event name in the menu-page script.
+  blocklist: ['text-wrap', 'static', 'resize'],
   theme: {
     extend: {
       colors: {
