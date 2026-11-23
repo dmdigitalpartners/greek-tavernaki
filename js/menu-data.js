@@ -135,7 +135,7 @@ window.menuData = [
     description_bg:'',
     description_en:'',
     allergens:     [],
-    image:         null, // placeholder until a better photo is available
+    image:         'menu-images/Варени картофи с червен лук.png',
   },
   {
     id:            'kinoa-i-skaridi',
@@ -1131,7 +1131,7 @@ window.menuData = [
     description_bg:'',
     description_en:'',
     allergens:     ['fish'],
-    image:         null,
+    image:         'menu-images/Сардела на скара.png',
   },
   {
     id:            'somga-na-skara',
